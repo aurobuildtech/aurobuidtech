@@ -45,21 +45,21 @@ export default function HeroCarousel() {
  
   
   useEffect(() => {
-    const el = document.getElementById("carouselExampleCaptions");
-    if (!el) return;
-  
-    const instance = Carousel.getOrCreateInstance(el, {
-      interval: 2000,
-      ride: "carousel",
-      pause: false,
-      touch: true,
-      wrap: true,
-    });
-  
-    instance.cycle(); // ✅ start autoplay
-  
-    return () => instance.dispose();
-  }, []);
+  const el = document.getElementById("carouselExampleCaptions");
+  if (!el) return;
+
+  const instance = Carousel.getOrCreateInstance(el, {
+    interval: 5000,      // ✅ slower (5 seconds)
+    ride: "carousel",
+    pause: "hover",      // ✅ pause when mouse enters
+    touch: true,
+    wrap: true,
+  });
+
+  instance.cycle(); // ✅ start autoplay
+
+  return () => instance.dispose();
+}, []);
 
   return (
     <section className="py-5">

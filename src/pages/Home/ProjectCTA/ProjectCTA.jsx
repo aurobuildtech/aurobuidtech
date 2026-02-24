@@ -55,7 +55,7 @@ import "./projectCTA.css";
           <div className="text-center">
             <h2 className="fw-bold display-6">Ready to Start Your Project?</h2>
             <p className="mt-2 projectCTASub">
-              Transform your vision into reality with AUROBUILDTECH. Schedule a free consultation today
+              Transform your vision into reality with “AURO BUILDTECH”. Schedule a free consultation today
               and discover how we can bring your construction dreams to life.
             </p>
             <div className="d-flex justify-content-center gap-3 flex-wrap mt-4">

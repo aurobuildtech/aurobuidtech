@@ -12,7 +12,7 @@ const testimonials = [
     thumb:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
     quote:
-      "AUROBUILDTECH transformed our vision into reality beyond our wildest dreams. Their attention to detail and transparent communication made the process smooth and exciting.",
+      '“AURO BUILDTECH” transformed our vision into reality beyond our wildest dreams. Their attention to detail and transparent communication made the process smooth and exciting.',
     name: "Verified Client",
     role: "Homeowner",
     videoUrl: "https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&mute=1",
@@ -98,7 +98,7 @@ function TestimonialsVideo() {
                       ))}
                     </div>
 
-                    <p className="tsQuote">“{t.quote}”</p>
+                    <p className="tsQuote">{t.quote}</p>
 
                     <div className="tsReviewer">
                       <div className="tsAvatar" aria-hidden="true">

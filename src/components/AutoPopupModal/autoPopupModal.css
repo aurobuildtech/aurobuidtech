@@ -1,0 +1,77 @@
+.apmModal{
+  border-radius: 18px;
+}
+
+/* bottom row layout */
+.apmBottomRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* WhatsApp + Phone icons */
+.apmQuickIcons{
+  display: flex;
+  gap: 10px;
+}
+.apmIconBtn{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border: 1.5px solid #e5e7eb;
+  background: transparent;
+  color: #111;
+  transition: 
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.apmIconBtn i{
+  font-size: 18px;
+}
+
+/* Hover animation */
+.apmIconBtn:hover{
+  background: #0d6efd;          /* blue fill */
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(13,110,253,0.35);
+}
+
+/* Optional platform colors */
+.apmIconBtn.whatsapp:hover{
+  background:#25D366;
+  box-shadow:0 6px 18px rgba(37,211,102,.45);
+}
+
+.apmIconBtn.phone:hover{
+  background:#0d6efd;
+}
+
+/* smaller submit button (not full width) */
+.apmSubmit{
+  width: 180px;          /* ✅ change size here */
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+/* mobile: stack nicely */
+@media (max-width: 480px){
+  .apmBottomRow{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .apmQuickIcons{
+    justify-content: center;
+  }
+  .apmSubmit{
+    width: 100%;
+  }
+}

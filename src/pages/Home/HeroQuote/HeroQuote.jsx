@@ -23,7 +23,7 @@ export default function HeroQuote() {
           {/* Buttons */}
           <div className="heroBtns">
             <a href="#contact" className="btn rounded-pill auro-btn-primary">Get a Free Quote</a>
-            <a href="#projects" className="heroBtnGhost">See Our Work</a>
+            {/* <a href="#projects" className="heroBtnGhost">See Our Work</a> */}
           </div>
 
           {/* Feature chips */}
@@ -32,10 +32,10 @@ export default function HeroQuote() {
               <div className="chipTitle">Fast</div>
               <div className="chipSub">Response in 24 hrs</div>
             </div>
-            <div className="chip">
+            {/* <div className="chip">
               <div className="chipTitle">Clean</div>
               <div className="chipSub">Respectful job sites</div>
-            </div>
+            </div> */}
             <div className="chip">
               <div className="chipTitle">Transparent</div>
               <div className="chipSub">No surprise costs</div>
