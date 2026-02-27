@@ -1,0 +1,211 @@
+/* ---------- THEME COLORS ---------- */
+/* Light mode (default) */
+.button{
+  --c1: #22d3ee;         /* cyan */
+  --c2: #1f63d0;         /* blue deep */
+  --glowA: #3b82f6;      /* blue glow */
+  --glowB: #22d3ee;      /* cyan glow */
+  --radA: rgba(113, 255, 248, 0.8); /* top radial */
+  --radB: rgba(225, 124, 255, 0);   /* fade */
+}
+
+/* Dark mode override */
+[data-theme="dark"] .button{
+  --c1: rgb(245,115,32);
+  --c2: rgb(245,115,32);
+  --glowA: rgb(245,115,32);
+  --glowB: rgb(245,115,32);
+  --radA: rgba(245,115,32,0.8);
+  --radB: rgba(245,115,32,0);
+}
+
+/* ---------- BUTTON ---------- */
+.button{
+  --round: 0.75rem;
+
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  border: none;
+  outline: none;
+  padding: 12px 18px;
+  border-radius: var(--round);
+
+  background:
+    radial-gradient(65.28% 65.28% at 50% 100%, var(--radA) 0%, var(--radB) 100%),
+    linear-gradient(135deg, var(--c1), var(--c2));
+
+  transition: transform 0.25s ease;
+  animation:
+    intro 0.6s ease forwards,
+    glow 1.5s ease-in-out infinite 0.6s,
+    shake 2s ease-in-out infinite 0.6s;
+}
+
+/* Pause the attention animation on hover (optional) */
+.button:hover{
+  animation-play-state: paused;
+}
+
+.button:active{
+  transform: scale(0.95);
+}
+
+/* ---------- BORDER LAYERS ---------- */
+.button::before,
+.button::after{
+  content:"";
+  position:absolute;
+  inset: var(--space);
+  border-radius: calc(var(--round) - var(--space));
+  z-index: 0;
+}
+
+.button::before{
+  --space: 1px;
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+}
+.button::after{
+  --space: 2px;
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+}
+
+/* ---------- FOLD ---------- */
+.fold{
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 1rem;
+  width: 1rem;
+
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+  box-shadow: 0 0 4px black;
+
+  border-bottom-left-radius: 0.5rem;
+  border-top-right-radius: var(--round);
+  transition: all 0.5s ease-in-out;
+}
+.fold::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:150%;
+  height:150%;
+  transform: rotate(45deg) translateY(-18px);
+  background-color:#e8e8e8;
+  pointer-events:none;
+}
+.button:hover .fold{
+  margin-top: -1rem;
+  margin-right: -1rem;
+}
+
+/* ---------- FLOATING POINTS ---------- */
+.points_wrapper{
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  position:absolute;
+  z-index:1;
+}
+.points_wrapper .point{
+  bottom:-10px;
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:#fff;
+  border-radius:9999px;
+  animation: floating-points infinite ease-in-out;
+}
+@keyframes floating-points{
+  0%{ transform: translateY(0); }
+  85%{ opacity:0; }
+  100%{ transform: translateY(-55px); opacity:0; }
+}
+.points_wrapper .point:nth-child(1){ left:10%; opacity:1; animation-duration:2.35s; animation-delay:.2s; }
+.points_wrapper .point:nth-child(2){ left:30%; opacity:.7; animation-duration:2.5s;  animation-delay:.5s; }
+.points_wrapper .point:nth-child(3){ left:25%; opacity:.8; animation-duration:2.2s;  animation-delay:.1s; }
+.points_wrapper .point:nth-child(4){ left:44%; opacity:.6; animation-duration:2.05s; }
+.points_wrapper .point:nth-child(5){ left:50%; opacity:1;  animation-duration:1.9s; }
+.points_wrapper .point:nth-child(6){ left:75%; opacity:.5; animation-duration:1.5s;  animation-delay:1.5s; }
+.points_wrapper .point:nth-child(7){ left:88%; opacity:.9; animation-duration:2.2s;  animation-delay:.2s; }
+.points_wrapper .point:nth-child(8){ left:58%; opacity:.8; animation-duration:2.25s; animation-delay:.2s; }
+.points_wrapper .point:nth-child(9){ left:98%; opacity:.6; animation-duration:2.6s;  animation-delay:.1s; }
+.points_wrapper .point:nth-child(10){ left:65%; opacity:1; animation-duration:2.5s;  animation-delay:.2s; }
+
+/* ---------- CONTENT ---------- */
+.inner{
+  z-index: 2;
+  gap: 6px;
+  position: relative;
+  width: 100%;
+  color: #fff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.inner svg.icon{
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- ICON HOVER DRAW (kept from your code) ---------- */
+.button:hover svg.icon{
+  fill: transparent;
+  animation: dasharray 1s linear forwards, filled 0.1s linear forwards 0.95s;
+}
+@keyframes dasharray{
+  from{ stroke-dasharray: 0 0 0 0; }
+  to{ stroke-dasharray: 68 68 0 0; }
+}
+@keyframes filled{
+  to{ fill: white; }
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes intro{
+  from{ opacity:0; transform: scale(0.7); }
+  to{ opacity:1; transform: scale(1); }
+}
+
+@keyframes glow{
+  0%,100%{
+    box-shadow: 0 0 5px var(--glowA),
+                0 0 10px var(--glowA);
+  }
+  50%{
+    box-shadow: 0 0 15px var(--glowB),
+                0 0 25px var(--glowA),
+                0 0 35px var(--glowB);
+  }
+}
+
+@keyframes shake{
+  0%,100%{ transform: translateX(0); }
+  20%{ transform: translateX(-2px); }
+  40%{ transform: translateX(2px); }
+  60%{ transform: translateX(-2px); }
+  80%{ transform: translateX(2px); }
+}
+
+  @media (max-width: 726px){
+.button{
+    position: relative;
+    left: 130px;
+    margin: 20px;
+}
+
+
+  }

@@ -52,11 +52,11 @@ export default function StatsCounter() {
   }, []);
 
   return (
-    <section className="statsWrap" ref={ref}>
+    <section className="statsWrap container" ref={ref}>
       <div className="statsBar">
         <StatItem start={start} end={15} suffix="+ Years" title="Industry Experience" />
         <StatItem start={start} end={33} suffix="+" title="Projects Completed" />
-        <StatItem start={start} end={4.9} decimals={1} suffix="/5" title="Client Satisfaction" />
+        <StatItem start={start} end={4.8} decimals={1} suffix="/5" title="Client Satisfaction" />
         <StatItem start={start} end={100} suffix="%" title="Licensed & Insured" />
       </div>
     </section>

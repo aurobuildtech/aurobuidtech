@@ -2,6 +2,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import AppRoutes from "./routes/AppRoutes";
 import CursorDust from "./components/effects/CursorDust";
+import WhatsAppFloat from "./components/buttons/WhatsAppFloat";
  export default function App() {
   return (
     <div className="app-bg min-vh-100 d-flex flex-column">
@@ -10,6 +11,7 @@ import CursorDust from "./components/effects/CursorDust";
       <main className="flex-grow-1">
     <CursorDust />
         <AppRoutes />
+        <WhatsAppFloat />
  
       </main>
       <Footer />

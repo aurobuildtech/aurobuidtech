@@ -40,10 +40,20 @@ export default function Home() {
 
         {/* HeroQuote */}
 
-        <LazySection placeholderHeight={420}>
+        <LazySection placeholderHeight={420} >
           <Suspense fallback={<BlockLoader h={420} />}>
             <Reveal y={40}>
               <HeroQuote />
+            </Reveal>
+          </Suspense>
+        </LazySection>
+
+
+          {/* Stats loads only when near */}
+        <LazySection placeholderHeight={140}>
+          <Suspense fallback={<BlockLoader h={140} />}>
+            <Reveal delay={0.1}>
+              <StatsCounter />
             </Reveal>
           </Suspense>
         </LazySection>
@@ -57,14 +67,7 @@ export default function Home() {
           </Suspense>
         </LazySection>
 
-        {/* Stats loads only when near */}
-        <LazySection placeholderHeight={140}>
-          <Suspense fallback={<BlockLoader h={140} />}>
-            <Reveal delay={0.1}>
-              <StatsCounter />
-            </Reveal>
-          </Suspense>
-        </LazySection>
+      
 
         {/*  Video section loads only when near */}
         <LazySection placeholderHeight={420}>

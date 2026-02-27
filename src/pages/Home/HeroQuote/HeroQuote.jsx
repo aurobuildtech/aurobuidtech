@@ -2,26 +2,26 @@ import "./heroQuote.css";
 import heroimg from "../../../assets/images/heroqutoimg/heroquote.jpg";
 import heroimg1 from "../../../assets/images/heroqutoimg/heroquote1.jpg";
 import heroimg2 from "../../../assets/images/heroqutoimg/heroquote2.jpg";
+import { HighlightsBtn } from "../../../components/buttons/highlightsbtn";
 
 export default function HeroQuote() {
   return (
-    <section className="heroWrap">
+    <section className="heroWrap mt-4 mb-5">
       <div className="container">
 
         {/* ✅ TOP RIGHT BUTTON ROW (no position) */}
-        <div className="heroTopRow">
-          <button type="button" className="heroHighlightsBtn">
-            Highlights
-          </button>
-        </div>
+        {/* <div className="heroTopRow"> */}
+       
+        {/* </div> */}
 
         {/* ORIGINAL GRID */}
         <div className="heroGrid">
           {/* LEFT */}
           <div className="heroLeft">
+              <HighlightsBtn />
             <h1 className="heroTitle">
               Build it right.{" "}
-              <span className="hero-accent">Finish it beautifully.</span>
+              <span className="hero-accent">Finish it  beautifully.</span>
             </h1>
 
             <p className="heroSub">

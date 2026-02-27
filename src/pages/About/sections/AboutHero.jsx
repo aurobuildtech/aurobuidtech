@@ -15,7 +15,7 @@ import "./aboutHero.css";
           </h1>
 
           <p className="abHeroDesc">
-            Since ___, AUROBUILDTECH has been transforming visions into lasting
+            "AURO BUILDTECH" has been transforming visions into lasting
             structures. We don&apos;t just build—we create spaces where memories
             are made, businesses thrive, and communities grow stronger.
           </p>

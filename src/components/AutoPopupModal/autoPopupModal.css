@@ -37,18 +37,22 @@
   font-size: 18px;
 }
 
+#termsCheck{
+  border: 1px solid gray;
+}
+
 /* Hover animation */
-.apmIconBtn:hover{
+.apmIconBtn{
   background: #0d6efd;          /* blue fill */
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(13,110,253,0.35);
+  box-shadow: 6 6px 18px rgba(13,110,253,0.35);
 }
 
 /* Optional platform colors */
-.apmIconBtn.whatsapp:hover{
+.apmIconBtn.whatsapp{
   background:#25D366;
-  box-shadow:0 6px 18px rgba(37,211,102,.45);
+  box-shadow:6 6px 18px rgba(37,211,102,.45);
 }
 
 .apmIconBtn.phone:hover{

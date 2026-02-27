@@ -131,13 +131,18 @@
   font-weight: 800;
   padding: 10px 14px;
   border-radius: 12px;
-  box-shadow: 2px 2px 5px var(--cta-primary);
+  box-shadow: 2px 2px 5px lightblue;
+}
+
+[data-theme="dark"] .btn-consult{
+    box-shadow: 2px 2px 5px orangered;
 }
 
 .btn-consult:hover {
   background: var(--cta-primary);
+  transition: all 2ms 2s ease-out;
   color: #fff;
-  /* border: 1px solid var(--hero-accent); */
+  border: 1px solid var(--hero-accent);
 }
 
 /* Toggler */
@@ -155,6 +160,8 @@
 [data-theme="dark"] .auro-toggler-icon {
   filter: invert(1);
 }
+
+
 
 
 .auro-overlay{

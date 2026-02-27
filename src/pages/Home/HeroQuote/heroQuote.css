@@ -35,11 +35,9 @@
   }
   
   .auro-btn-primary:hover{
-    background: var(--cta-primary-hover) !important;
+    /* background: var(--hero-accent) ; */
   }
   
-  
-
   .heroTitle{
     font-size: 56px;
     line-height: 1.05;
@@ -107,6 +105,7 @@
     background: rgba(255,255,255,0.05);
     border-radius: 16px;
     padding: 14px 14px;
+    box-shadow: 5px 5px 5px rgba(158, 185, 188, 0.229);
   }
   
   .chipTitle{
@@ -186,16 +185,13 @@
     .heroSmall img{
       height: 180px;
     }
+    .heroBtns{
+     align-self:center ;
+
+  
+    } 
+
   }
-
-
-  /* top row to push button right */
-.heroTopRow{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 10px; /* small spacing above hero */
-}
 
 /* button (theme based) */
 .heroHighlightsBtn{
