@@ -76,6 +76,13 @@
 
     box-shadow: 0 18px 40px rgba(0,0,0,0.08);
   }
+
+  
+[data-theme="dark"] .opStepCard.active{
+    border-color: color-mix(in srgb,rgb(220, 95, 20) 55%, var(--border));
+
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  }
   
   .opStepTop{
     display: flex;

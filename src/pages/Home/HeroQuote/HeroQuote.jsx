@@ -18,7 +18,9 @@ export default function HeroQuote() {
         <div className="heroGrid">
           {/* LEFT */}
           <div className="heroLeft">
-              <HighlightsBtn />
+               <a href="#highlights">
+              < HighlightsBtn/>
+              </a>
             <h1 className="heroTitle">
               Build it right.{" "}
               <span className="hero-accent">Finish it  beautifully.</span>

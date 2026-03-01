@@ -19,7 +19,7 @@ const highlights = [
     description:
       "Gary Kirsten’s arrival at Yugen in a Hummer was nothing short of Dhurandhar style — bold, powerful, and unmistakably iconic. A true superhero moment reflecting leadership, legacy, and a larger-than-life vision. At Yugen, we don’t just build spaces — we celebrate moments that define ambition and belief.",
     type: "iframe",
-    videoUrl:"https://www.youtube.com/embed/LyKGQxPUH68/",
+    videoUrl: "https://www.youtube.com/embed/LyKGQxPUH68/",
   },
   {
     id: "h3",
@@ -44,7 +44,11 @@ const cardVariants = {
 
 export default function VideoHighlights() {
   return (
-    <section className="container py-5">
+    <section
+      id="highlights"
+      className="container py-5"
+  
+    >
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 18 }}
@@ -80,17 +84,17 @@ export default function VideoHighlights() {
               >
                 <div className="vhCard">
                   <div className="vhMedia">
-                   
-                      <iframe
-                        src={card.videoUrl}
-                        title={card.title}
-                        allow="encrypted-media; picture-in-picture"
-                        allowFullScreen
-                        loading="lazy"
-                        
-                      />
-                  
-                 
+
+                    <iframe
+                      src={card.videoUrl}
+                      title={card.title}
+                      allow="encrypted-media; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+
+                    />
+
+
 
                     <div className="vhOverlay" />
                     <div className="vhPlay" aria-hidden="true">

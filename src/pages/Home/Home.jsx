@@ -1,16 +1,19 @@
 import PageTransitionE from "../../components/animations/PageTransition";
 import Reveal from "../../components/animations/Reveal";
 import LazySection from "../../components/lazy/LazySection";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 
-import HeroQuote from "./HeroQuote/HeroQuote";
-import VideoHighlights from "./videoHighlights/VideoHighlights";
+// import HeroQuote from "./HeroQuote/HeroQuote";
+// import VideoHighlights from "./videoHighlights/VideoHighlights";
+
 const HeroCarousel = lazy(() => import("../../components/HeroCarousel/HeroCarousel"));
 const StatsCounter = lazy(() => import("./StatsCounter/StatsCounter"));
 const TestimonialsVideo = lazy(() => import("./TestimonialsVideo/TestimonialsVideo"));
 const ClientsStrip = lazy(() => import("./ClientsStrip/ClientsStrip"));
-const ProjectCTA = lazy(() => import("./ProjectCTA/ProjectCTA"))
-const AutoPopupModal = lazy(() => import("../../components/AutoPopupModal/AutoPopupModal"))
+const ProjectCTA = lazy(() => import("./ProjectCTA/ProjectCTA"));
+const AutoPopupModal = lazy(() => import("../../components/AutoPopupModal/AutoPopupModal"));
+const HeroQuote = lazy(() => import('./HeroQuote/HeroQuote'))
+const VideoHighlights = lazy(() => import('./videoHighlights/VideoHighlights'))
 
 function BlockLoader({ h = 260 }) {
   return (
@@ -25,8 +28,9 @@ function BlockLoader({ h = 260 }) {
 }
 
 export default function Home() {
-  return (
 
+
+  return (
     <PageTransitionE>
       <section className="container py-3 home-block">
         {/* AutoPopupModal */}
@@ -39,8 +43,7 @@ export default function Home() {
         </LazySection>
 
         {/* HeroQuote */}
-
-        <LazySection placeholderHeight={420} >
+        <LazySection placeholderHeight={420}>
           <Suspense fallback={<BlockLoader h={420} />}>
             <Reveal y={40}>
               <HeroQuote />
@@ -48,8 +51,7 @@ export default function Home() {
           </Suspense>
         </LazySection>
 
-
-          {/* Stats loads only when near */}
+        {/* Stats */}
         <LazySection placeholderHeight={140}>
           <Suspense fallback={<BlockLoader h={140} />}>
             <Reveal delay={0.1}>
@@ -58,7 +60,7 @@ export default function Home() {
           </Suspense>
         </LazySection>
 
-        {/* Load Carousel chunk only when near viewport */}
+        {/* Carousel */}
         <LazySection placeholderHeight={520}>
           <Suspense fallback={<BlockLoader h={520} />}>
             <Reveal y={40}>
@@ -67,37 +69,30 @@ export default function Home() {
           </Suspense>
         </LazySection>
 
-      
-
-        {/*  Video section loads only when near */}
+        {/* Testimonials */}
         <LazySection placeholderHeight={420}>
           <Suspense fallback={<BlockLoader h={420} />}>
-            <Reveal delay={0.10}>
+            <Reveal delay={0.1}>
               <TestimonialsVideo />
             </Reveal>
           </Suspense>
         </LazySection>
 
+        {/* ✅ Highlights (force mount when button clicked) */}
+
+        <Suspense fallback={<BlockLoader h={420} />}>
+          <Reveal delay={0.10}>
+            <VideoHighlights />
+          </Reveal>
+        </Suspense>
 
 
-
-        {/* ViedoHighlights */}
-        <LazySection placeholderHeight={420}>
-          <Suspense fallback={<BlockLoader h={420} />}>
-            <Reveal delay={0.10}>
-              <VideoHighlights />
-            </Reveal>
-          </Suspense>
-        </LazySection>
-
-
-
-        {/* Features are light, can keep normal */}
+        {/* CTA */}
         <Reveal delay={0.15}>
           <ProjectCTA />
         </Reveal>
 
-        {/*  Clients strip lazy */}
+        {/* Clients */}
         <LazySection placeholderHeight={110}>
           <Suspense fallback={<BlockLoader h={110} />}>
             <Reveal delay={0.2}>
@@ -105,7 +100,6 @@ export default function Home() {
             </Reveal>
           </Suspense>
         </LazySection>
-
       </section>
     </PageTransitionE>
   );

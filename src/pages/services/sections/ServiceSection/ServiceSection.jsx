@@ -1,6 +1,6 @@
+import ViewDetails from "../../../../components/buttons/ViewDetails";
 import "./serviceSections.css";
-import { Modal } from "bootstrap";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+ 
 
 export default function ServiceSection({
   id,
@@ -11,13 +11,6 @@ export default function ServiceSection({
   desc3,
   img,
 }) {
-  function openServiceModal() {
-    const el = document.getElementById("serviceModal");
-    if (!el) return;
-    Modal.getOrCreateInstance(el).show();
-  }
-
-  // ✅ only interior + home automation will come as array
   const isCollage = Array.isArray(img);
 
   return (
@@ -64,9 +57,8 @@ export default function ServiceSection({
             )}
           </div>
 
-          <button className="ssBtn" onClick={openServiceModal}>
-            View Details
-          </button>
+          {/* ✅ NOW: opens correct details page */}
+          <ViewDetails toId={id} />
         </div>
       </div>
 

@@ -1,34 +1,43 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function LazySection({
+ function LazySection({
   children,
-  rootMargin = "250px",
-  placeholderHeight = 200,
+  placeholderHeight = 260,
+  rootMargin = "260px",
+  forceMount = false, // ✅ NEW
 }) {
   const ref = useRef(null);
-  const [show, setShow] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // ✅ If forced, mount immediately
+    if (forceMount) {
+      setMounted(true);
+      return;
+    }
+
     const el = ref.current;
     if (!el) return;
 
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShow(true);
-          obs.disconnect();
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setMounted(true);
+          io.disconnect();
         }
       },
-      { rootMargin }
+      { root: null, rootMargin, threshold: 0.01 }
     );
 
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [rootMargin]);
+    io.observe(el);
+    return () => io.disconnect();
+  }, [forceMount, rootMargin]);
 
   return (
-    <div ref={ref} style={!show ? { minHeight: placeholderHeight } : undefined}>
-      {show ? children : null}
+    <div ref={ref} style={{ minHeight: mounted ? "auto" : placeholderHeight }}>
+      {mounted ? children : null}
     </div>
   );
 }
+
+export default LazySection
