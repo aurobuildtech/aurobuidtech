@@ -144,7 +144,7 @@ export default function ServiceDetails() {
                       </div>
                     </div>
 
-                    <h2 className="cs-title" style={{ fontFamily:" system-ui"}}>{s.title}</h2>
+                    <h2 className="cs-title" style={{ fontFamily:"system-ui"}}>{s.title}</h2>
 
                     {/* HERO slide content */}
                     {s.type === "hero" && (
