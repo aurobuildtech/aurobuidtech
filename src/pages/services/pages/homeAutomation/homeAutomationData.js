@@ -3,7 +3,6 @@ import securityImg from "../../../../assets/homeauto/security.png";
 import climateImg from "../../../../assets/homeauto/climate.png";
 import energyImg from "../../../../assets/homeauto/energy.png";
 import curtainImg from "../../../../assets/homeauto/curtain.png";
-
 import smarthomeAutoImg from "../../../../assets/homeauto/smarthomeAutoImg.png";
 import Intelligentsecurity from "../../../../assets/homeauto/Intelligentsecurity.png";
 import energyusage from "../../../../assets/homeauto/energyusage.png";

@@ -5,6 +5,13 @@ import interior1 from "../../assets/images/servicesBannerImgs/interior1.jpeg";
 import interior2 from "../../assets/images/servicesBannerImgs/interior2.jpeg";
 import constructions from "../../assets/images/servicesBannerImgs/constructions.jpeg";
 import homeauto from "../../assets/homeauto/BannerBackImg.png";
+import deschomeauto from "../../assets/homeauto/deschomeauto.png"
+import roadwithtreesaround from "../../assets/homeauto/roadwithtreesaround.jpg"
+import saleOfpropvilla from"../../assets/homeauto/saleOfpropvilla.jpg"
+import constructionadd from "../../assets/homeauto/construction.jpg"
+import interiorimg from "../../assets/homeauto/interiorimg.jpg"
+
+
  
 
 export const servicesData = [
@@ -14,7 +21,8 @@ export const servicesData = [
     pageKey: "layout",
     eyebrow: "Premium Construction Services",
     title: "Layout Development",
-    img: layoutdev,
+    img: roadwithtreesaround,
+    descImg : layoutdev,
 
      desc1:
       "We are committed to transforming open land into well-planned, legally compliant, and future-ready investment destinations for modern living and business growth.",
@@ -96,7 +104,8 @@ export const servicesData = [
     pageKey: "sale",
     eyebrow: "Real Estate & Sales",
     title: "Sale of Properties",
-    img: sop,
+    img: saleOfpropvilla,
+    descImg : sop,
      desc1:
     "Auro BuildTech is a reliable real estate company specializing in the development and sale of Plots, premium flats and luxury villas designed for modern lifestyles.",
   desc2:
@@ -137,6 +146,7 @@ export const servicesData = [
     desc3:
       "From architectural planning and design to project execution and final handover, we manage every stage of the construction process with precision and professionalism.",
     img: constructions,
+    descImg : constructionadd,
 
       aboutTitle: "About Construction Services",
 
@@ -160,15 +170,15 @@ export const servicesData = [
     "Sustainable and cost-effective building practices"
   ],
 
-  offerIconKeys: [
-    "villa",
-    "apartment",
-    "execute",
-    "plan",
-    "design",
-    "approve",
-    "growth"
-  ],
+offerIconKeys: [
+  "villaConstruction",
+  "apartmentConstruction",
+  "execute",
+  "plan",
+  "design",
+  "approve",
+  "growth"
+],
 
   bottomText:
     "At Auro BuildTech Projects, we focus on building homes that combine comfort, style, and reliability—ensuring every project reflects superior craftsmanship, durable construction, and long-term customer satisfaction."
@@ -186,7 +196,8 @@ export const servicesData = [
       "Our interior design services focus on smart space planning, premium materials, contemporary finishes, and seamless execution to create elegant and comfortable interiors.",
     desc3:
       "From concept development to final installation, we ensure attention to detail, quality craftsmanship, and timely project completion.",
-    img: [interior, interior1, interior2],
+    img: interior,
+    descImg : interiorimg,
 
 
   aboutTitle: "About Interior Solutions",
@@ -233,6 +244,7 @@ export const servicesData = [
     desc2:
       "Our intelligent automation systems are designed to provide seamless control over lighting, security, climate, entertainment, and other essential home functions-all from a single interface.",
     img:homeauto ,
+    descImg:deschomeauto,
   },
 
   

@@ -43,7 +43,7 @@ export default function AutomationModal({ system, onClose }) {
                 alt={system.title}
                 className="ha-modalImg"
                 width={'100%'}
-                height={'350px'}
+                height={'425px'}
               />
             </div>
 

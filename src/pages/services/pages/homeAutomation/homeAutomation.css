@@ -83,25 +83,24 @@
 
 .ha-rotateSection {
   width: 100%;
-  min-height: 760px;
+  min-height: 700px;
   display: grid;
   place-items: center;
-  padding: 30px 0 20px;
+  padding: 18px 0 14px;
   overflow: hidden;
   position: relative;
 }
 
-/* soft focus glow behind center */
 .ha-rotateSection::before {
   content: "";
   position: absolute;
-  inset: auto 50% 90px 50%;
-  width: 430px;
-  height: 430px;
+  inset: auto 50% 72px 50%;
+  width: 400px;
+  height: 400px;
   transform: translateX(-50%);
   border-radius: 50%;
   background:
-    radial-gradient(circle, rgba(96,165,250,0.18) 0%, rgba(191,219,254,0.10) 42%, transparent 72%);
+    radial-gradient(circle, rgba(96, 165, 250, 0.16) 0%, rgba(191, 219, 254, 0.08) 42%, transparent 72%);
   filter: blur(12px);
   pointer-events: none;
 }
@@ -109,35 +108,34 @@
 .ha-rotateWrapper {
   width: 100%;
   max-width: 1280px;
-  height: 650px;
+  height: 560px;
   display: grid;
   place-items: center;
   perspective: 2200px;
   position: relative;
 }
 
-/* center focus plate */
 .ha-rotateWrapper::after {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 500px;
-  border-radius: 34px;
+  width: 380px;
+  height: 410px;
+  border-radius: 32px;
   background:
-    linear-gradient(145deg, rgba(255,255,255,0.36), rgba(255,255,255,0.12)),
-    radial-gradient(circle at top left, rgba(96,165,250,0.10), transparent 58%);
-  border: 1px solid rgba(180, 200, 230, 0.18);
+    linear-gradient(145deg, rgba(214, 232, 255, 0.18), rgba(224, 240, 255, 0.08)),
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.10), transparent 58%);
+  border: 1px solid rgba(160, 200, 245, 0.22);
   box-shadow:
-    0 24px 80px rgba(15, 23, 42, 0.10),
-    inset 0 1px 0 rgba(255,255,255,0.55);
+    0 24px 70px rgba(96, 165, 250, 0.08),
+    0 18px 36px rgba(15, 23, 42, 0.08);
   z-index: 0;
   pointer-events: none;
 }
 
 .ha-rotateCarousel {
   position: relative;
-  width: 360px;
-  height: 460px;
+  width: 340px;
+  height: 390px;
   transform-style: preserve-3d;
   animation: haAutoRotate 20s linear infinite;
   z-index: 1;
@@ -157,14 +155,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: saturate(0.94) brightness(0.98);
+  filter: saturate(0.96) brightness(0.98);
   transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
   pointer-events: auto;
 }
 
-/* makes hovered/front feel stronger */
 .ha-rotateCard:hover {
-  filter: saturate(1.1) brightness(1.02);
+  filter: saturate(1.08) brightness(1.02);
   z-index: 5;
 }
 
@@ -172,8 +169,8 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 30px;
-  padding: 26px 20px 22px;
+  border-radius: 28px;
+  padding: 20px 18px 18px;
   overflow: hidden;
 
   display: flex;
@@ -184,20 +181,17 @@
 
   color: var(--text);
 
+  /* removed plain white card feel */
   background:
-    /* linear-gradient(145deg, rgba(255,255,255,0.36), rgba(255,255,255,0.12)),
-    radial-gradient(circle at top left, rgba(96,165,250,0.10), transparent 58%); */
- radial-gradient(1200px 500px at 20% 20%, rgb(13 110 253 / 56%), transparent 60%),
-  radial-gradient(900px 420px at 70% 30%, rgb(255 99 0 / 0%), #000000 60%),
-  linear-gradient(to bottom, rgb(0 0 0), rgb(0 0 0));
-
-  border: 1px solid rgba(160, 190, 230, 0.25);
-
-  backdrop-filter: blur(12px);
+   linear-gradient(145deg, rgba(217, 235, 255, 0.22), rgba(237, 246, 255, 0.10)), 
+   radial-gradient(circle at top left, rgb(96 165 250), #000000 58%), 
+   radial-gradient(circle at bottom right, rgba(191, 219, 254, 0.14), transparent 62%);
+  border: 1px solid rgba(150, 190, 235, 0.24);
+  backdrop-filter: blur(14px);
 
   box-shadow:
-    0 24px 50px rgba(15, 23, 42, 0.10),
-    0 12px 30px rgba(148, 163, 184, 0.14);
+    0 22px 50px rgba(96, 165, 250, 0.12),
+    0 12px 30px rgba(15, 23, 42, 0.10);
 
   transition:
     transform 0.35s ease,
@@ -206,7 +200,6 @@
     border-color 0.35s ease;
 }
 
-/* glossy reflection */
 .ha-rotateCardInner::before {
   content: "";
   position: absolute;
@@ -217,38 +210,38 @@
   transform: rotate(24deg);
   background: linear-gradient(
     to right,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0.22),
-    rgba(255,255,255,0)
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0)
   );
   pointer-events: none;
 }
 
-/* hover feels like front card bigger */
 .ha-rotateCard:hover .ha-rotateCardInner {
-  transform: scale(1.05) translateY(-12px);
+  transform: scale(1.05) translateY(-10px);
   background:
    linear-gradient(145deg, #1e293b, #0f172a),
-    radial-gradient(circle at top left, rgba(245,115,32,0.18), transparent 58%),
-    radial-gradient(circle at bottom right, rgba(255,148,77,0.10), transparent 62%);
-  border-color: rgba(96, 165, 250, 0.30);
+    radial-gradient(circle at top left, rgba(245, 115, 32, 0.18), transparent 58%),
+    radial-gradient(circle at bottom right, rgba(255, 148, 77, 0.10), transparent 62%);
+  border-color: rgba(96, 165, 250, 0.28);
   box-shadow:
-    0 34px 72px rgba(15, 23, 42, 0.16),
-    0 18px 40px rgba(96, 165, 250, 0.16);
+    0 30px 64px rgba(96, 165, 250, 0.16),
+    0 18px 40px rgba(15, 23, 42, 0.12);
 }
 
 .ha-rotateImgWrap {
-  width: 150px;
-  height: 150px;
+  width: 132px;
+  height: 132px;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
   padding: 0;
-  background: rgba(255,255,255,0.82);
-  border: 1px solid rgba(180, 200, 230, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(180, 200, 230, 0.28);
   box-shadow:
-    0 12px 28px rgba(15, 23, 42, 0.10),
-    inset 0 1px 0 rgba(255,255,255,0.75);
+    0 10px 22px rgba(96, 165, 250, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20);
+  flex-shrink: 0;
 }
 
 .ha-rotateImg {
@@ -261,17 +254,17 @@
 }
 
 .ha-rotateTitle {
-  font-size: 1.75rem;
+  font-size: 1.48rem;
   font-weight: 900;
-  line-height: 1.24;
-  margin: 0 0 12px;
-  color: lavender;
-  text-shadow: 0 2px 6px rgba(255,255,255,0.35);
+  line-height: 1.2;
+  margin: 0 0 10px;
+  color: #eaf4ff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
 }
 
 .ha-rotateText {
-  font-size: 1rem;
-  color: #64748b;
+  font-size: 0.96rem;
+  color: #bfd8ff;
   font-weight: 500;
   margin: 0;
 }
@@ -308,11 +301,11 @@
   overflow: auto;
   border-radius: 30px;
   border: 1px solid var(--border);
-  background:radial-gradient(1200px 500px at 20% 20%, rgba(13, 110, 253, 0.45), transparent 60%),
+  background:
+    radial-gradient(1200px 500px at 20% 20%, rgba(13, 110, 253, 0.45), transparent 60%),
     radial-gradient(900px 420px at 70% 30%, rgba(245, 115, 32, 0.18), transparent 60%),
-    linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65))
- ;
-  box-shadow: 0 28px 80px rgba(0,0,0,0.38);
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
 }
 
 .ha-modalLarge {
@@ -331,7 +324,7 @@
   font-size: 34px;
   line-height: 1;
   cursor: pointer;
-  background: rgba(0,0,0,0.38);
+  background: rgba(0, 0, 0, 0.38);
   color: #fff;
   display: grid;
   place-items: center;
@@ -355,9 +348,9 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.18)),
-    radial-gradient(900px 260px at 18% 18%, rgba(13,110,253,0.22), transparent 60%),
-    radial-gradient(900px 260px at 82% 20%, rgba(245,115,32,0.18), transparent 60%);
+    linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.18)),
+    radial-gradient(900px 260px at 18% 18%, rgba(13, 110, 253, 0.22), transparent 60%),
+    radial-gradient(900px 260px at 82% 20%, rgba(245, 115, 32, 0.18), transparent 60%);
 }
 
 .ha-modalHeroContent {
@@ -369,19 +362,19 @@
 }
 
 .ha-modalTitle {
-      font-family: system-ui;
+  font-family: system-ui;
   margin: 0 0 10px;
   color: #fff;
   font-size: clamp(28px, 4vw, 54px);
   line-height: 1.04;
   font-weight: 900;
-  text-shadow: 0 14px 36px rgba(0,0,0,0.4);
+  text-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
 }
 
 .ha-modalIntro {
   margin: 0;
   max-width: 900px;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.9;
   font-size: 17px;
 }
@@ -427,7 +420,7 @@
   margin-top: 8px;
   border-radius: 999px;
   background: var(--cta-primary);
-  box-shadow: 0 0 0 6px rgba(13,110,253,0.14);
+  box-shadow: 0 0 0 6px rgba(13, 110, 253, 0.14);
   flex: 0 0 auto;
 }
 
@@ -437,9 +430,9 @@
   border-radius: 20px;
   padding: 18px;
   background:
-    radial-gradient(700px 220px at 10% 10%, rgba(13,110,253,0.12), transparent 60%),
-    radial-gradient(700px 220px at 90% 20%, rgba(245,115,32,0.10), transparent 60%),
-    rgba(255,255,255,0.02);
+    radial-gradient(700px 220px at 10% 10%, rgba(13, 110, 253, 0.12), transparent 60%),
+    radial-gradient(700px 220px at 90% 20%, rgba(245, 115, 32, 0.10), transparent 60%),
+    rgba(255, 255, 255, 0.02);
 }
 
 .ha-benefitTitle {
@@ -459,64 +452,64 @@
 /* dark theme */
 [data-theme="dark"] .ha-wrap {
   background:
-    radial-gradient(circle at top left, rgba(245,115,32,0.10), transparent 26%),
-    radial-gradient(circle at bottom right, rgba(245,115,32,0.08), transparent 22%),
+    radial-gradient(circle at top left, rgba(245, 115, 32, 0.10), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(245, 115, 32, 0.08), transparent 22%),
     linear-gradient(180deg, #0b1220 0%, #111827 100%);
 }
 
 [data-theme="dark"] .ha-rotateSection::before {
   background:
-    radial-gradient(circle, rgba(245,115,32,0.18) 0%, rgba(245,115,32,0.08) 42%, transparent 72%);
+    radial-gradient(circle, rgba(245, 115, 32, 0.18) 0%, rgba(245, 115, 32, 0.08) 42%, transparent 72%);
 }
 
 [data-theme="dark"] .ha-rotateWrapper::after {
   background:
-    linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
-    radial-gradient(circle at top left, rgba(245,115,32,0.10), transparent 58%);
-  border: 1px solid rgba(255,255,255,0.06);
+    linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    radial-gradient(circle at top left, rgba(245, 115, 32, 0.10), transparent 58%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow:
-    0 24px 80px rgba(0,0,0,0.28),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+    0 24px 80px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 [data-theme="dark"] .ha-rotateCardInner {
   background:
     linear-gradient(145deg, #1e293b, #0f172a),
-    radial-gradient(circle at top left, rgba(245,115,32,0.18), transparent 58%),
-    radial-gradient(circle at bottom right, rgba(255,148,77,0.10), transparent 62%);
-  border: 1px solid rgba(255,255,255,0.08);
+    radial-gradient(circle at top left, rgba(245, 115, 32, 0.18), transparent 58%),
+    radial-gradient(circle at bottom right, rgba(255, 148, 77, 0.10), transparent 62%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
-    0 25px 60px rgba(0,0,0,0.58),
-    0 12px 25px rgba(245,115,32,0.24);
+    0 25px 60px rgba(0, 0, 0, 0.58),
+    0 12px 25px rgba(245, 115, 32, 0.24);
 }
 
 [data-theme="dark"] .ha-rotateCardInner::before {
   background: linear-gradient(
     to right,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0.06),
-    rgba(255,255,255,0)
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0)
   );
 }
 
 [data-theme="dark"] .ha-rotateCard:hover .ha-rotateCardInner {
-  border-color: rgba(245,115,32,0.24);
+  border-color: rgba(245, 115, 32, 0.24);
   box-shadow:
-    0 30px 70px rgba(0,0,0,0.62),
-    0 18px 40px rgba(245,115,32,0.28);
+    0 30px 70px rgba(0, 0, 0, 0.62),
+    0 18px 40px rgba(245, 115, 32, 0.28);
 }
 
 [data-theme="dark"] .ha-rotateImgWrap {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   box-shadow:
-    0 14px 28px rgba(0,0,0,0.34),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+    0 14px 28px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 [data-theme="dark"] .ha-rotateTitle {
   color: #f8fafc;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 [data-theme="dark"] .ha-rotateText {
@@ -524,89 +517,6 @@
 }
 
 /* responsive */
-@media (max-width: 992px) {
-  .ha-intro {
-    grid-template-columns: 1fr;
-  }
-
-  .ha-previewImg {
-    height: 280px;
-  }
-
-  .ha-rotateWrapper {
-    height: 540px;
-    perspective: 1300px;
-  }
-
-  .ha-rotateWrapper::after {
-    width: 300px;
-    height: 390px;
-  }
-
-  .ha-rotateCarousel {
-    width: 260px;
-    height: 350px;
-  }
-
-  .ha-rotateCardInner {
-    padding: 18px 14px;
-    border-radius: 24px;
-  }
-
-  .ha-rotateImgWrap {
-    width: 112px;
-    height: 112px;
-  }
-
-  .ha-rotateTitle {
-    font-size: 1.22rem;
-  }
-
-  .ha-modalHero,
-  .ha-modalHeroImg {
-    min-height: 320px;
-    height: 320px;
-  }
-}
-
-@media (max-width: 576px) {
-  .ha-rotateSection {
-    min-height: 500px;
-  }
-
-  .ha-rotateWrapper {
-    height: 440px;
-  }
-
-  .ha-rotateWrapper::after {
-    width: 240px;
-    height: 300px;
-    border-radius: 24px;
-  }
-
-  .ha-rotateCarousel {
-    width: 210px;
-    height: 290px;
-  }
-
-  .ha-modalHeroContent {
-    left: 18px;
-    right: 18px;
-    bottom: 18px;
-  }
-
-  .ha-modalBodySingle {
-    padding: 20px 18px 6px;
-  }
-
-  .ha-modalIntro,
-  .ha-modalDescription,
-  .ha-benefitText {
-    font-size: 15px;
-  }
-}
-
-
 @media (max-width: 992px) {
   .ha-intro {
     grid-template-columns: 1fr;
@@ -628,15 +538,19 @@
 
   .ha-rotateWrapper::after {
     width: 280px;
-    height: 360px;
+    height: 320px;
+    border-radius: 26px;
   }
 
   .ha-rotateCarousel {
     width: 240px;
-    height: 320px;
+    height: 300px;
   }
 
-
+  .ha-rotateCardInner {
+    padding: 16px 14px 14px;
+    border-radius: 24px;
+  }
 
   .ha-rotateImgWrap {
     width: 108px;
@@ -672,17 +586,17 @@
 
   .ha-rotateWrapper::after {
     width: 210px;
-    height: 270px;
+    height: 240px;
     border-radius: 22px;
   }
 
   .ha-rotateCarousel {
     width: 185px;
-    height: 250px;
+    height: 220px;
   }
 
   .ha-rotateCardInner {
-    padding: 14px 10px 12px;
+    padding: 12px 10px 10px;
   }
 
   .ha-rotateImgWrap {
@@ -692,13 +606,13 @@
   }
 
   .ha-rotateTitle {
-    font-size: 0.98rem;
-    line-height: 1.2;
+    font-size: 0.92rem;
+    line-height: 1.18;
     margin-bottom: 6px;
   }
 
   .ha-rotateText {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
 
   .ha-modalHeroContent {
@@ -716,4 +630,5 @@
   .ha-benefitText {
     font-size: 15px;
   }
+ 
 }

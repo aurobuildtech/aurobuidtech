@@ -1,27 +1,54 @@
 import Reveal from "../../../components/animations/Reveal";
-import { ICONS } from "../ServiceIcons";
 import "./serviceContentLayout.css";
+import { getIconByKey } from "../ServiceIcons";
 
 export default function ServiceContentLayout({ data }) {
   if (!data) return null;
 
+  const {
+    aboutTitle,
+    aboutParas = [],
+    provideTitle,
+    provideList = [],
+    provideIconKeys = [],
+    offerTitle,
+    offerList = [],
+    offerIconKeys = [],
+    processTitle,
+    processSteps = [],
+    processIconKeys = [],
+    highlightsTitle,
+    highlights = [],
+    ctaTitle,
+    ctaText,
+    ctaBtnText,
+    ctaLink,
+    bottomText,
+    descImg,
+  } = data;
+
+  const sideTitle = provideTitle || offerTitle;
+  const sideList = provideList.length ? provideList : offerList;
+  const sideIconKeys = provideIconKeys.length ? provideIconKeys : offerIconKeys;
+
   return (
     <section className="scl-wrap">
       <div className="container">
-
         {/* TOP GRID */}
         <div className="scl-grid">
           {/* LEFT */}
           <Reveal y={14}>
             <div className="scl-left">
               <h2 className="scl-title">
-                {data.aboutTitle}
+                {aboutTitle || data.title}
                 <span className="scl-underline" />
               </h2>
 
               <div className="scl-paras">
-                {data.aboutParas?.map((p, i) => (
-                  <p key={i} className="scl-text">{p}</p>
+                {aboutParas.map((p, i) => (
+                  <p key={i} className="scl-text">
+                    {p}
+                  </p>
                 ))}
               </div>
             </div>
@@ -30,23 +57,26 @@ export default function ServiceContentLayout({ data }) {
           {/* RIGHT */}
           <Reveal y={14}>
             <div className="scl-right">
-              {data.sideImage && (
+              {descImg && (
                 <div className="scl-imgCard">
-                  <img src={data.sideImage} alt={data.title} className="scl-img" />
+                  <img
+                    src={descImg}
+                    alt={aboutTitle || data.title}
+                    className="scl-img"
+                  />
                 </div>
               )}
 
-              {(data.provideList || data.offerList) && (
+              {sideTitle && sideList.length > 0 && (
                 <div className="scl-box">
                   <h3 className="scl-subTitle">
-                    {data.provideTitle || data.offerTitle}
+                    {sideTitle}
                     <span className="scl-underline sm" />
                   </h3>
 
                   <ul className="scl-list">
-                    {(data.provideList || data.offerList)?.map((item, i) => {
-                      const keys = data.provideIconKeys || data.offerIconKeys || [];
-                      const IconComp = keys[i] ? ICONS[keys[i]] : null;
+                    {sideList.map((item, i) => {
+                      const IconComp = getIconByKey(sideIconKeys[i]);
 
                       return (
                         <li key={i} className="scl-li">
@@ -65,26 +95,27 @@ export default function ServiceContentLayout({ data }) {
         </div>
 
         {/* PROCESS */}
-        {data.processSteps?.length > 0 && (
+        {processTitle && processSteps.length > 0 && (
           <Reveal y={16}>
             <div className="scl-section">
               <h3 className="scl-h3">
-                {data.processTitle}
+                {processTitle}
                 <span className="scl-underline sm" />
               </h3>
 
               <div className="scl-steps">
-                {data.processSteps.map((s, i) => {
-                  const IconComp = data.processIconKeys?.[i] ? ICONS[data.processIconKeys[i]] : null;
+                {processSteps.map((step, i) => {
+                  const IconComp = getIconByKey(processIconKeys[i]);
 
                   return (
                     <div className="scl-step" key={i}>
                       <div className="scl-stepIconBox">
-                        {IconComp ? <IconComp /> : <span>{String(i + 1).padStart(2, "0")}</span>}
+                        {IconComp ? <IconComp /> : <span className="scl-fallbackDot" />}
                       </div>
+
                       <div>
-                        <div className="scl-stepTitle">{s.title}</div>
-                        <div className="scl-stepText">{s.text}</div>
+                        <div className="scl-stepTitle">{step.title}</div>
+                        <div className="scl-stepText">{step.text}</div>
                       </div>
                     </div>
                   );
@@ -95,22 +126,22 @@ export default function ServiceContentLayout({ data }) {
         )}
 
         {/* HIGHLIGHTS */}
-        {data.highlights?.length > 0 && (
+        {highlightsTitle && highlights.length > 0 && (
           <Reveal y={16}>
             <div className="scl-section">
               <h3 className="scl-h3">
-                {data.highlightsTitle}
+                {highlightsTitle}
                 <span className="scl-underline sm" />
               </h3>
 
               <div className="scl-cards">
-                {data.highlights.map((h, i) => (
+                {highlights.map((item, i) => (
                   <div className="scl-card" key={i}>
                     <div className="scl-cardTop">
                       <span className="scl-cardDot" />
-                      <h4 className="scl-cardTitle">{h.title}</h4>
+                      <h4 className="scl-cardTitle">{item.title}</h4>
                     </div>
-                    <p className="scl-cardText">{h.text}</p>
+                    <p className="scl-cardText">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -119,26 +150,28 @@ export default function ServiceContentLayout({ data }) {
         )}
 
         {/* BOTTOM TEXT */}
-        {data.bottomText && (
+        {bottomText && (
           <Reveal y={16}>
             <div className="scl-bottomCard">
-              <p className="scl-bottomText">{data.bottomText}</p>
+              <p className="scl-bottomText">{bottomText}</p>
             </div>
           </Reveal>
         )}
 
         {/* CTA */}
-        {data.ctaTitle && (
+        {ctaTitle && (
           <Reveal y={16}>
             <div className="scl-cta">
               <div>
-                <h3 className="scl-ctaTitle">{data.ctaTitle}</h3>
-                <p className="scl-ctaText">{data.ctaText}</p>
+                <h3 className="scl-ctaTitle">{ctaTitle}</h3>
+                <p className="scl-ctaText">{ctaText}</p>
               </div>
 
-              <a className="scl-ctaBtn" href={data.ctaLink}>
-                {data.ctaBtnText}
-              </a>
+              {ctaBtnText && ctaLink && (
+                <a className="scl-ctaBtn" href={ctaLink}>
+                  {ctaBtnText}
+                </a>
+              )}
             </div>
           </Reveal>
         )}

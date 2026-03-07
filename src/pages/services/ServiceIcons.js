@@ -7,10 +7,10 @@ import {
   MdGavel,
   MdApartment,
   MdVilla,
-  MdOutlineChair, 
+  MdOutlineChair,
   MdKitchen,
   MdBed,
-   MdBusiness,
+  MdBusiness,
   MdLightbulb,
   MdWeekend,
   MdBuild,
@@ -20,47 +20,54 @@ import {
   MdOutlineFactCheck,
   MdOutlineAssuredWorkload,
   MdOutlineHomeWork,
-  MdTrendingUp,
+  MdTrendingUp
 } from "react-icons/md";
 
 export const ICONS = {
-  // Common
+
+  /* Common */
   legal: MdGavel,
-  growth: MdOutlineTrendingUp,
+  growth: MdTrendingUp,
   infra: MdOutlineAssuredWorkload,
   dtcp: MdOutlineFactCheck,
 
-  // Layout Development - Provide list
+  /* Layout */
   villaPlot: MdOutlineHomeWork,
   commercialPlot: MdOutlineLocationCity,
 
-  // Layout Development - Process steps
+  /* Layout Process */
   land: MdLocationSearching,
   plan: MdDesignServices,
   approve: MdVerified,
   execute: MdConstruction,
   support: MdSupportAgent,
 
-  // Sale of Properties - Offer list
+  /* Sale of Properties */
   apartment: MdApartment,
   villa: MdVilla,
   gated: MdOutlineHandshake,
+  legal: MdGavel,
+  infra: MdOutlineAssuredWorkload,
+  growth: MdTrendingUp,
 
+  /* Constructions */
+  construction: MdConstruction,
+  design: MdDesignServices,
+  approve: MdVerified,
+  execute: MdBuild,
+  villaConstruction: MdVilla,
+  apartmentConstruction: MdApartment,
 
-//   Constructions
-
-construction: MdConstruction,
-design: MdDesignServices,
-approve: MdVerified,
-growth: MdTrendingUp,
-
-// Interiors
-   interiorHome: MdOutlineChair,
+  /* Interiors */
+  interiorHome: MdOutlineChair,
   modular: MdKitchen,
   livingBed: MdBed,
   office: MdBusiness,
   lighting: MdLightbulb,
   furniture: MdWeekend,
   turnkey: MdBuild,
+};
 
+export const getIconByKey = (key) => {
+  return ICONS[key] || null;
 };
