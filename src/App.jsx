@@ -5,7 +5,6 @@ import CursorDust from "./components/effects/CursorDust";
 export default function App() {
   return (
     <div className="app-bg min-vh-100 d-flex flex-column">
-
       <Header />
       <main className="flex-grow-1">
         <CursorDust />
