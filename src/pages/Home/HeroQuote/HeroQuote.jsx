@@ -3,6 +3,7 @@ import heroimg from "../../../assets/images/heroqutoimg/heroquote.jpg";
 import heroimg1 from "../../../assets/images/heroqutoimg/heroquote1.jpg";
 import heroimg2 from "../../../assets/images/heroqutoimg/heroquote2.jpg";
 import { HighlightsBtn } from "../../../components/buttons/highlightsbtn";
+import { Link } from "react-router-dom";
 
 export default function HeroQuote() {
   return (
@@ -32,9 +33,9 @@ export default function HeroQuote() {
             </p>
 
             <div className="heroBtns">
-              <a href="#contact" className="btn rounded-pill auro-btn-primary">
+              <Link to="/contact" className="btn rounded-pill auro-btn-primary">
                 Get a Free Quote
-              </a>
+              </Link>
             </div>
 
             <div className="heroChips">

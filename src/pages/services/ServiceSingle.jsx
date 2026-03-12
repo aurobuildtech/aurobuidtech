@@ -1,24 +1,37 @@
 import { Navigate, Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import PageTransitionE from "../../components/animations/PageTransition";
 import Reveal from "../../components/animations/Reveal";
 import { servicesData } from "./servicesMap";
 import "./serviceSingle.css";
 
-/* ✅ Import individual pages (create one by one) */
+/* ✅ Import individual pages */
 import LayoutDevelopment from "./pages/LayoutDevelopment";
 import SaleOfProperties from "./pages/SaleOfProperties";
 import Constructions from "./pages/Constructions";
 import InteriorSolutions from "./pages/InteriorSolutions";
 import HomeAutomation from "./pages/HomeAutomation";
-// import FinancialServices from "./pages/FinancialServices";
 
 export default function ServiceSingle() {
   const { serviceId } = useParams();
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   const service = servicesData.find((s) => s.id === serviceId);
   if (!service) return <Navigate to="/services" replace />;
 
   const bannerImg = Array.isArray(service.img) ? service.img[0] : service.img;
+
+  useEffect(() => {
+    setImgLoaded(false);
+
+    if (!bannerImg) return;
+
+    const img = new Image();
+    img.src = bannerImg;
+
+    img.onload = () => setImgLoaded(true);
+    img.onerror = () => setImgLoaded(true);
+  }, [bannerImg]);
 
   // ✅ Breadcrumb services click should open dropdown
   const openServicesMenu = (e) => {
@@ -27,16 +40,13 @@ export default function ServiceSingle() {
     window.dispatchEvent(new Event("open-services-dropdown"));
   };
 
-  // ✅ Component map (render each service page individually)
+  // ✅ Component map
   const servicePageMap = {
     "layout-development": LayoutDevelopment,
-
-    // Add these later (when you create those files)
     "sale-of-properties": SaleOfProperties,
     constructions: Constructions,
     "interior-solutions": InteriorSolutions,
     "home-automation": HomeAutomation,
-    // "financial-services": FinancialServices,
   };
 
   const PageComponent = servicePageMap[serviceId];
@@ -44,17 +54,26 @@ export default function ServiceSingle() {
   return (
     <PageTransitionE>
       {/* ✅ Banner */}
-      <section className="svcHero" style={{ "--svcHeroImg": `url(${bannerImg})` }}>
+      <section
+        className={`svcHero ${imgLoaded ? "is-loaded" : "is-loading"}`}
+        style={imgLoaded ? { "--svcHeroImg": `url(${bannerImg})` } : {}}
+      >
+        <div className="svcHeroShimmer" />
         <div className="svcHeroOverlay" />
 
         <div className="container svcHeroInner">
           <Reveal y={14}>
             <p className="svcCrumb">
-              <Link to="/" className="svcCrumbLink">Home</Link>
+              <Link to="/" className="svcCrumbLink">
+                Home
+              </Link>
               <span className="svcCrumbSep">»</span>
 
-              {/* ✅ not navigation */}
-              <button type="button" className="svcCrumbBtn" onClick={openServicesMenu}>
+              <button
+                type="button"
+                className="svcCrumbBtn"
+                onClick={openServicesMenu}
+              >
                 Services
               </button>
 

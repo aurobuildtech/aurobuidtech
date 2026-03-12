@@ -2,32 +2,111 @@
    --text, --muted, --border, --cta-primary
 */
 
+/* =========================
+   HERO SECTION
+========================= */
 .svcHero {
   position: relative;
   min-height: 620px;
   display: flex;
   align-items: center;
   overflow: hidden;
+  isolation: isolate;
 
-  /* banner cover image */
+  background-color: #0c111b;
   background-image: var(--svcHeroImg);
-  background-size: 100% 100%;
-  background-position: center;
-  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
+
+  transition:
+    background-image 0.3s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
+/* Optional parallax only on desktop */
+@media (min-width: 992px) {
+  .svcHero {
+    background-attachment: fixed;
+  }
+}
+
+/* Disable fixed bg on mobile for better rendering */
+@media (max-width: 991px) {
+  .svcHero {
+    background-attachment: scroll;
+  }
+}
+
+/* =========================
+   SHIMMER / LOADING EFFECT
+========================= */
+.svcHeroShimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.svcHero.is-loading .svcHeroShimmer {
+  opacity: 1;
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.04) 8%,
+      rgba(255, 255, 255, 0.12) 18%,
+      rgba(255, 255, 255, 0.04) 33%
+    ),
+    linear-gradient(135deg, #121a27, #0b0f16 60%, #151d2b);
+  background-size: 220% 100%, 100% 100%;
+  animation: svcShimmerMove 1.5s linear infinite;
+}
+
+.svcHero.is-loaded .svcHeroShimmer {
+  opacity: 0;
+}
+
+@keyframes svcShimmerMove {
+  from {
+    background-position: 200% 0, 0 0;
+  }
+  to {
+    background-position: -40% 0, 0 0;
+  }
+}
+
+/* =========================
+   HERO OVERLAY
+========================= */
 .svcHeroOverlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
 
-  /* ✅ Auro theme overlay (blue + dark glass) */
   background:
-    radial-gradient(1200px 500px at 20% 20%, rgba(13, 110, 253, 0.45), transparent 60%),
-    radial-gradient(900px 420px at 70% 30%, rgba(245, 115, 32, 0.18), transparent 60%),
-    linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+    radial-gradient(
+      1200px 500px at 20% 20%,
+      rgba(13, 110, 253, 0.34),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 420px at 70% 30%,
+      rgba(245, 115, 32, 0.16),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.28),
+      rgba(0, 0, 0, 0.6)
+    );
 }
 
+/* =========================
+   INNER CONTENT
+========================= */
 .svcHeroInner {
   display: flex;
   align-items: center;
@@ -36,18 +115,21 @@
   z-index: 2;
   padding: 88px 16px 70px;
   max-width: 980px;
+  text-align: center;
 }
 
-/* Breadcrumb */
+/* =========================
+   BREADCRUMB
+========================= */
 .svcCrumb {
   margin: 0 0 14px;
   font-size: 14px;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.88);
   letter-spacing: 0.2px;
 }
 
 .svcCrumbLink {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
 }
 
@@ -71,7 +153,7 @@
   margin: 0;
   cursor: pointer;
 
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 14px;
   letter-spacing: 0.2px;
 }
@@ -80,51 +162,56 @@
   text-decoration: underline;
 }
 
-/* Title */
+/* =========================
+   TITLE
+========================= */
 .svcHeroTitle {
   margin: 0 0 10px;
-  font-weight: 400;
+  font-weight: 900;
   font-size: clamp(34px, 5vw, 72px);
   line-height: 1.05;
   color: #fff;
-
-  /* ✅ text highlight like your reference */
-  text-shadow: 0 18px 42px rgba(0,0,0,0.55);
+  text-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
 }
 
-/* small subtitle line */
+/* =========================
+   SUBTITLE
+========================= */
 .svcHeroSub {
   margin: 0 0 14px;
-  font-weight: 200;
+  font-weight: 400;
   font-size: clamp(16px, 2vw, 22px);
-  color: rgba(255,255,255,0.92);
-  text-shadow: 0 14px 34px rgba(0,0,0,0.55);
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
 }
 
-/* paragraph */
+/* =========================
+   DESCRIPTION
+========================= */
 .svcHeroDesc {
   max-width: 760px;
-  margin: 0;
+  margin: 0 auto;
   font-size: 15.5px;
   line-height: 1.8;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.9);
 
-  /* ✅ glass highlight for readability */
   padding: 14px 16px;
   border-radius: 14px;
-  background: rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
 
-  text-shadow: 0 10px 26px rgba(0,0,0,0.55);
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
 }
 
-/* Content card below banner */
+/* =========================
+   CONTENT CARD BELOW BANNER
+========================= */
 .svcContentCard {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 22px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .svcContentTitle {
@@ -140,12 +227,89 @@
   font-size: 15.5px;
 }
 
-/* responsive */
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px) {
+  .svcHero {
+    min-height: 520px;
+    background-position: center center;
+  }
+
+  .svcHeroInner {
+    padding: 78px 18px 60px;
+    max-width: 860px;
+  }
+
+  .svcHeroDesc {
+    max-width: 700px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 768px) {
   .svcHero {
-    min-height: 420px;
+    min-height: 460px;
+
+    /* ✅ makes image fill better on small screens */
+    background-size: cover;
+    background-position: center center;
   }
+
   .svcHeroInner {
     padding: 70px 16px 55px;
+    max-width: 100%;
+  }
+
+  .svcCrumb {
+    font-size: 13px;
+  }
+
+  .svcHeroTitle {
+    font-size: clamp(28px, 9vw, 42px);
+    line-height: 1.08;
+  }
+
+  .svcHeroSub {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .svcHeroDesc {
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 12px 14px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+  .svcHero {
+    min-height: 420px;
+
+    /* ✅ adjust visible focus area on very small screens */
+    background-position: center top;
+  }
+
+  .svcHeroInner {
+    padding: 64px 12px 46px;
+  }
+
+  .svcHeroTitle {
+    font-size: clamp(24px, 9vw, 34px);
+  }
+
+  .svcHeroSub {
+    font-size: 14px;
+  }
+
+  .svcHeroDesc {
+    font-size: 13.5px;
+    line-height: 1.65;
+    border-radius: 12px;
   }
 }

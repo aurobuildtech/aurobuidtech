@@ -224,8 +224,8 @@ export default function Header() {
             </ul>
 
             <div className="d-flex align-items-center gap-2 auro-right" onClick={(e) => e.stopPropagation()}>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="btn btn-consult"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -235,7 +235,7 @@ export default function Header() {
                 }}
               >
                 Schedule Consultation
-              </a>
+              </Link>
               <ThemeToggle />
             </div>
           </div>

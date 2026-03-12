@@ -1,126 +1,369 @@
 /* =========================
-   TITLE
+   HERO WRAPPER
 ========================= */
-.auro-caption-title{
-  color: var(--hero-title);
-  text-shadow: 0 10px 30px rgba(0,0,0,0.55);
+#carouselExampleCaptions {
+  position: relative;
 }
 
 /* =========================
-   SUBTITLE (P TAG)
+   HERO IMAGE
 ========================= */
-.auro-caption-subtitle{
-  color: rgba(255,255,255,0.88);
-  font-size: 1.15rem;          /* ⬆ bigger */
-  font-weight: 500;
-  line-height: 1.7;
-  max-width: 620px;
-  text-shadow: 0 4px 14px rgba(0,0,0,0.6);
+.auro-hero-img {
+  height: 620px;
+  object-fit: cover;
+  filter: brightness(0.62);
 }
 
-.auro-caption{
-  display: block !important;
+/* =========================
+   EACH SLIDE
+========================= */
+.carousel-item {
+  position: relative;
 }
 
+/* =========================
+   CINEMATIC OVERLAY
+========================= */
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.56) 35%,
+      rgba(0, 0, 0, 0.34) 65%,
+      rgba(0, 0, 0, 0.22) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.12) 0%,
+      rgba(0, 0, 0, 0.12) 55%,
+      rgba(0, 0, 0, 0.38) 100%
+    );
+}
 
-.auro-caption{
-  display: block !important;
+/* =========================
+   CAPTION WRAPPER
+========================= */
+.auro-caption,
+.carousel-caption {
+  z-index: 2;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+
+  width: min(90%, 900px);
+  padding: 0 12px;
+  margin: 0 auto;
 }
 
 /* =========================
    BADGE
 ========================= */
-.auro-badge{
-  background: linear-gradient(135deg,#ffd56b,#f1b24a) !important;
-  color:#0b0b0c !important;
-  padding: 10px 20px !important;   /* ⬆ bigger */
-  font-size: 0.9rem;               /* ⬆ */
+.auro-badge {
+  background: linear-gradient(135deg, #ffd56b, #f1b24a) !important;
+  color: #0b0b0c !important;
+  padding: 10px 22px !important;
+  font-size: 0.9rem;
   font-weight: 800;
-  letter-spacing: .5px;
-  box-shadow: 0 6px 18px rgba(241,178,74,.45);
+  letter-spacing: 0.5px;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 22px rgba(241, 178, 74, 0.45);
 }
 
 /* =========================
-   MOBILE OPTIMIZATION
+   TITLE
 ========================= */
-@media (max-width: 768px){
-  .carousel-caption{
-    left: 8%;
-    right: 8%;
-    bottom: 10%;
-    text-align: left;
-  }
+.auro-caption-title{
+  color: #ffd56b; /* gold highlight */
 
-  .auro-caption-title{
-    font-size: 1.7rem;
-    line-height: 1.2;
-  }
+  font-size: clamp(2.2rem,4vw,3.5rem);
+  font-weight: 900;
 
-  .auro-caption-subtitle{
-    font-size: 0.95rem;
-    line-height: 1.6;
-    max-width: 100%;
-  }
-  .auro-badge{
-    padding: 8px 16px !important;
-    font-size: .75rem;
-  }
-  .auro-btn-primary,
-  .auro-btn-outline{
-    padding: 10px 16px;
-    font-size: 0.9rem;
-  }
+  line-height: 1.15;
 
+  text-shadow:
+    0 10px 35px rgba(0,0,0,0.7),
+    0 2px 6px rgba(0,0,0,0.5);
+
+  margin-top: 14px;
 }
 
-/* Primary CTA */
-.auro-btn-primary {
-  background: linear-gradient(135deg, #f6c453, #f1b24a);
-  color: #0b0b0c !important;          /* darker text for contrast */
-  border: none !important;
-  font-weight: 800;
-  letter-spacing: 0.3px;
+/* =========================
+   SUBTITLE
+========================= */
+.auro-caption-subtitle{
+  color: rgba(255,255,255,0.92);
 
-  padding: 12px 22px;
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  line-height: 1.7;
+
+  margin-top: 16px;
+
+  max-width: 640px;
+
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   BUTTON WRAPPER
+========================= */
+.auro-caption .d-flex {
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   COMMON BUTTON LOOK
+========================= */
+.auro-btn-primary,
+.auro-btn-outline {
+  min-height: 50px;
+  padding: 12px 24px;
+  border-radius: 999px !important;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   PRIMARY CTA
+========================= */
+.auro-btn-primary {
+  background: linear-gradient(135deg, #2d7ef7, #1f6fe0);
+  color: #ffffff !important;
+  border: none !important;
   box-shadow:
-    0 12px 30px rgba(241,178,74,0.55),
-    inset 0 1px 0 rgba(255,255,255,0.45);
+    0 12px 28px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .auro-btn-primary:hover {
-  background: var(--cta-bg-hover) !important;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
-.auro-hero-img{
-  height: 600px;
-  object-fit: cover;
+/* =========================
+   SECONDARY CTA
+========================= */
+.auro-btn-outline {
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(6px);
 }
 
-@media(max-width:768px){
-  .auro-hero-img{
-    height: 430px;
-  }
+.auro-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  transform: translateY(-2px);
 }
 
-.auro-btn-center{
+/* =========================
+   CENTER ALIGN BUTTON TEXT
+========================= */
+.auro-btn-center {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  min-height: 44px;
-  padding: 12px 22px;
 }
 
-
-/* Secondary CTA */
-.auro-btn-outline {
-  color: var(--cta-outline-text) !important;
-  border: 1px solid var(--cta-outline-border) !important;
-  background: transparent !important;
-  font-weight: 700;
+/* =========================
+   INDICATORS
+========================= */
+.carousel-indicators {
+  margin-bottom: 1.5rem;
+  z-index: 3;
 }
 
-.auro-btn-outline:hover {
-  background: var(--cta-outline-hover-bg) !important;
+.carousel-indicators [data-bs-target] {
+  width: 34px;
+  height: 4px;
+  border: 0;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.45);
+  opacity: 1;
+  margin: 0 5px;
+}
+
+.carousel-indicators .active {
+  background-color: #ffffff;
+}
+
+/* =========================
+   CONTROL ARROWS
+========================= */
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 3;
+  width: 9%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  background-size: 55% 55%;
+  backdrop-filter: blur(4px);
+}
+
+/* =========================
+   OPTIONAL TEXT ANIMATION
+========================= */
+.carousel-item.active .auro-badge {
+  animation: auroFadeUp 0.55s ease both;
+}
+
+.carousel-item.active .auro-caption-title {
+  animation: auroFadeUp 0.8s ease both;
+}
+
+.carousel-item.active .auro-caption-subtitle {
+  animation: auroFadeUp 1s ease both;
+}
+
+.carousel-item.active .d-flex.gap-3 {
+  animation: auroFadeUp 1.15s ease both;
+}
+
+@keyframes auroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px) {
+  .auro-hero-img {
+    height: 520px;
+  }
+
+  .auro-caption,
+  .carousel-caption {
+    width: min(92%, 760px);
+  }
+
+  .auro-caption-subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .auro-hero-img {
+    height: 430px;
+  }
+
+  .auro-caption,
+  .carousel-caption {
+    width: 92%;
+    padding: 0 8px;
+  }
+
+  .auro-badge {
+    padding: 8px 16px !important;
+    font-size: 0.75rem;
+  }
+
+  .auro-caption-title {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin-top: 12px;
+  }
+
+  .auro-caption-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-top: 12px;
+  }
+
+  .auro-btn-primary,
+  .auro-btn-outline {
+    padding: 10px 18px;
+    font-size: 0.92rem;
+    min-height: 44px;
+  }
+
+  .carousel-caption .d-flex {
+    gap: 12px !important;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 12%;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .carousel-indicators {
+    margin-bottom: 1rem;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 24px;
+    height: 3px;
+    margin: 0 4px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+  .auro-hero-img {
+    height: 390px;
+  }
+
+  .auro-caption-title {
+    font-size: 1.6rem;
+  }
+
+  .auro-caption-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .carousel-caption .d-flex {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .auro-btn-primary,
+  .auro-btn-outline,
+  .auro-btn-center {
+    width: 100%;
+  }
 }

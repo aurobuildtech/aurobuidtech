@@ -1,6 +1,7 @@
 import Reveal from "../../../components/animations/Reveal";
 import "./serviceContentLayout.css";
 import { getIconByKey } from "../ServiceIcons";
+import { Link } from "react-router-dom";
 
 export default function ServiceContentLayout({ data }) {
   if (!data) return null;
@@ -168,9 +169,9 @@ export default function ServiceContentLayout({ data }) {
               </div>
 
               {ctaBtnText && ctaLink && (
-                <a className="scl-ctaBtn" href={ctaLink}>
+                <Link className="scl-ctaBtn" to={ctaLink}>
                   {ctaBtnText}
-                </a>
+                </Link>
               )}
             </div>
           </Reveal>

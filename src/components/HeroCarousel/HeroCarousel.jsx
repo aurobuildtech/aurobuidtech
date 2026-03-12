@@ -6,6 +6,7 @@ import caroImg3 from "../../assets/images/carousel/caro3.jpg";
 import caroImg4 from "../../assets/images/carousel/caro4.jpg";
 import caroImg5 from "../../assets/images/carousel/caro5.jpg";
 import Carousel from "bootstrap/js/dist/carousel";
+import { Link } from "react-router-dom";
 const slides = [
   {
     id: "s1",
@@ -88,7 +89,7 @@ export default function HeroCarousel() {
             <div key={slide.id} className={`carousel-item ${i === 0 ? "active" : ""}`}>
               <img src={slide.img} className="d-block w-100 auro-hero-img" alt={slide.title} />
 
-              <div className="carousel-caption text-start auro-caption">
+              <div className="carousel-caption  auro-caption">
                 <div className="d-flex align-items-center gap-2">
                   <h3 className="badge p-3 fw-bold rounded-pill auro-badge">{slide.badge}</h3>
                 </div>
@@ -100,9 +101,9 @@ export default function HeroCarousel() {
                 <p className="mt-3 auro-caption-subtitle">{slide.subtitle}</p>
 
                 <div className="d-flex gap-3 mt-4 flex-wrap">
-                  <a href="#contact" className="btn rounded-pill auro-btn-primary">
+                  <Link to="/contact" className="btn rounded-pill auro-btn-primary">
                     Schedule Consultation
-                  </a>
+                  </Link>
 
                   <a href="#projects" className="btn rounded-pill auro-btn-outline auro-btn-center">
                     View All Projects →

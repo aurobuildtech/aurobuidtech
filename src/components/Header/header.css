@@ -17,7 +17,13 @@
   text-decoration: none;
 }
 
-.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
+.navbar>.container,
+.navbar>.container-fluid,
+.navbar>.container-lg,
+.navbar>.container-md,
+.navbar>.container-sm,
+.navbar>.container-xl,
+.navbar>.container-xxl{
   margin: 0px;
 }
 
@@ -50,39 +56,68 @@
   letter-spacing: 2px;
 }
 
-
-
-/* Nav links */
+/* ========================= */
+/* NAV LINKS WITH ANIMATION */
+/* ========================= */
+/* NAV LINKS */
 .auro-link {
   font-weight: 700;
   color: var(--muted) !important;
   position: relative;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
+/* Hover color */
 .auro-link:hover {
   color: var(--text) !important;
 }
 
-/* Active underline (orange) */
-.auro-link.active {
-  color: var(--text) !important;
-}
-
-
-@media (min-width: 1200px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl {
-      max-width: 96%;
-  }
-}
-.auro-link.active::after {
+/* Underline base */
+.auro-link::after {
   content: "";
   position: absolute;
   left: 0;
-  right: 0;
-  bottom: -8px;
+  bottom: -6px;
+  width: 100%;
   height: 2px;
   background: var(--cta-primary);
   border-radius: 999px;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+/* Hover underline */
+.auro-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active link underline */
+.auro-link.active::after {
+  transform: scaleX(1);
+}
+
+/* IMPORTANT: remove active underline when hovering another link */
+.navbar-nav:hover .auro-link.active::after {
+  transform: scaleX(0);
+}
+
+/* Show hovered underline */
+.navbar-nav .auro-link:hover::after {
+  transform: scaleX(1);
+}
+/* ========================= */
+
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+      max-width: 96%;
+  }
 }
 
 /* Dropdown */
@@ -111,7 +146,7 @@
   color: var(--text);
 }
 
-/* Desktop hover open (optional) */
+/* Desktop hover open */
 @media (min-width: 992px) {
   .dropdown:hover .dropdown-menu {
     display: block;
@@ -123,7 +158,7 @@
   padding: 10px 0;
 }
 
-/* Button (orange) */
+/* Button */
 .btn-consult {
   background: var(--hero-accent);
   border: 1px solid transparent;
@@ -135,12 +170,12 @@
 }
 
 [data-theme="dark"] .btn-consult{
-    box-shadow: 2px 2px 5px orangered;
+  box-shadow: 2px 2px 5px orangered;
 }
 
 .btn-consult:hover {
   background: var(--cta-primary);
-  transition: all 2ms 2s ease-out;
+  transition: all 0.3s ease;
   color: #fff;
   border: 1px solid var(--hero-accent);
 }
@@ -152,7 +187,7 @@
   padding: 8px 10px;
 }
 
-/* Make toggler icon visible in both modes */
+/* Toggle icon */
 .auro-toggler-icon {
   filter: none;
 }
@@ -161,9 +196,6 @@
   filter: invert(1);
 }
 
-
-
-
 .auro-overlay{
   position: fixed;
   inset: 0;
@@ -171,12 +203,18 @@
   z-index: 1020;
 }
 
-.auro-sticky{ z-index: 1030; }
+.auro-sticky{ 
+  z-index: 1030; 
+}
 
- 
 /* Dropdown show */
-.auro-dropdown { display: none; }
-.auro-dropdown.show { display: block; }
+.auro-dropdown { 
+  display: none; 
+}
+
+.auro-dropdown.show { 
+  display: block; 
+}
 
 .theme-btn{
   background: transparent;
@@ -191,6 +229,7 @@
 .theme-btn:hover{
   background: rgba(210,141,36,0.15);
 }
+
 .bi-moon-stars-fill{
   color: gray;
 }
@@ -201,7 +240,6 @@
   background: transparent;
   border: 0;
 }
-
 
 /* Mobile Services button hidden on desktop */
 .auro-mobile-services {
@@ -222,14 +260,15 @@
 .auro-mobile-services:hover {
   background: rgba(255,255,255,0.12);
 }
-/* ✅ keep proper spacing in navbar container */
+
+/* Navbar spacing */
 .navbar > .container {
   margin: 0 auto;
   padding-left: 12px;
   padding-right: 12px;
 }
 
-/* ✅ Show ONLY on mobile */
+/* Mobile */
 @media (max-width: 992px) {
   .auro-mobile-services {
     display: inline-flex;
