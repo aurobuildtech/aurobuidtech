@@ -28,7 +28,7 @@ const highlights = [
     description:
       "A closer look at how our projects are shaping vibrant communities while delivering strong appreciation and lasting value for investors.",
     type: "iframe",
-    videoUrl: "https://www.youtube.com/embed/shorts/LyKGQxPUH68",
+    videoUrl: "https://www.youtube.com/embed/xKKWTlsKJD8",
   },
 ];
 

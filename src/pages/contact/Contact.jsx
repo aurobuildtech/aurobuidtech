@@ -127,7 +127,7 @@ export default function Contact() {
                     name="phone"
                     value={form.phone}
                     onChange={onChange}
-                    placeholder="(555) 123-4567"
+                    placeholder="(91+) 123-456789"
                     required
                   />
                 </div>
@@ -227,7 +227,7 @@ export default function Contact() {
           <div className="ctCard">
             <h2 className="ctCardTitle">Our Service Area</h2>
             <p className="ctCardSub">
-              We proudly serve Tirupati and surrounding communities within a 50-mile radius.
+              We proudly serve Bangalore and surrounding communities within a 50-mile radius.
             </p>
 
             <div className="ctMapWrap">

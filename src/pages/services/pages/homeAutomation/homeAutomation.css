@@ -575,6 +575,11 @@
 }
 
 @media (max-width: 576px) {
+
+  .ha-modalImageFull{
+    /* height: 200px;
+    width: 100%; */
+  }
   .ha-rotateSection {
     min-height: 390px;
     padding: 4px 0 0;

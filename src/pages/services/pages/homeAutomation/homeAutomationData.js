@@ -51,8 +51,8 @@ export const automationSystems = [
     intro:
       "Auro BuildTech Projects offers smart home automation solutions integrated with advanced CCTV surveillance systems to enhance safety, control, and convenience for modern homes and commercial spaces.",
 
-    description:
-      "Our solutions enable real-time monitoring, remote access, and intelligent threat detection through a complete connected ecosystem built for smarter property protection.",
+    description:'',
+      // "Our solutions enable real-time monitoring, remote access, and intelligent threat detection through a complete connected ecosystem built for smarter property protection.",
 
     pointsTitle:
       "Our solutions enable real-time monitoring, remote access, and intelligent threat detection through:",

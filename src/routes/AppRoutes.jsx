@@ -3,12 +3,15 @@ import { AnimatePresence } from "framer-motion";
 import { Suspense, lazy, useEffect, useState } from "react";
 import SplashScreen from "../components/SplashScreen/SplashScreen";
 import WhatsAppFloat from "../components/buttons/WhatsAppFloat";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const Services = lazy(() => import("../pages/services/Services"));
-const ServiceSingle = lazy(() => import("../pages/services/ServiceSingle")); // ✅ NEW
+const ServiceSingle = lazy(() => import("../pages/services/ServiceSingle"));
 const About = lazy(() => import("../pages/About/About"));
 const Contact = lazy(() => import("../pages/contact/Contact"));
+const Projects = lazy(() => import("../pages/Projects/ProjectsPage"));
+const ProjectDetailsPage = lazy(() => import("../pages/Projects/ProjectDetailsPage"));
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -25,17 +28,19 @@ export default function AppRoutes() {
     <AnimatePresence mode="wait">
       <Suspense fallback={<SplashScreen />}>
         <WhatsAppFloat />
+        <ScrollToTop />
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Navigate to="/" />} />
 
-          {/* <Route path="/services/:layout-development" element={<Services />} /> */}
-          <Route path="/services/:serviceId" element={<ServiceSingle />} /> {/* ✅ */}
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:serviceId" element={<ServiceSingle />} />
+
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:projectSlug" element={<ProjectDetailsPage />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-
-          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
     </AnimatePresence>

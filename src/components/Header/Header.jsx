@@ -10,14 +10,12 @@ const services = [
   { label: "Constructions", id: "constructions" },
   { label: "Interior Solutions", id: "interior-solutions" },
   { label: "Home Automations", id: "home-automation" },
-
-  // ✅ Financial should NOT navigate
   { label: "Financial Services", id: "financial-services", disabled: true },
 ];
 
 const projects = [
-  { label: "Projects In Bangalore", id: "projects-in-bangalore" },
-  { label: "Projects In Goa", id: "projects-in-goa" },
+  { label: "Projects In Bangalore", slug: "bangalore" },
+  { label: "Projects In Goa", slug: "goa", disabled: true },
 ];
 
 export default function Header() {
@@ -27,14 +25,11 @@ export default function Header() {
 
   const navigate = useNavigate();
 
-  // ✅ open services dropdown from anywhere (breadcrumb trigger)
   useEffect(() => {
     const handler = () => {
       setNavOpen(true);
       setServicesOpen(true);
       setProjectsOpen(false);
-
-      // optional: scroll to top so user sees dropdown
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
@@ -42,10 +37,16 @@ export default function Header() {
     return () => window.removeEventListener("open-services-dropdown", handler);
   }, []);
 
+  const closeAllMenus = () => {
+    setNavOpen(false);
+    setServicesOpen(false);
+    setProjectsOpen(false);
+  };
+
   const toggleNav = (e) => {
     e.stopPropagation();
-    setNavOpen((p) => {
-      const next = !p;
+    setNavOpen((prev) => {
+      const next = !prev;
       if (!next) {
         setServicesOpen(false);
         setProjectsOpen(false);
@@ -56,8 +57,8 @@ export default function Header() {
 
   const toggleServices = (e) => {
     e.stopPropagation();
-    setServicesOpen((p) => {
-      const next = !p;
+    setServicesOpen((prev) => {
+      const next = !prev;
       if (next) setProjectsOpen(false);
       return next;
     });
@@ -65,30 +66,33 @@ export default function Header() {
 
   const toggleProjects = (e) => {
     e.stopPropagation();
-    setProjectsOpen((p) => {
-      const next = !p;
+    setProjectsOpen((prev) => {
+      const next = !prev;
       if (next) setServicesOpen(false);
       return next;
     });
   };
 
   const goService = (service) => {
-    // ✅ if disabled -> do nothing (stay there)
     if (service.disabled) return;
-
-    setServicesOpen(false);
-    setProjectsOpen(false);
-    setNavOpen(false);
-
-    // ✅ route to single service page
+    closeAllMenus();
     navigate(`/services/${service.id}`);
   };
 
-  const goProject = (id) => {
-    setServicesOpen(false);
-    setProjectsOpen(false);
-    setNavOpen(false);
-    navigate(`/projects#${id}`);
+  const goProject = (project) => {
+    if (project.disabled) return;
+
+    closeAllMenus();
+
+    // for now all Bangalore projects go to main projects page
+    if (project.slug === "bangalore") {
+      navigate("/projects");
+    }
+
+    // later when Goa page is ready, you can enable this
+    // if (project.slug === "goa") {
+    //   navigate("/projects/goa");
+    // }
   };
 
   return (
@@ -100,6 +104,7 @@ export default function Header() {
             <div className="d-flex flex-column auro-brand-text">
               <span className="auro-title">AURO</span>
               <span className="auro-subtitle">BUILDTECH</span>
+              {/* <span className="auro-subtitle text-primary">BluePrint . Build .Fish</span> */}
             </div>
           </Link>
 
@@ -123,17 +128,12 @@ export default function Header() {
                 <NavLink
                   className="nav-link auro-link"
                   to="/"
-                  onClick={() => {
-                    setNavOpen(false);
-                    setServicesOpen(false);
-                    setProjectsOpen(false);
-                  }}
+                  onClick={closeAllMenus}
                 >
                   Home
                 </NavLink>
               </li>
 
-              {/* ✅ SERVICES DROPDOWN */}
               <li className={`nav-item dropdown ${servicesOpen ? "show" : ""}`}>
                 <button
                   className="nav-link auro-link dropdown-toggle auro-dropbtn"
@@ -165,7 +165,6 @@ export default function Header() {
                 </ul>
               </li>
 
-              {/* PROJECTS (same as your current) */}
               <li className={`nav-item dropdown ${projectsOpen ? "show" : ""}`}>
                 <button
                   className="nav-link auro-link dropdown-toggle auro-dropbtn"
@@ -178,16 +177,19 @@ export default function Header() {
 
                 <ul className={`dropdown-menu auro-dropdown ${projectsOpen ? "show" : ""}`}>
                   {projects.map((p) => (
-                    <li key={p.id}>
+                    <li key={p.slug}>
                       <button
                         type="button"
-                        className="dropdown-item auro-dd-item"
-                        // onClick={(e) => {
-                        //   e.stopPropagation();
-                        //   goProject(p.id);
-                        // }}
+                        className={`dropdown-item auro-dd-item ${p.disabled ? "auro-dd-disabled" : ""}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          goProject(p);
+                        }}
+                        disabled={!!p.disabled}
+                        aria-disabled={!!p.disabled}
                       >
                         {p.label}
+                        {p.disabled ? " (Coming Soon)" : ""}
                       </button>
                     </li>
                   ))}
@@ -198,11 +200,7 @@ export default function Header() {
                 <NavLink
                   className="nav-link auro-link"
                   to="/about"
-                  onClick={() => {
-                    setNavOpen(false);
-                    setServicesOpen(false);
-                    setProjectsOpen(false);
-                  }}
+                  onClick={closeAllMenus}
                 >
                   About
                 </NavLink>
@@ -212,30 +210,28 @@ export default function Header() {
                 <NavLink
                   className="nav-link auro-link"
                   to="/contact"
-                  onClick={() => {
-                    setNavOpen(false);
-                    setServicesOpen(false);
-                    setProjectsOpen(false);
-                  }}
+                  onClick={closeAllMenus}
                 >
                   Contact
                 </NavLink>
               </li>
             </ul>
 
-            <div className="d-flex align-items-center gap-2 auro-right" onClick={(e) => e.stopPropagation()}>
+            <div
+              className="d-flex align-items-center gap-2 auro-right"
+              onClick={(e) => e.stopPropagation()}
+            >
               <Link
                 to="/contact"
                 className="btn btn-consult"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setNavOpen(false);
-                  setServicesOpen(false);
-                  setProjectsOpen(false);
+                  closeAllMenus();
                 }}
               >
                 Schedule Consultation
               </Link>
+
               <ThemeToggle />
             </div>
           </div>
