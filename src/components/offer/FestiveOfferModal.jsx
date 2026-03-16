@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./festiveOfferModal.css";
+import "./FestiveOfferModal.css";
 import offerImg from "../../assets/projects/offerimg.png";
 
 export default function FestiveOfferModal({ open, onClose, onProceed }) {
