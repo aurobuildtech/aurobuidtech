@@ -11,6 +11,12 @@ import goalux from "../../../assets/projects/goabanner/goalux.png"
 import goapv from "../../../assets/projects/goabanner/goapv2.png"
 import goainvest from "../../../assets/projects/goabanner/goainvest.png"
 
+import Medawateredge from "../../../assets/projects/flats/Medawateredge.jpeg"
+import pavanimirabilia from "../../../assets/projects/flats/pavanimirabilia.jpeg"
+import citySky from "../../../assets/projects/flats/citySky.jpeg"
+
+
+
 export const projectCategories = ["All", "Plots", "Flats", "Villas"];
 
 /* REGION BASED HERO SLIDES */
@@ -254,7 +260,7 @@ export const projectsData = [
     location: "Hadosiddapura, Sarjapur Road, Bangalore",
     price: "₹73 Lakhs – ₹2.31 Cr",
     status: "Available",
-    image: "/projects/flats/meda-water-edge.jpg",
+    image: Medawateredge,
     shortDesc:
       "Premium apartment project combining modern design, practical location and family-friendly amenities near Sarjapur Road.",
     overview: [
@@ -287,7 +293,7 @@ export const projectsData = [
     location: "Whitefield Main Road, Bangalore",
     price: "₹1.42 Cr – ₹2.72 Cr",
     status: "Premium",
-    image: "/projects/flats/pavani-mirabilia.jpg",
+    image: pavanimirabilia,
     shortDesc:
       "Large-scale premium apartment project in Whitefield with high open space, clubhouse and strong metro access.",
     overview: [
@@ -317,7 +323,7 @@ export const projectsData = [
     location: "Bangalore",
     price: "From ₹37.99 Lakhs*",
     status: "Offer Running",
-    image: "/projects/flats/bcd-city-sky9.jpg",
+    image: citySky,
     shortDesc:
       "Apartment project positioned around comfort, convenience and accessible pricing with active campaign support.",
     overview: [

@@ -33,7 +33,7 @@ export default function ProjectsHeroCarousel({ currentRegion = "bangalore" }) {
   return (
     <section className="projectsHero">
       <div className="projectsHeroBg">
-        <img src={current.image} alt={current.title} style={{objectFit:'cover'}} />
+        <img src={current.image} alt={current.title} style={{objectFit:'fill'}} />
       </div>
 
       <div className="projectsHeroOverlay"></div>
