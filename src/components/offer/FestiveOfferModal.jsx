@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./FestiveOfferModal.css"
-import offerImg from "../../assets/projects/offerImg.png";
+import offerpic from "../../assets/projects/offerImg.png";
 
 export default function FestiveOfferModal({ open, onClose, onProceed }) {
   const [revealContent, setRevealContent] = useState(false);
@@ -64,7 +64,7 @@ export default function FestiveOfferModal({ open, onClose, onProceed }) {
         {revealContent && (
           <div className="offerContent">
             <div className="offerImageWrap">
-              <img src={offerImg} alt="Navratri Offer" className="offerImage" />
+              <img src={offerpic} alt="Navratri Offer" className="offerImage" />
             </div>
 
             <div className="offerTextBlock">
