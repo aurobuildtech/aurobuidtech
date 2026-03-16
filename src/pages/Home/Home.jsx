@@ -2,9 +2,7 @@ import PageTransitionE from "../../components/animations/PageTransition";
 import Reveal from "../../components/animations/Reveal";
 import LazySection from "../../components/lazy/LazySection";
 import { lazy, Suspense, useEffect, useState } from "react";
-
-// import HeroQuote from "./HeroQuote/HeroQuote";
-// import VideoHighlights from "./videoHighlights/VideoHighlights";
+import FestiveOfferModal from "../../components/offer/FestiveOfferModal";
 
 const HeroCarousel = lazy(() => import("../../components/HeroCarousel/HeroCarousel"));
 const StatsCounter = lazy(() => import("./StatsCounter/StatsCounter"));
@@ -12,8 +10,8 @@ const TestimonialsVideo = lazy(() => import("./TestimonialsVideo/TestimonialsVid
 const ClientsStrip = lazy(() => import("./ClientsStrip/ClientsStrip"));
 const ProjectCTA = lazy(() => import("./ProjectCTA/ProjectCTA"));
 const AutoPopupModal = lazy(() => import("../../components/AutoPopupModal/AutoPopupModal"));
-const HeroQuote = lazy(() => import('./HeroQuote/HeroQuote'))
-const VideoHighlights = lazy(() => import('./videoHighlights/VideoHighlights'))
+const HeroQuote = lazy(() => import("./HeroQuote/HeroQuote"));
+const VideoHighlights = lazy(() => import("./videoHighlights/VideoHighlights"));
 
 function BlockLoader({ h = 260 }) {
   return (
@@ -28,19 +26,46 @@ function BlockLoader({ h = 260 }) {
 }
 
 export default function Home() {
+  const [showOfferModal, setShowOfferModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
 
+  useEffect(() => {
+    const offerTimer = setTimeout(() => {
+      setShowOfferModal(true);
+    }, 2200);
+
+    return () => clearTimeout(offerTimer);
+  }, []);
+
+  const handleOfferClose = () => {
+    setShowOfferModal(false);
+  };
+
+  const handleOfferProceed = () => {
+    setTimeout(() => {
+      setShowContactModal(true);
+    }, 300);
+  };
 
   return (
     <PageTransitionE>
+      <FestiveOfferModal
+        open={showOfferModal}
+        onClose={handleOfferClose}
+        onProceed={handleOfferProceed}
+      />
+
       <section className="container py-3 home-block">
         {/* AutoPopupModal */}
-        <LazySection placeholderHeight={520}>
-          <Suspense fallback={<BlockLoader h={520} />}>
-            <Reveal y={20}>
-              <AutoPopupModal />
-            </Reveal>
-          </Suspense>
-        </LazySection>
+        {showContactModal && (
+          <LazySection placeholderHeight={520}>
+            <Suspense fallback={<BlockLoader h={520} />}>
+              <Reveal y={20}>
+                <AutoPopupModal />
+              </Reveal>
+            </Suspense>
+          </LazySection>
+        )}
 
         {/* HeroQuote */}
         <LazySection placeholderHeight={420}>
@@ -78,14 +103,12 @@ export default function Home() {
           </Suspense>
         </LazySection>
 
-        {/* ✅ Highlights (force mount when button clicked) */}
-
+        {/* Highlights */}
         <Suspense fallback={<BlockLoader h={420} />}>
-          <Reveal delay={0.10}>
+          <Reveal delay={0.1}>
             <VideoHighlights />
           </Reveal>
         </Suspense>
-
 
         {/* CTA */}
         <Reveal delay={0.15}>

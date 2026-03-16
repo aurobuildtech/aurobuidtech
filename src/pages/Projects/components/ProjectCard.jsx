@@ -1,29 +1,38 @@
 import { Link } from "react-router-dom";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, currentRegion }) {
   return (
     <article className="projectCard h-100">
-      <div className="projectCardImgWrap">
-        <img src={project.image} alt={project.title} className="projectCardImg" />
-
-        <div className="projectCardOverlay">
-          <Link to={`/projects/${project.slug}`} className="projectOverlayBtn">
-            View Details
-          </Link>
-        </div>
+      <div className="projectCardMedia">
+        <img src={project.image} alt={project.title} width={"100%"} />
+        <span className="projectCategoryTag">{project.category}</span>
+        <span className="projectStatusTag">{project.status}</span>
       </div>
 
       <div className="projectCardBody">
-        <div className="d-flex justify-content-between align-items-center gap-2 flex-wrap mb-2">
-          <span className="projectTypeBadge">{project.category}</span>
-          <span className={`projectStatus ${project.status.toLowerCase()}`}>
-            {project.status}
-          </span>
-        </div>
+        <h3>{project.title}</h3>
+        <p className="projectLocation">{project.location}</p>
+        <p className="projectPrice">{project.price}</p>
+        <p className="projectDesc">{project.shortDesc}</p>
 
-        <h3 className="projectCardTitle">{project.title}</h3>
-        <p className="projectCardLocation">{project.location}</p>
-        <p className="projectCardDesc">{project.shortDesc}</p>
+        <ul className="projectHighlightsMini">
+          {project.highlights.slice(0, 3).map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+
+        <div className="projectCardActions">
+          <Link
+            to={`/projects/${currentRegion}/${project.slug}`}
+            className="btn btn-primary"
+          >
+            View Details
+          </Link>
+
+          <button type="button" className="btn btn-outline-primary">
+            {project.ctaLabel || "Know More"}
+          </button>
+        </div>
       </div>
     </article>
   );

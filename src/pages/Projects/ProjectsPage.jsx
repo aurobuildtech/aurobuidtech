@@ -1,45 +1,76 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./projects.css";
-import { projectCategories, projectsData } from "./projectsData";
-import ProjectsHero from "./components/ProjectsHero";
-import ProjectStats from "./components/ProjectStats";
-import ProjectFilters from "./components/ProjectFilters";
-import FeaturedProjects from "./components/FeaturedProjects";
+import { projectCategories, projectsData } from "./data/projectsData";
+import ProjectsHeroCarousel from "./components/ProjectCarousel";
+import ProjectTabs from "./components/ProjectsTabs";
 import ProjectsGrid from "./components/ProjectsGrid";
-import ProjectsCTA from "./components/ProjectsCTA";
 
 export default function ProjectsPage() {
+  const { location } = useParams();
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredProjects = useMemo(() => {
-    if (activeCategory === "All") return projectsData;
+  const currentRegion = location || "bangalore";
 
-    if (activeCategory === "Ongoing" || activeCategory === "Completed") {
-      return projectsData.filter((project) => project.status === activeCategory);
+  useEffect(() => {
+    setActiveCategory("All");
+  }, [currentRegion]);
+
+  const filteredProjects = useMemo(() => {
+    let list = projectsData.filter(
+      (project) => project.region === currentRegion
+    );
+
+    if (activeCategory !== "All") {
+      list = list.filter((project) => project.category === activeCategory);
     }
 
-    return projectsData.filter((project) => project.category === activeCategory);
-  }, [activeCategory]);
+    return list;
+  }, [currentRegion, activeCategory]);
 
-  const featuredProjects = projectsData.slice(0, 2);
+  const pageTitle =
+    currentRegion === "goa"
+      ? "Explore premium plots and villas in Goa"
+      : "Explore premium plots, flats and villas in Bangalore";
+
+  const pageDesc =
+    currentRegion === "goa"
+      ? "Discover curated Goa opportunities with premium plotted developments and luxury villa communities."
+      : "Discover curated Bangalore opportunities across plots, flats and villas with strong location advantages.";
 
   return (
     <main className="projectsPage">
-      <ProjectsHero />
-      <ProjectStats projects={projectsData} />
+      <ProjectsHeroCarousel currentRegion={currentRegion} />
 
-      <section className="projectsMainSection container py-5">
-        <ProjectFilters
-          categories={projectCategories}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-        />
+      <section className="projectsIntro section-space">
+        <div className="container">
+          <div className="projectsIntroBox">
+            <span className="projectsMiniBadge">
+              {currentRegion === "goa"
+                ? "Auro Buildtech Goa Projects"
+                : "Auro Buildtech Bangalore Projects"}
+            </span>
 
-        <FeaturedProjects projects={featuredProjects} />
-        <ProjectsGrid projects={filteredProjects} />
+            <h2>{pageTitle}</h2>
+            <p>{pageDesc}</p>
+          </div>
+        </div>
       </section>
 
-      <ProjectsCTA />
+      <section className="projectsCatalog section-space pt-0">
+        <div className="container">
+          <ProjectTabs
+            categories={projectCategories}
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+          />
+
+          <ProjectsGrid
+            projects={filteredProjects}
+            currentRegion={currentRegion}
+          />
+        </div>
+      </section>
     </main>
   );
 }

@@ -15,7 +15,7 @@ const services = [
 
 const projects = [
   { label: "Projects In Bangalore", slug: "bangalore" },
-  { label: "Projects In Goa", slug: "goa", disabled: true },
+  { label: "Projects In Goa", slug: "goa" },
 ];
 
 export default function Header() {
@@ -45,66 +45,73 @@ export default function Header() {
 
   const toggleNav = (e) => {
     e.stopPropagation();
+
     setNavOpen((prev) => {
       const next = !prev;
+
       if (!next) {
         setServicesOpen(false);
         setProjectsOpen(false);
       }
+
       return next;
     });
   };
 
   const toggleServices = (e) => {
     e.stopPropagation();
+
     setServicesOpen((prev) => {
       const next = !prev;
-      if (next) setProjectsOpen(false);
+
+      if (next) {
+        setProjectsOpen(false);
+      }
+
       return next;
     });
   };
 
   const toggleProjects = (e) => {
     e.stopPropagation();
+
     setProjectsOpen((prev) => {
       const next = !prev;
-      if (next) setServicesOpen(false);
+
+      if (next) {
+        setServicesOpen(false);
+      }
+
       return next;
     });
   };
 
   const goService = (service) => {
     if (service.disabled) return;
+
     closeAllMenus();
     navigate(`/services/${service.id}`);
   };
 
   const goProject = (project) => {
-    if (project.disabled) return;
-
     closeAllMenus();
-
-    // for now all Bangalore projects go to main projects page
-    if (project.slug === "bangalore") {
-      navigate("/projects");
-    }
-
-    // later when Goa page is ready, you can enable this
-    // if (project.slug === "goa") {
-    //   navigate("/projects/goa");
-    // }
+    navigate(`/projects/${project.slug}`);
   };
 
   return (
     <header className="sticky-top auro-sticky">
       <nav className="navbar navbar-expand-lg auro-header">
         <div className="container">
-          <Link to="/" className="navbar-brand d-flex align-items-center auro-brand">
+          <Link
+            to="/"
+            className="navbar-brand d-flex align-items-center auro-brand"
+            onClick={closeAllMenus}
+          >
             <img src={auroicon} alt="Auro logo" className="auro-logo" />
+
             <div className="d-flex flex-column auro-brand-text">
               <span className="auro-title">AURO</span>
               <span className="auro-subtitle">BUILDTECH</span>
-              {/* <span className="auro-subtitle text-primary">BluePrint . Build .Fish</span> */}
             </div>
           </Link>
 
@@ -136,29 +143,33 @@ export default function Header() {
 
               <li className={`nav-item dropdown ${servicesOpen ? "show" : ""}`}>
                 <button
-                  className="nav-link auro-link dropdown-toggle auro-dropbtn"
                   type="button"
+                  className="nav-link auro-link dropdown-toggle auro-dropbtn"
                   aria-expanded={servicesOpen}
                   onClick={toggleServices}
                 >
                   Services
                 </button>
 
-                <ul className={`dropdown-menu auro-dropdown ${servicesOpen ? "show" : ""}`}>
-                  {services.map((s) => (
-                    <li key={s.id}>
+                <ul
+                  className={`dropdown-menu auro-dropdown ${servicesOpen ? "show" : ""}`}
+                >
+                  {services.map((service) => (
+                    <li key={service.id}>
                       <button
                         type="button"
-                        className={`dropdown-item auro-dd-item ${s.disabled ? "auro-dd-disabled" : ""}`}
+                        className={`dropdown-item auro-dd-item ${
+                          service.disabled ? "auro-dd-disabled" : ""
+                        }`}
                         onClick={(e) => {
                           e.stopPropagation();
-                          goService(s);
+                          goService(service);
                         }}
-                        disabled={!!s.disabled}
-                        aria-disabled={!!s.disabled}
+                        disabled={!!service.disabled}
+                        aria-disabled={!!service.disabled}
                       >
-                        {s.label}
-                        {s.disabled ? " (Coming Soon)" : ""}
+                        {service.label}
+                        {service.disabled ? " (Coming Soon)" : ""}
                       </button>
                     </li>
                   ))}
@@ -167,29 +178,28 @@ export default function Header() {
 
               <li className={`nav-item dropdown ${projectsOpen ? "show" : ""}`}>
                 <button
-                  className="nav-link auro-link dropdown-toggle auro-dropbtn"
                   type="button"
+                  className="nav-link auro-link dropdown-toggle auro-dropbtn"
                   aria-expanded={projectsOpen}
                   onClick={toggleProjects}
                 >
                   Projects
                 </button>
 
-                <ul className={`dropdown-menu auro-dropdown ${projectsOpen ? "show" : ""}`}>
-                  {projects.map((p) => (
-                    <li key={p.slug}>
+                <ul
+                  className={`dropdown-menu auro-dropdown ${projectsOpen ? "show" : ""}`}
+                >
+                  {projects.map((project) => (
+                    <li key={project.slug}>
                       <button
                         type="button"
-                        className={`dropdown-item auro-dd-item ${p.disabled ? "auro-dd-disabled" : ""}`}
+                        className="dropdown-item auro-dd-item"
                         onClick={(e) => {
                           e.stopPropagation();
-                          goProject(p);
+                          goProject(project);
                         }}
-                        disabled={!!p.disabled}
-                        aria-disabled={!!p.disabled}
                       >
-                        {p.label}
-                        {p.disabled ? " (Coming Soon)" : ""}
+                        {project.label}
                       </button>
                     </li>
                   ))}

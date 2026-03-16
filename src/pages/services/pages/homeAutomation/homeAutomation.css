@@ -522,6 +522,8 @@
     grid-template-columns: 1fr;
   }
 
+
+
   .ha-previewImg {
     height: 280px;
   }
@@ -577,8 +579,8 @@
 @media (max-width: 576px) {
 
   .ha-modalImageFull{
-    /* height: 200px;
-    width: 100%; */
+    height: 250px;
+    width: 100%;
   }
   .ha-rotateSection {
     min-height: 390px;
