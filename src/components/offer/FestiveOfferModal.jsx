@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./FestiveOfferModal.css"
-import offerpic from "../../assets/projects/offerImg.png";
+import offerpic from "../../assets/projects/festivaloffer.png";
 
 export default function FestiveOfferModal({ open, onClose, onProceed }) {
   const [revealContent, setRevealContent] = useState(false);

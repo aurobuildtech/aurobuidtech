@@ -3,6 +3,7 @@ import Reveal from "../../components/animations/Reveal";
 import LazySection from "../../components/lazy/LazySection";
 import { lazy, Suspense, useEffect, useState } from "react";
 import FestiveOfferModal from "../../components/offer/FestiveOfferModal";
+// import { MyBanner } from "../../MyBanner";
 
 const HeroCarousel = lazy(() => import("../../components/HeroCarousel/HeroCarousel"));
 const StatsCounter = lazy(() => import("./StatsCounter/StatsCounter"));
@@ -71,6 +72,7 @@ export default function Home() {
         <LazySection placeholderHeight={420}>
           <Suspense fallback={<BlockLoader h={420} />}>
             <Reveal y={40}>
+              {/* <MyBanner />  */}
               <HeroQuote />
             </Reveal>
           </Suspense>

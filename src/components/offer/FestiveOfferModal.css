@@ -380,7 +380,7 @@ body.dark .offerBadge {
     display: flex;
     align-items: center;
     justify-content: center;
-   background-image: url('../../assets/projects/offerImg.png');
+   background-image: url('../../assets/projects/festivaloffer.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;    
   }

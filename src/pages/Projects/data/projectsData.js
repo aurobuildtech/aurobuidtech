@@ -16,6 +16,14 @@ import pavanimirabilia from "../../../assets/projects/flats/pavanimirabilia.jpeg
 import citySky from "../../../assets/projects/flats/citySky.jpeg"
 
 
+import serenity from "../../../assets/projects/villas/serenity.png"
+
+import krishnagreen from "../../../assets/projects/plots/krishnagreen.png"
+import yellow from "../../../assets/projects/plots/yellow.png"
+import vistaraplot from "../../../assets/projects/plots/vistaraplot.png"
+import goaplot from "../../../assets/projects/plots/goaplot.png"
+import purvankaraplot from "../../../assets/projects/plots/purvankaraplot.png"
+
 
 export const projectCategories = ["All", "Plots", "Flats", "Villas"];
 
@@ -120,7 +128,7 @@ export const projectsData = [
     location: "Devanahalli / North Bangalore",
     price: "₹1499 / sq.ft",
     status: "Available",
-    image: "/projects/plots/krishna-greens.jpg",
+    image: krishnagreen,
     shortDesc:
       "Premium plotted development with greenery, gated living, and strong investment potential near North Bangalore growth corridor.",
     overview: [
@@ -149,7 +157,7 @@ export const projectsData = [
     location: "Varthur, Whitefield",
     price: "₹8999 onwards",
     status: "New Launch",
-    image: "/projects/plots/yellowstone-tattvam.jpg",
+    image: yellow,
     shortDesc:
       "BMRDA-approved plotted development in Varthur with strong Whitefield connectivity and premium community amenities.",
     overview: [
@@ -179,7 +187,7 @@ export const projectsData = [
     location: "Yelahanka / Doddaballapura Road",
     price: "₹51 Lakhs onwards",
     status: "Fast Moving",
-    image: "/projects/plots/visthara-silver-lake.jpg",
+    image: vistaraplot,
     shortDesc:
       "Premium gated plotted community close to KWIN City with excellent connectivity and ready-to-construct plots.",
     overview: [
@@ -207,7 +215,7 @@ export const projectsData = [
     location: "Near Mopa Airport, Goa",
     price: "₹1.55 Cr onwards",
     status: "Limited Units",
-    image: "/projects/plots/goa-villa-plots.jpg",
+    image: goaplot,
     shortDesc:
       "Premium resort-style golf community plots in Goa with luxury lifestyle positioning and airport proximity.",
     overview: [
@@ -234,7 +242,7 @@ export const projectsData = [
     location: "KIADB, Aerospace Park, Bangalore",
     price: "₹1.2 Cr onwards",
     status: "Hot Offer",
-    image: "/projects/flats/puravankara-flow.jpg",
+    image: purvankaraplot,
     shortDesc:
       "Premium apartment opportunity at Aerospace Park with strong airport connectivity and launch excitement.",
     overview: [
@@ -375,7 +383,7 @@ export const projectsData = [
     location: "Goa",
     price: "₹3.51 Cr onwards",
     status: "Luxury Villas",
-    image: yugen,
+    image: serenity,
     shortDesc:
       "Acqua Front Villas at Yugen Golf City offering luxury resort living with scenic design and premium Goa lifestyle positioning.",
     overview: [
