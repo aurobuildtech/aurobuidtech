@@ -498,7 +498,8 @@ body.dark .projectsEmptyState p {
   color: #9fb0c3;
 }
 
-[data-theme="dark"] .btn-primary, .dark-btn {
+
+html[data-theme="dark"].dark-btn {
     box-shadow: 2px 2px 5px orangered;
     background-color: linear-gradient(135deg, rgb(245 115 32), #b45309);;
 }
