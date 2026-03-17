@@ -18,7 +18,7 @@ import citySky from "../../../assets/projects/flats/citySky.jpeg"
 
 import serenity from "../../../assets/projects/villas/serenity.png"
 
-import krishnagreen from "../../../assets/projects/plots/krishnagreen.png"
+import krishnagreen from "../../../assets/projects/plots/krishnagreenplot.png"
 import yellow from "../../../assets/projects/plots/yellow.png"
 import vistaraplot from "../../../assets/projects/plots/vistaraplot.png"
 import goaplot from "../../../assets/projects/plots/goaplot.png"
