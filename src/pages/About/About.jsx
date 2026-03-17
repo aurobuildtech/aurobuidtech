@@ -2,6 +2,7 @@ import PageTransitionE from "../../components/animations/PageTransition";
 import Reveal from "../../components/animations/Reveal";
 import LazySection from "../../components/lazy/LazySection";
 import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 
 import "./about.css";
 import ClientsStrip from "../Home/ClientsStrip/ClientsStrip";
@@ -25,10 +26,40 @@ function BlockLoader({ h = 320 }) {
   );
 }
 
- function About() {
+function About() {
   return (
     <PageTransitionE>
+
+      {/* ✅ HELMET */}
+      <Helmet>
+        <title>About Us | Auro BuildTech</title>
+
+        <meta
+          name="description"
+          content="Learn about Auro BuildTech, a trusted construction company offering modern building solutions, premium interiors, and smart home automation services."
+        />
+
+        <meta
+          name="keywords"
+          content="about Auro BuildTech, construction company, interior solutions, home automation company, building experts"
+        />
+
+        <meta name="author" content="Auro BuildTech" />
+
+        <meta property="og:title" content="About Us | Auro BuildTech" />
+        <meta
+          property="og:description"
+          content="Discover our journey, expertise, and commitment to quality construction and smart living solutions."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:url" content="https://www.aurobuildtech.com/about" />
+
+        <link rel="canonical" href="https://www.aurobuildtech.com/about" />
+      </Helmet>
+
       <section className="container py-4 aboutWrap">
+
         <LazySection placeholderHeight={520}>
           <Suspense fallback={<BlockLoader h={520} />}>
             <Reveal y={26}>
@@ -37,25 +68,21 @@ function BlockLoader({ h = 320 }) {
           </Suspense>
         </LazySection>
 
-
         <LazySection placeholderHeight={520}>
           <Suspense fallback={<BlockLoader h={520} />}>
             <Reveal y={26}>
-             <StatsCounter />
+              <StatsCounter />
             </Reveal>
           </Suspense>
         </LazySection>
 
-
-
-<LazySection placeholderHeight={520}>
+        <LazySection placeholderHeight={520}>
           <Suspense fallback={<BlockLoader h={520} />}>
             <Reveal y={30}>
               <OurProcess />
             </Reveal>
           </Suspense>
         </LazySection>
-
 
         <LazySection placeholderHeight={560}>
           <Suspense fallback={<BlockLoader h={560} />}>
@@ -73,19 +100,17 @@ function BlockLoader({ h = 320 }) {
           </Suspense>
         </LazySection>
 
-
         <LazySection placeholderHeight={640}>
           <Suspense fallback={<BlockLoader h={640} />}>
             <Reveal y={26}>
-              <ClientsStrip  />
+              <ClientsStrip />
             </Reveal>
           </Suspense>
         </LazySection>
-
 
       </section>
     </PageTransitionE>
   );
 }
 
-export default About
+export default About;

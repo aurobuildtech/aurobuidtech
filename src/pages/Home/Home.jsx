@@ -2,6 +2,7 @@ import PageTransitionE from "../../components/animations/PageTransition";
 import Reveal from "../../components/animations/Reveal";
 import LazySection from "../../components/lazy/LazySection";
 import { lazy, Suspense, useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import FestiveOfferModal from "../../components/offer/FestiveOfferModal";
 // import { MyBanner } from "../../MyBanner";
 
@@ -50,6 +51,38 @@ export default function Home() {
 
   return (
     <PageTransitionE>
+      <Helmet>
+        <title>Auro BuildTech | Construction, Interiors & Smart Home Solutions</title>
+
+        <meta
+          name="description"
+          content="Auro BuildTech provides modern construction, premium interior solutions, and smart home automation services for residential and commercial spaces."
+        />
+
+        <meta
+          name="keywords"
+          content="Auro BuildTech, construction company, interior solutions, home automation, smart home solutions, residential construction, commercial construction"
+        />
+
+        <meta name="author" content="Auro BuildTech" />
+
+        <meta
+          property="og:title"
+          content="Auro BuildTech | Construction, Interiors & Smart Home Solutions"
+        />
+
+        <meta
+          property="og:description"
+          content="Explore modern construction, premium interiors, and smart home automation solutions by Auro BuildTech."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:url" content="https://www.aurobuildtech.com/" />
+
+        <link rel="canonical" href="https://www.aurobuildtech.com/" />
+      </Helmet>
+
       <FestiveOfferModal
         open={showOfferModal}
         onClose={handleOfferClose}
@@ -57,7 +90,6 @@ export default function Home() {
       />
 
       <section className="container py-3 home-block">
-        {/* AutoPopupModal */}
         {showContactModal && (
           <LazySection placeholderHeight={520}>
             <Suspense fallback={<BlockLoader h={520} />}>
@@ -68,7 +100,6 @@ export default function Home() {
           </LazySection>
         )}
 
-        {/* HeroQuote */}
         <LazySection placeholderHeight={420}>
           <Suspense fallback={<BlockLoader h={420} />}>
             <Reveal y={40}>
@@ -78,7 +109,6 @@ export default function Home() {
           </Suspense>
         </LazySection>
 
-        {/* Stats */}
         <LazySection placeholderHeight={140}>
           <Suspense fallback={<BlockLoader h={140} />}>
             <Reveal delay={0.1}>
@@ -87,7 +117,6 @@ export default function Home() {
           </Suspense>
         </LazySection>
 
-        {/* Carousel */}
         <LazySection placeholderHeight={520}>
           <Suspense fallback={<BlockLoader h={520} />}>
             <Reveal y={40}>
@@ -96,7 +125,6 @@ export default function Home() {
           </Suspense>
         </LazySection>
 
-        {/* Testimonials */}
         <LazySection placeholderHeight={420}>
           <Suspense fallback={<BlockLoader h={420} />}>
             <Reveal delay={0.1}>
@@ -105,19 +133,16 @@ export default function Home() {
           </Suspense>
         </LazySection>
 
-        {/* Highlights */}
         <Suspense fallback={<BlockLoader h={420} />}>
           <Reveal delay={0.1}>
             <VideoHighlights />
           </Reveal>
         </Suspense>
 
-        {/* CTA */}
         <Reveal delay={0.15}>
           <ProjectCTA />
         </Reveal>
 
-        {/* Clients */}
         <LazySection placeholderHeight={110}>
           <Suspense fallback={<BlockLoader h={110} />}>
             <Reveal delay={0.2}>

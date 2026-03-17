@@ -359,14 +359,148 @@
   margin: 0;
   color: var(--muted, #666);
 }
+/* =========================
+   DARK MODE - PROJECTS PAGE
+   ========================= */
 
+html[data-theme="dark"] .projectsPage,
+html[data-theme="dark"] .projectDetailsPage,
+body.dark .projectsPage,
+body.dark .projectDetailsPage {
+  background: #05080d;
+  color: #f8fafc;
+}
+
+html[data-theme="dark"] .projectsIntroBox h2,
+body.dark .projectsIntroBox h2,
+html[data-theme="dark"] .projectCardBody h3,
+body.dark .projectCardBody h3,
+html[data-theme="dark"] .projectDetailsContent h1,
+body.dark .projectDetailsContent h1,
+html[data-theme="dark"] .projectDetailBlock h3,
+body.dark .projectDetailBlock h3 {
+  color: #f8fafc;
+}
+
+html[data-theme="dark"] .projectsIntroBox p,
+body.dark .projectsIntroBox p,
+html[data-theme="dark"] .projectDesc,
+body.dark .projectDesc,
+html[data-theme="dark"] .projectDetailBlock li,
+body.dark .projectDetailBlock li {
+  color: #a8b3c2;
+}
+
+/* badge */
+html[data-theme="dark"] .projectsMiniBadge,
+body.dark .projectsMiniBadge {
+  background: rgba(245, 115, 32, 0.12);
+  color: rgb(245 115 32);
+  border: 1px solid rgba(245, 115, 32, 0.18);
+}
+
+/* tabs wrapper */
+html[data-theme="dark"] .projectTabs,
+body.dark .projectTabs {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+html[data-theme="dark"] .projectTabBtn,
+body.dark .projectTabBtn {
+  color: #d7dfeb;
+}
+
+html[data-theme="dark"] .projectTabBtn:hover,
+body.dark .projectTabBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="dark"] .projectTabBtn.active,
+body.dark .projectTabBtn.active {
+  background: linear-gradient(135deg, rgb(245 115 32), #b45309);
+  color: #fff;
+  box-shadow:
+    0 10px 24px rgba(245, 115, 32, 0.22),
+    0 0 18px rgba(245, 115, 32, 0.10);
+}
+
+/* cards */
+html[data-theme="dark"] .projectCard,
+body.dark .projectCard {
+  background: linear-gradient(180deg, #0d131b 0%, #0a1017 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34);
+}
+
+html[data-theme="dark"] .projectCard:hover,
+body.dark .projectCard:hover {
+  box-shadow:
+    0 22px 46px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(245, 115, 32, 0.10);
+}
+
+/* category tag */
+html[data-theme="dark"] .projectCategoryTag,
+body.dark .projectCategoryTag {
+  background: rgba(245, 115, 32, 0.95);
+  color: #fff;
+}
+
+/* status tag */
+html[data-theme="dark"] .projectStatusTag,
+body.dark .projectStatusTag {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* location and price */
+html[data-theme="dark"] .projectLocation,
+body.dark .projectLocation {
+  color: #98a8bb;
+}
+
+html[data-theme="dark"] .projectPrice,
+body.dark .projectPrice {
+  color: rgb(245 115 32);
+}
+
+/* highlights */
+html[data-theme="dark"] .projectHighlightsMini li,
+body.dark .projectHighlightsMini li {
+  background: rgba(255, 255, 255, 0.04);
+  color: #dce5ef;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* details page image */
+html[data-theme="dark"] .projectDetailsImageWrap,
+body.dark .projectDetailsImageWrap {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+}
+
+/* empty state */
 html[data-theme="dark"] .projectsEmptyState,
 body.dark .projectsEmptyState {
   background: rgba(255, 255, 255, 0.03);
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+html[data-theme="dark"] .projectsEmptyState h3,
+body.dark .projectsEmptyState h3 {
+  color: #f8fafc;
+}
+
 html[data-theme="dark"] .projectsEmptyState p,
 body.dark .projectsEmptyState p {
   color: #9fb0c3;
 }
+
+[data-theme="dark"] .btn-primary, .dark-btn {
+    box-shadow: 2px 2px 5px orangered;
+    background-color: linear-gradient(135deg, rgb(245 115 32), #b45309);;
+}
+
+

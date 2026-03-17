@@ -1,11 +1,13 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Suspense, lazy, useEffect, useState } from "react";
+
 import SplashScreen from "../components/SplashScreen/SplashScreen";
 import WhatsAppFloat from "../components/buttons/WhatsAppFloat";
 import PropertyHubFloat from "../components/floating/PropertyHubFloat";
 import ScrollToTop from "../components/ScrollToTop";
 
+/* LAZY PAGES */
 const Home = lazy(() => import("../pages/Home/Home"));
 const Services = lazy(() => import("../pages/services/Services"));
 const ServiceSingle = lazy(() => import("../pages/services/ServiceSingle"));
@@ -31,12 +33,15 @@ export default function AppRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Suspense fallback={<SplashScreen />}>
-
-        {/* GLOBAL FLOAT BUTTONS */}
         
+        {/* ✅ GLOBAL FLOAT BUTTONS */}
         <PropertyHubFloat />
         <WhatsAppFloat />
-<ScrollToTop />
+
+        {/* ✅ SCROLL FIX */}
+        <ScrollToTop />
+
+        {/* ✅ ROUTES */}
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Navigate to="/" />} />

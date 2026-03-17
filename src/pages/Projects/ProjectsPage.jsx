@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import "./projects.css";
 import { projectCategories, projectsData } from "./data/projectsData";
 import ProjectsHeroCarousel from "./components/ProjectCarousel";
@@ -30,16 +31,39 @@ export default function ProjectsPage() {
 
   const pageTitle =
     currentRegion === "goa"
-      ? "Explore premium plots and villas in Goa"
-      : "Explore premium plots, flats and villas in Bangalore";
+      ? "Goa Projects | Auro BuildTech"
+      : "Bangalore Projects | Auro BuildTech";
 
   const pageDesc =
     currentRegion === "goa"
-      ? "Discover curated Goa opportunities with premium plotted developments and luxury villa communities."
-      : "Discover curated Bangalore opportunities across plots, flats and villas with strong location advantages.";
+      ? "Explore premium plots and luxury villas in Goa with Auro BuildTech."
+      : "Explore premium plots, flats, and villas in Bangalore with Auro BuildTech.";
+
+  const pageUrl = `https://www.aurobuildtech.com/projects/${currentRegion}`;
 
   return (
     <main className="projectsPage">
+
+      {/* ✅ HELMET */}
+      <Helmet>
+        <title>{pageTitle}</title>
+
+        <meta name="description" content={pageDesc} />
+
+        <meta
+          name="keywords"
+          content={`Auro BuildTech projects, ${currentRegion} real estate, plots, flats, villas`}
+        />
+
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:url" content={pageUrl} />
+
+        <link rel="canonical" href={pageUrl} />
+      </Helmet>
+
       <ProjectsHeroCarousel currentRegion={currentRegion} />
 
       <section className="projectsIntro section-space">
@@ -51,8 +75,17 @@ export default function ProjectsPage() {
                 : "Auro Buildtech Bangalore Projects"}
             </span>
 
-            <h2>{pageTitle}</h2>
-            <p>{pageDesc}</p>
+            <h2>
+              {currentRegion === "goa"
+                ? "Explore premium plots and villas in Goa"
+                : "Explore premium plots, flats and villas in Bangalore"}
+            </h2>
+
+            <p>
+              {currentRegion === "goa"
+                ? "Discover curated Goa opportunities with premium plotted developments and luxury villa communities."
+                : "Discover curated Bangalore opportunities across plots, flats and villas with strong location advantages."}
+            </p>
           </div>
         </div>
       </section>

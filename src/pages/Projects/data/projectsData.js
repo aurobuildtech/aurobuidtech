@@ -1,6 +1,6 @@
 import allure from "../../../assets/projects/villas/allureavani.jpeg";
 import allure2 from "../../../assets/projects/villas/allure-avani2.jpeg";
-import maharaja from "../../../assets/projects/villas/maharaja.jpeg";
+import maharaja from "../../../assets/projects/villas/maharaja.png";
 import yugen from "../../../assets/projects/villas/yugen.jpeg";
 
 import skyline from "../../../assets/projects/bangcaro/skylinebang.png"
@@ -11,9 +11,9 @@ import goalux from "../../../assets/projects/goabanner/goalux.png"
 import goapv from "../../../assets/projects/goabanner/goapv2.png"
 import goainvest from "../../../assets/projects/goabanner/goainvest.png"
 
-import Medawateredge from "../../../assets/projects/flats/Medawateredge.jpeg"
-import pavanimirabilia from "../../../assets/projects/flats/pavanimirabilia.jpeg"
-import citySky from "../../../assets/projects/flats/citySky.jpeg"
+import Medawateredge from "../../../assets/projects/flats/Medawateredge.png"
+import pavanimirabilia from "../../../assets/projects/flats/pavanimirabilia.png"
+import citySky from "../../../assets/projects/flats/citySky.png"
 
 
 import serenity from "../../../assets/projects/villas/serenity.png"
