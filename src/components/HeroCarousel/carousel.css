@@ -3,26 +3,35 @@
 ========================= */
 #carouselExampleCaptions {
   position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+/* =========================
+   MAIN CAROUSEL
+========================= */
+.carousel,
+.carousel-inner,
+.carousel-item {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 /* =========================
    HERO IMAGE
 ========================= */
 .auro-hero-img {
-  height: 620px;
+  width: 100%;
+  height: 540px;
   object-fit: cover;
+  display: block;
   filter: brightness(0.62);
 }
 
 /* =========================
-   EACH SLIDE
-========================= */
-.carousel-item {
-  position: relative;
-}
-
-/* =========================
-   CINEMATIC OVERLAY
+   DARK OVERLAY
 ========================= */
 .carousel-item::after {
   content: "";
@@ -39,9 +48,9 @@
     ),
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.12) 0%,
-      rgba(0, 0, 0, 0.12) 55%,
-      rgba(0, 0, 0, 0.38) 100%
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.14) 50%,
+      rgba(0, 0, 0, 0.46) 100%
     );
 }
 
@@ -50,88 +59,91 @@
 ========================= */
 .auro-caption,
 .carousel-caption {
-  z-index: 2;
+  position: absolute;
+  z-index: 2; /* lower than footer */
   display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 
-  top: 50%;
-  bottom: auto;
+  top: 34%;
   left: 50%;
   right: auto;
+  bottom: auto;
   transform: translate(-50%, -50%);
 
   width: min(90%, 900px);
-  padding: 0 12px;
   margin: 0 auto;
+  padding: 0 12px;
+  pointer-events: auto;
 }
 
 /* =========================
    BADGE
 ========================= */
 .auro-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, #ffd56b, #f1b24a) !important;
   color: #0b0b0c !important;
   padding: 10px 22px !important;
   font-size: 0.9rem;
   font-weight: 800;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   border-radius: 999px !important;
-  box-shadow: 0 8px 22px rgba(241, 178, 74, 0.45);
+  box-shadow: 0 8px 22px rgba(241, 178, 74, 0.35);
+  margin-bottom: 14px;
 }
 
 /* =========================
    TITLE
 ========================= */
-.auro-caption-title{
-  color: #ffd56b; /* gold highlight */
-
-  font-size: clamp(2.2rem,4vw,3.5rem);
+.auro-caption-title {
+  color: #ffd56b;
+  font-size: clamp(2rem, 3.3vw, 3.1rem);
   font-weight: 900;
-
-  line-height: 1.15;
-
+  line-height: 1.1;
+  margin: 0;
   text-shadow:
-    0 10px 35px rgba(0,0,0,0.7),
-    0 2px 6px rgba(0,0,0,0.5);
-
-  margin-top: 14px;
+    0 8px 28px rgba(0, 0, 0, 0.6),
+    0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* =========================
    SUBTITLE
 ========================= */
-.auro-caption-subtitle{
-  color: rgba(255,255,255,0.92);
-
-  font-size: 1.1rem;
+.auro-caption-subtitle {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1rem;
   font-weight: 500;
-
-  line-height: 1.7;
-
-  margin-top: 16px;
-
+  line-height: 1.55;
+  margin-top: 14px;
+  margin-bottom: 0;
   max-width: 640px;
-
-  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* =========================
-   BUTTON WRAPPER
+   BUTTON ROW
 ========================= */
-.auro-caption .d-flex {
-  justify-content: center;
+.auro-caption .d-flex,
+.carousel-caption .d-flex {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
 }
 
 /* =========================
-   COMMON BUTTON LOOK
+   BUTTONS
 ========================= */
 .auro-btn-primary,
 .auro-btn-outline {
-  min-height: 50px;
+  min-height: 48px;
   padding: 12px 24px;
   border-radius: 999px !important;
   font-size: 1rem;
@@ -140,43 +152,31 @@
   transition: all 0.3s ease;
 }
 
-/* =========================
-   PRIMARY CTA
-========================= */
 .auro-btn-primary {
-  background: linear-gradient(135deg, #2d7ef7, #1f6fe0);
-  color: #ffffff !important;
+  background: linear-gradient(135deg, #38bdf8, #3b82f6);
+  color: #fff !important;
   border: none !important;
   box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    0 12px 28px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .auro-btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow:
-    0 16px 34px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
-/* =========================
-   SECONDARY CTA
-========================= */
 .auro-btn-outline {
-  color: #ffffff !important;
+  color: #fff !important;
   border: 1px solid rgba(255, 255, 255, 0.72) !important;
-  background: rgba(255, 255, 255, 0.04) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   backdrop-filter: blur(6px);
 }
 
 .auro-btn-outline:hover {
-  background: rgba(255, 255, 255, 0.16) !important;
+  background: rgba(255, 255, 255, 0.14) !important;
   transform: translateY(-2px);
 }
 
-/* =========================
-   CENTER ALIGN BUTTON TEXT
-========================= */
 .auro-btn-center {
   display: inline-flex !important;
   align-items: center !important;
@@ -188,18 +188,18 @@
    INDICATORS
 ========================= */
 .carousel-indicators {
-  margin-bottom: 1.5rem;
   z-index: 3;
+  margin-bottom: 1rem;
 }
 
 .carousel-indicators [data-bs-target] {
-  width: 34px;
+  width: 32px;
   height: 4px;
+  margin: 0 5px;
   border: 0;
   border-radius: 999px;
   background-color: rgba(255, 255, 255, 0.45);
   opacity: 1;
-  margin: 0 5px;
 }
 
 .carousel-indicators .active {
@@ -207,7 +207,7 @@
 }
 
 /* =========================
-   CONTROL ARROWS
+   ARROWS
 ========================= */
 .carousel-control-prev,
 .carousel-control-next {
@@ -226,28 +226,29 @@
 }
 
 /* =========================
-   OPTIONAL TEXT ANIMATION
+   ENTRY ANIMATION
 ========================= */
 .carousel-item.active .auro-badge {
-  animation: auroFadeUp 0.55s ease both;
+  animation: auroFadeUp 0.45s ease both;
 }
 
 .carousel-item.active .auro-caption-title {
-  animation: auroFadeUp 0.8s ease both;
+  animation: auroFadeUp 0.65s ease both;
 }
 
 .carousel-item.active .auro-caption-subtitle {
-  animation: auroFadeUp 1s ease both;
+  animation: auroFadeUp 0.85s ease both;
 }
 
+.carousel-item.active .auro-caption .d-flex,
 .carousel-item.active .d-flex.gap-3 {
-  animation: auroFadeUp 1.15s ease both;
+  animation: auroFadeUp 1s ease both;
 }
 
 @keyframes auroFadeUp {
   from {
     opacity: 0;
-    transform: translateY(26px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -260,17 +261,22 @@
 ========================= */
 @media (max-width: 992px) {
   .auro-hero-img {
-    height: 520px;
+    height: 500px;
   }
 
   .auro-caption,
   .carousel-caption {
+    top: 32%;
     width: min(92%, 760px);
   }
 
+  .auro-caption-title {
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+  }
+
   .auro-caption-subtitle {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 0.95rem;
+    max-width: 580px;
   }
 }
 
@@ -279,11 +285,12 @@
 ========================= */
 @media (max-width: 768px) {
   .auro-hero-img {
-    height: 430px;
+    height: 420px;
   }
 
   .auro-caption,
   .carousel-caption {
+    top: 29%;
     width: 92%;
     padding: 0 8px;
   }
@@ -291,30 +298,32 @@
   .auro-badge {
     padding: 8px 16px !important;
     font-size: 0.75rem;
+    margin-bottom: 10px;
   }
 
   .auro-caption-title {
-    font-size: 1.9rem;
-    line-height: 1.2;
-    margin-top: 12px;
+    font-size: 1.8rem;
+    line-height: 1.12;
   }
 
   .auro-caption-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-top: 10px;
     max-width: 100%;
-    margin-top: 12px;
+  }
+
+  .auro-caption .d-flex,
+  .carousel-caption .d-flex {
+    gap: 12px;
+    margin-top: 14px;
   }
 
   .auro-btn-primary,
   .auro-btn-outline {
+    min-height: 44px;
     padding: 10px 18px;
     font-size: 0.92rem;
-    min-height: 44px;
-  }
-
-  .carousel-caption .d-flex {
-    gap: 12px !important;
   }
 
   .carousel-control-prev,
@@ -326,10 +335,6 @@
   .carousel-control-next-icon {
     width: 2.3rem;
     height: 2.3rem;
-  }
-
-  .carousel-indicators {
-    margin-bottom: 1rem;
   }
 
   .carousel-indicators [data-bs-target] {
@@ -344,18 +349,25 @@
 ========================= */
 @media (max-width: 480px) {
   .auro-hero-img {
-    height: 390px;
+    height: 380px;
+  }
+
+  .auro-caption,
+  .carousel-caption {
+    top: 27%;
+    width: 94%;
   }
 
   .auro-caption-title {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
   }
 
   .auro-caption-subtitle {
-    font-size: 0.88rem;
-    line-height: 1.55;
+    font-size: 0.84rem;
+    line-height: 1.4;
   }
 
+  .auro-caption .d-flex,
   .carousel-caption .d-flex {
     flex-direction: column;
     width: 100%;

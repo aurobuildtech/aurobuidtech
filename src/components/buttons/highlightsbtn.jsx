@@ -41,7 +41,6 @@ export const HighlightsBtn = () => {
       ></polyline></svg>Highlights</span >
 </button>
 
-  
   </>
   );
 };

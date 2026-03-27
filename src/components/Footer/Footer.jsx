@@ -9,30 +9,30 @@ export default function Footer() {
 
       <footer className="text-center text-lg-start auro-footer text-muted">
         {/* <!-- Section: Social media --> */}
-        <section className="d-flex justify-content-center justify-content-lg-between p-4 align-items-center border-bottom border-light">
-          {/* <!-- Left --> */}
-          <div className="me-5 d-none d-lg-block">
-            <span className="fw-bold">Get connected with us on social networks:</span>
-          </div>
-          {/* <!-- Left --> */}
+        {/* <section className="d-flex justify-content-center justify-content-lg-between p-4 align-items-center border-bottom border-light"> */}
+        {/* <!-- Left --> */}
+        {/* <div className="me-5 d-none d-lg-block">
+            <span className="fw-bold">Get connected with us on social networks:</span> */}
+        {/* </div> */}
+        {/* <!-- Left --> */}
 
-          {/* <!-- Right --> */}
-          <div className="d-flex gap-3 mt-3">
+        {/* <!-- Right --> */}
+        {/* <div className="d-flex gap-3 mt-3">
             <a className="soc yt" href="#"  ><i className="bi bi-youtube"></i>  </a>
             <a className="soc fb" href="#"><i className="bi bi-facebook"></i></a>
             <a className="soc tw" href="#"><i className="bi bi-twitter-x"></i></a>
             <a className="soc ig" href="#"><i className="bi bi-instagram"></i></a>
-            <a className="soc ln" href="#"><i className="bi bi-linkedin"></i></a>
+            <a className="soc ln" href="#"><i className="bi bi-linkedin"></i></a> */}
 
 
-          </div>
-          {/* <!-- Right --> */}
-        </section>
+        {/* </div> */}
+        {/* <!-- Right --> */}
+        {/* </section> */}
         {/* <!-- Section: Social media --> */}
 
         {/* <!-- Section: Links  --> */}
         <section className="">
-          <div className="container text-center text-md-start mt-5">
+          <div className="container text-center text-md-start mt-5 mb-5">
             {/* <!-- Grid row --> */}
             <div className="row mt-3">
               {/* <!-- Grid column --> */}
@@ -106,9 +106,61 @@ export default function Footer() {
         {/* <!-- Section: Links  --> */}
 
         {/* <!-- Copyright --> */}
-        <div className="text-center p-4 auro-copyright">
-          © 2026 <a className="fw-bold" href="#">AURO BUILDTECH</a> — All rights reserved.
-        </div>
+        {/* <div className="text-center p-3 auro-copyright"> */}
+
+
+        {/* <section className="d-flex  auro-copyright gap-5 justify-content-around justify-content-lg-around p-3 align-items-center border-bottom border-light"> */}
+        {/* <!-- Left --> */}
+        {/* <div className="me-5 d-none d-lg-block">
+             © 2026 <a className="fw-bold" href="#">AURO BUILDTECH</a> — All rights reserved.
+          </div> */}
+        {/* <!-- Left --> */}
+
+        {/* <!-- Right --> */}
+        {/* <div className="d-flex gap-4">
+            <a className="soc yt" href="#"  ><i className="bi bi-youtube"></i>  </a>
+            <a className="soc fb" href="#"><i className="bi bi-facebook"></i></a>
+            <a className="soc tw" href="#"><i className="bi bi-twitter-x"></i></a>
+            <a className="soc ig" href="#"><i className="bi bi-instagram"></i></a>
+            <a className="soc ln" href="#"><i className="bi bi-linkedin"></i></a>
+
+
+          </div> */}
+        {/* <!-- Right --> */}
+        {/* </section> */}
+
+
+
+        <section className="auro-copyright d-flex justify-content-between align-items-center flex-wrap">
+          <div className="auro-copy-text">
+            © 2026 <a className="fw-bold" href="#">AURO BUILDTECH</a> — All rights reserved.
+          </div>
+
+          <div className="auro-socials">
+            <a className="soc yt" href="#" aria-label="YouTube">
+              <i className="bi bi-youtube"></i>
+            </a>
+
+            <a className="soc fb" href="#" aria-label="Facebook">
+              <i className="bi bi-facebook"></i>
+            </a>
+
+            <a className="soc tw" href="#" aria-label="Twitter X">
+              <i className="bi bi-twitter-x"></i>
+            </a>
+
+            <a className="soc ig" href="https://www.instagram.com/aurobuildtech?igsh=MWN4dWxpYW5oNjBqNQ==" aria-label="Instagram">
+              <i className="bi bi-instagram"></i>
+            </a>
+
+            <a className="soc ln" href="#" aria-label="LinkedIn">
+              <i className="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </section>
+
+
+        {/* </div> */}
 
         {/* <!-- Copyright --> */}
       </footer>
@@ -117,7 +169,7 @@ export default function Footer() {
 
 
 
-
+      {/* © 2026 <a className="fw-bold" href="#">AURO BUILDTECH</a> — All rights reserved. */}
 
     </>
 

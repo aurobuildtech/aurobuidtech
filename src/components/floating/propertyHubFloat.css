@@ -1,14 +1,19 @@
 .propertyHub {
   position: fixed;
-  right: 20px;
+  right: 18px;
   bottom: 95px;
-  z-index: 999;
+  z-index: 998;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-
+@media (max-width: 767px) {
+ .propertyHub {
+    right: 14px;
+    bottom: 82px;}
+ 
+}
 
 .hubItemBtn {
   width: 100%;

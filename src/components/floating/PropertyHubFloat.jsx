@@ -4,6 +4,9 @@ import {
   RiHomeSmile2Line,
   RiBuilding2Line,
   RiHome5Line,
+  RiHomeSmileFill,
+  
+ 
 } from "react-icons/ri";
 import { GiVillage } from "react-icons/gi";
 import { quickVideoGroups } from "../../pages/Projects/data/projectsData";
@@ -147,7 +150,7 @@ export default function PropertyHubFloat() {
         aria-label="Open property hub"
       >
         <span className="hubTriggerInner">
-          <RiHomeSmile2Line size={26} />
+          <RiHomeSmileFill size={26} />
         </span>
       </button>
     </div>

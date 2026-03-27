@@ -1,122 +1,292 @@
-:root{
-  --footer-orange: #d28d24;   /* your light theme orange */
+:root {
+  --footer-orange: #d28d24;
 }
 
-[data-theme="dark"]{
-  --footer-orange: #c26c35;   /* your dark theme orange */
+[data-theme="dark"] {
+  --footer-orange: #c26c35;
 }
-
 
 /* Footer Wrapper */
-.auro-footer{
+.auro-footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
   color: var(--muted);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 
-.lh-1 {
 
+/* brand text */
+.lh-1 {
   line-height: 1;
   position: relative;
   right: 12px;
   bottom: 2px;
 }
 
-/* Top social bar */
-.auro-footer .border-bottom{
-  border-color: var(--border) !important;
-}
-
 /* Titles */
-.auro-footer h6{
+.auro-footer h6 {
   color: var(--text);
   letter-spacing: 0.2px;
 }
 
 /* Paragraph */
-.auro-footer p{
+.auro-footer p {
   color: var(--muted) !important;
 }
 
-
-
 /* Links list */
-.footer-links li{
-  margin-bottom:10px;
+.footer-links li {
+  margin-bottom: 10px;
   color: var(--muted);
-  cursor:pointer;
-  transition: color .2s ease;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-.footer-links li:hover{
+.footer-links li:hover {
   color: var(--primary);
 }
 
 /* Contact icons spacing */
-.footer-links i{
+.footer-links i {
   margin-right: 8px;
   color: var(--primary);
 }
 
-/* ICONS ROW */
-.soc{
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background: rgba(0,0,0,0.05);  /* light fallback */
+/* =========================
+   SOCIAL ICONS
+========================= */
+.auro-socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+
+ 
+.soc {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
   color: var(--text);
-  transition: all .25s ease;
-  text-decoration:none;
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  animation: socialFloat 3s ease-in-out infinite;
+
 }
 
-[data-theme="dark"] .soc{
-  background: rgba(255,255,255,0.06);
+ 
+[data-theme="dark"] .soc {
+  background: rgba(255, 255, 255, 0.06);
 }
 
-/* Hover lift */
-.soc:hover{
-  transform: translateY(-3px);
+
+/* stagger effect */
+.soc:nth-child(1) { animation-delay: 0s; }
+.soc:nth-child(2) { animation-delay: 0.3s; }
+.soc:nth-child(3) { animation-delay: 0.6s; }
+.soc:nth-child(4) { animation-delay: 0.9s; }
+.soc:nth-child(5) { animation-delay: 1.2s; }
+
+.soc i {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* hover */
+.soc:hover {
+  transform: translateY(-5px) scale(1.06);
   color: #fff;
   border-color: transparent;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
 }
 
-/* Apply colors ONLY on hover */
-.soc.fb:hover{ background:#1877F2; }
-.soc.tw:hover{ background:#000000; }
-.soc.ig:hover{
-  background: radial-gradient(circle at 30% 30%,
-    #feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
-}
-.soc.ln:hover{ background:#0A66C2; }
-.soc.yt:hover{ background:#FF0000; border-color:#FF0000; }
+/* individual hover colors */
+.soc.yt{  background: #ff0000;}
+.soc.fb{  background: #1877f2;}
+.soc.tw{  background: #000;  color: #f5f5f5;}
+.soc.ig{background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);}
+.soc.ln{  background: #0a66c2;}
 
-/* Copyright bar */
-.auro-copyright{
-  background: rgba(0,0,0,0.04);
+/* floating animation */
+@keyframes socialFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* =========================
+   COPYRIGHT BAR
+========================= */
+
+body {
+  padding-bottom: 90px; /* adjust based on footer height */
+  
+}
+/* 
+.auro-copyright {
+  position: fixed;
+  bottom: 0;    
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+
+  background: var(--surface);
   border-top: 1px solid var(--border);
   color: var(--muted);
+
+  padding: 12px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+} */
+
+
+.auro-copyright {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999; 
+  background: var(--surface, #fff);
+  border-top: 1px solid var(--border, #ddd);
+  color: var(--muted, #666);
+  padding: 12px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.08);
 }
 
-[data-theme="dark"] .auro-copyright{
-  background: rgba(255,255,255,0.05);
+
+
+
+[data-theme="dark"] .auro-copyright {
+  background: rgba(0 0 0);
 }
 
-/* copyright link */
-.auro-copyright a{
+.auro-copyright a {
   color: var(--text);
   text-decoration: none;
 }
-.auro-copyright a:hover{
+
+.auro-copyright a:hover {
   color: var(--primary);
 }
 
-/* Mobile spacing */
-@media (max-width: 991px){
-  .auro-footer .me-5{
-    display:none !important;
+.auro-copy-text {
+  font-size: 0.98rem;
+  flex: 1 1 320px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (min-width: 992px) {
+  .auro-copyright {
+    padding: 16px 32px;
   }
+}
+
+@media (max-width: 991px) {
+  .auro-copyright {
+    padding: 16px 18px;
+    gap: 16px;
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  .auro-copy-text {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .auro-socials {
+    justify-content: center;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .auro-copyright {
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .auro-copy-text {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .auro-socials {
+    justify-content: center;
+  }
+
+  .soc {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .auro-copyright {
+    padding: 14px 12px 18px;
+  }
+
+  .auro-copy-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .auro-socials {
+    gap: 5px;
+  }
+
+  .soc {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+
+  .soc i {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .auro-copyright {
+    padding-right: 140px;
+  }
+}
+
+@media (max-width: 425px) {
+      .auro-socials {
+        gap: 5px;
+        margin-right: 56px;
+    }
+
 }
