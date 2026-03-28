@@ -5,8 +5,6 @@ import {
   RiBuilding2Line,
   RiHome5Line,
   RiHomeSmileFill,
-  
- 
 } from "react-icons/ri";
 import { GiVillage } from "react-icons/gi";
 import { quickVideoGroups } from "../../pages/Projects/data/projectsData";
@@ -59,10 +57,10 @@ export default function PropertyHubFloat() {
     setShowTooltip(false);
   };
 
-  const handleNavigateProjects = () => {
+  const handleNavigateProject = (item) => {
     setOpen(false);
     setShowTooltip(false);
-    navigate("/projects/bangalore");
+    navigate(`/projects/${item.region}/${item.slug}`);
   };
 
   const renderGroupIcon = (group) => {
@@ -129,13 +127,13 @@ export default function PropertyHubFloat() {
                 key={`${activeGroup}-${index}`}
                 type="button"
                 className="hubItem hubItemBtn"
-                onClick={handleNavigateProjects}
+                onClick={() => handleNavigateProject(item)}
               >
                 <span className="hubItemIcon">{renderGroupIcon(activeGroup)}</span>
 
                 <div className="hubItemText">
                   <strong>{item.title}</strong>
-                  <small>Open projects page</small>
+                  <small>Open project details page</small>
                 </div>
               </button>
             ))}

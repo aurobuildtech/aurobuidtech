@@ -93,31 +93,74 @@ export const heroSlidesByRegion = {
 
 export const quickVideoGroups = {
   Plots: [
-    { title: "Krishna Greens North Star", url: "#" },
-    { title: "Yellow Stone Tattvam (JLL)", url: "#" },
-    { title: "Visthara - The Silver Lake", url: "#" },
-    { title: "Goa Villa Plots", url: "#" },
+    {
+      title: "Krishna Greens North Star",
+      region: "bangalore",
+      slug: "krishna-greens-north-star",
+    },
+    {
+      title: "Yellow Stone Tattvam (JLL)",
+      region: "bangalore",
+      slug: "yellow-stone-tattvam",
+    },
+    {
+      title: "Visthara - The Silver Lake",
+      region: "bangalore",
+      slug: "visthara-the-silver-lake",
+    },
+    {
+      title: "Goa Villa Plots",
+      region: "goa",
+      slug: "goa-villa-plots",
+    },
   ],
+
   Flats: [
     {
       title: "Puravankara Codename Flow",
-      url: "https://youtube.com/shorts/xKKWTlsKJD8?si=fJdem9UGqHmWVslC",
+      region: "bangalore",
+      slug: "puravankara-codename-flow",
     },
-    { title: "Meda The Water Edge", url: "#" },
-    { title: "Pavani Mirabilia", url: "#" },
+    {
+      title: "Meda The Water Edge",
+      region: "bangalore",
+      slug: "meda-the-water-edge",
+    },
+    {
+      title: "Pavani Mirabilia",
+      region: "bangalore",
+      slug: "pavani-mirabilia",
+    },
     {
       title: "BCD City Sky 9",
-      url: "https://www.instagram.com/p/DRzDL3sgNC0/?igsh=dXJhdTd2YWZ1Y2U1",
+      region: "bangalore",
+      slug: "bcd-city-sky-9",
     },
   ],
+
   Villas: [
-    { title: "Yugen Golf City – Garden of Eden", url: "#" },
-    { title: "Yugen Golf City – Serenity", url: "#" },
-    { title: "ALLURE AVANI", url: "#" },
-    { title: "Maharaja Ikon Park", url: "#" },
+    {
+      title: "Yugen Golf City – Garden of Eden",
+      region: "goa",
+      slug: "yugen-garden-of-eden",
+    },
+    {
+      title: "Yugen Golf City – Serenity",
+      region: "goa",
+      slug: "yugen-serenity",
+    },
+    {
+      title: "ALLURE AVANI",
+      region: "bangalore",
+      slug: "allure-avani",
+    },
+    {
+      title: "Maharaja Ikon Park",
+      region: "bangalore",
+      slug: "maharaja-ikon-park",
+    },
   ],
 };
-
 export const projectsData = [
   {
     id: 1,

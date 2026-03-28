@@ -123,8 +123,6 @@ export default function Footer() {
             <a className="soc tw" href="#"><i className="bi bi-twitter-x"></i></a>
             <a className="soc ig" href="#"><i className="bi bi-instagram"></i></a>
             <a className="soc ln" href="#"><i className="bi bi-linkedin"></i></a>
-
-
           </div> */}
         {/* <!-- Right --> */}
         {/* </section> */}
