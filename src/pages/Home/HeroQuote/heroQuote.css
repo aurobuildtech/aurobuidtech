@@ -27,16 +27,399 @@
   .hero-accent{
     color: var(--hero-accent);
   }
-  
+
+
+/* =========================
+   Plain glowing EARTH line
+   ========================= */
+
+/* Center only the quote, not layout */
+/* =========================
+   Premium EARTH highlight line
+   ========================= */
+
+.earthLineWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 18px;
+  perspective: 1400px;
+  overflow: visible;
+}
+.earthLine {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0 auto;
+  padding: 10px 22px;
+
+  border-radius: 999px;
+
+  /* 🔥 PREMIUM GLASS BACKGROUND */
+  /* background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.85),
+    rgba(236,250,255,0.9)
+  ); */
+/* 
+  border: 1px solid rgba(34, 199, 232, 0.15);
+
+  box-shadow:
+    0 10px 30px rgba(34,199,232,0.12),
+    0 0 40px rgba(34,199,232,0.08); */
+
+  backdrop-filter: blur(10px);
+
+  font-family: "Poppins", Inter, sans-serif;
+
+  transition: transform 0.3s ease;
+}
+
+.earthLine:hover {
+  transform: translateY(-1px);
+}
+
+.earthLine::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -16%;
+  width: 16%;
+  height: 160%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.08) 18%,
+    rgba(255,255,255,0.85) 50%,
+    rgba(255,255,255,0.08) 78%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: translateY(-50%) skewX(-18deg);
+  filter: blur(5px);
+  animation: earthTextShine 4.8s linear 2.4s infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.earthWord {
+  font-size: clamp(1.2rem, 2.2vw, 2.1rem); /* 🔥 bigger */
+  font-weight: 900;
+  letter-spacing: -0.02em;
+
+  color: #0f172a;
+
+  text-shadow:
+    0 2px 0 rgba(255,255,255,0.7),
+    0 10px 22px rgba(15,23,42,0.12);
+
+  transform:
+    translate3d(0, -100px, -220px)
+    scale(0.75)
+    rotateX(18deg);
+
+  animation: earthDropBack 1.3s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.earthPlanetIcon {
+  font-size: clamp(1.4rem, 2.4vw, 2.3rem);
+
+  color: #22c7e8;
+
+  text-shadow:
+    0 0 12px rgba(34,199,232,0.4),
+    0 0 28px rgba(34,199,232,0.2);
+
+  animation:
+    earthDropBack 1.3s ease forwards,
+    earthPlanetFloat 2.5s ease-in-out infinite;
+
+  margin-right: 6px;
+}
+
+.earthWord1 { animation-delay: 0.18s; }
+.earthWord2 { animation-delay: 0.34s; }
+.earthWord3 { animation-delay: 0.50s; }
+.earthWord4 { animation-delay: 0.66s; }
+.earthWord5 { animation-delay: 0.82s; }
+.earthWord6 { animation-delay: 0.98s; }
+.earthWord7 { animation-delay: 1.14s; }
+
+.earthAccent {
+  font-size: clamp(1.3rem, 2.4vw, 2.3rem);
+  font-weight: 900;
+
+  background: linear-gradient(135deg, #22c7e8, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 12px rgba(34,199,232,0.45),
+    0 0 28px rgba(34,199,232,0.25),
+    0 0 50px rgba(34,199,232,0.15);
+
+  animation:
+    earthDropBack 1.3s ease forwards,
+    earthPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes earthPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: brightness(1.15);
+  }
+}
+
+@keyframes earthDropBack {
+  0% {
+    opacity: 0;
+    transform:
+      translate3d(0, -80px, -180px)
+      scale(0.8)
+      rotateX(16deg);
+    filter: blur(5px);
+  }
+  60% {
+    opacity: 1;
+    transform:
+      translate3d(0, 8px, 0)
+      scale(1.02)
+      rotateX(0deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform:
+      translate3d(0, 0, 0)
+      scale(1)
+      rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes earthAccentGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 8px rgba(34, 199, 232, 0.18),
+      0 0 18px rgba(34, 199, 232, 0.08),
+      0 0 28px rgba(34, 199, 232, 0.05);
+  }
+  50% {
+    text-shadow:
+      0 0 12px rgba(34, 199, 232, 0.30),
+      0 0 24px rgba(34, 199, 232, 0.14),
+      0 0 34px rgba(34, 199, 232, 0.08);
+  }
+}
+
+@keyframes earthPlanetFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes earthTextShine {
+  0% {
+    left: -16%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    left: 102%;
+    opacity: 0;
+  }
+}
+
+/* keep rest layout same */
+
+.heroHighlightsLink {
+  display: inline-block;
+  margin-bottom: 18px;
+  text-decoration: none;
+}
+
+/* dark mode */
+html[data-theme="dark"] .earthLine {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.02)
+  );
+
+  border: 1px solid rgba(245,115,32,0.2);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.4),
+    0 0 40px rgba(245,115,32,0.2);
+}
+
+html[data-theme="dark"] .earthWord,
+body.dark .earthWord {
+  color: #f8fafc;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.04),
+    0 8px 18px rgba(0, 0, 0, 0.20);
+}
+
+html[data-theme="dark"] .earthPlanetIcon,
+body.dark .earthPlanetIcon {
+  color: rgb(245 115 32);
+  text-shadow:
+    0 0 8px rgba(245, 115, 32, 0.20),
+    0 0 18px rgba(245, 115, 32, 0.08);
+}
+
+html[data-theme="dark"] .earthAccent,
+body.dark .earthAccent {
+  color: rgb(245 115 32);
+  text-shadow:
+    0 0 8px rgba(245, 115, 32, 0.22),
+    0 0 18px rgba(245, 115, 32, 0.10),
+    0 0 28px rgba(245, 115, 32, 0.06);
+  animation:
+    earthDropBack 1.25s cubic-bezier(.2,.8,.2,1) forwards,
+    earthAccentGlowDark 2.2s ease-in-out 1.9s infinite;
+}
+
+@keyframes earthAccentGlowDark {
+  0%, 100% {
+    text-shadow:
+      0 0 8px rgba(245, 115, 32, 0.18),
+      0 0 18px rgba(245, 115, 32, 0.08),
+      0 0 28px rgba(245, 115, 32, 0.05);
+  }
+  50% {
+    text-shadow:
+      0 0 12px rgba(245, 115, 32, 0.30),
+      0 0 24px rgba(245, 115, 32, 0.14),
+      0 0 34px rgba(245, 115, 32, 0.08);
+  }
+}
+
+/* responsive */
+@media (max-width: 991px) {
+  .earthLine {
+    max-width: 100%;
+    gap: 7px;
+  }
+
+  .earthWord {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .earthLineWrap {
+    margin: 0 0 14px;
+  }
+
+  .earthLine {
+    max-width: 100%;
+    gap: 6px;
+    padding: 4px 6px;
+  }
+
+  .earthWord {
+    font-size: 0.84rem;
+  }
+
+  .earthPlanetIcon {
+    font-size: 0.95rem;
+  }
+
+  .heroHighlightsLink {
+    margin-bottom: 14px;
+  }
+}
+/* keep remaining layout same */
+.heroHighlightsLink {
+  display: inline-block;
+  margin-bottom: 18px;
+  text-decoration: none;
+}
+
+/* dark mode */
+html[data-theme="dark"] .earthWord,
+body.dark .earthWord {
+  color: #f8fafc;
+  text-shadow:
+    0 0 8px rgba(245, 115, 32, 0.05),
+    0 0 16px rgba(245, 115, 32, 0.04);
+}
+
+html[data-theme="dark"] .earthAccent,
+body.dark .earthAccent {
+  color: rgb(245 115 32);
+  text-shadow:
+    0 0 10px rgba(245, 115, 32, 0.24),
+    0 0 24px rgba(245, 115, 32, 0.14),
+    0 0 36px rgba(245, 115, 32, 0.08);
+  animation:
+    earthDropBack 1.15s cubic-bezier(.2,.8,.2,1) forwards,
+    earthAccentGlowDark 2.2s ease-in-out 2.1s infinite;
+}
+
+@keyframes earthAccentGlowDark {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(245, 115, 32, 0.22),
+      0 0 24px rgba(245, 115, 32, 0.12),
+      0 0 34px rgba(245, 115, 32, 0.08);
+  }
+  50% {
+    text-shadow:
+      0 0 14px rgba(245, 115, 32, 0.38),
+      0 0 30px rgba(245, 115, 32, 0.18),
+      0 0 46px rgba(245, 115, 32, 0.12);
+  }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .earthLineWrap {
+    margin: 0 0 14px;
+  }
+
+  .earthLine {
+    max-width: 100%;
+    gap: 6px;
+    padding: 0 6px;
+  }
+
+  .earthWord {
+    font-size: 0.84rem;
+  }
+
+  .earthPlanet {
+    font-size: 1rem;
+  }
+
+  .heroHighlightsLink {
+    margin-bottom: 14px;
+  }
+}
   .auro-btn-primary{
     background: var(--cta-primary) !important;
     border: 1px solid transparent !important;
     color: #0b0b0c !important;
   }
   
-  .auro-btn-primary:hover{
-    /* background: var(--hero-accent) ; */
-  }
+
   
   .heroTitle{
     font-size: 56px;

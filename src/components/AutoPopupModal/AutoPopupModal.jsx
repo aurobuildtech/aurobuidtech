@@ -8,7 +8,7 @@ function AutoPopupModal() {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 2000);
+    const timer = setTimeout(() => setShow(true), 4000);
     return () => clearTimeout(timer);
   }, []);
 

@@ -4,32 +4,56 @@ import heroimg1 from "../../../assets/images/heroqutoimg/heroquote1.jpg";
 import heroimg2 from "../../../assets/images/heroqutoimg/heroquote2.jpg";
 import { HighlightsBtn } from "../../../components/buttons/highlightsbtn";
 import { Link } from "react-router-dom";
-
+import { FaGlobeAmericas } from "react-icons/fa";
+import { TbWorld } from "react-icons/tb";
+import { MdPublic } from "react-icons/md";
 export default function HeroQuote() {
   return (
     <section className="heroWrap mt-4 mb-5">
       <div className="container">
 
-        {/* ✅ TOP RIGHT BUTTON ROW (no position) */}
-        {/* <div className="heroTopRow"> */}
-       
-        {/* </div> */}
+            {/* Animated investment line - ABOVE Highlights */}
+<div className="earthLineWrap">
+  <p
+    className="earthLine"
+    aria-label="The best investment on earth is EARTH"
+  >
+    <span className="earthWord earthPlanetIcon">
+      <FaGlobeAmericas />
+      {/* <TbWorld />
+      <MdPublic /> */}
+    </span>
 
-        {/* ORIGINAL GRID */}
+    <span className="earthWord earthWord1">The</span>
+    <span className="earthWord earthWord2">best</span>
+    <span className="earthWord earthWord3">investment</span>
+    <span className="earthWord earthWord4">on</span>
+    <span className="earthWord earthWord5">earth</span>
+    <span className="earthWord earthWord6">is</span>
+    <span className="earthWord earthWord7 earthAccent">EARTH</span>
+  </p>
+</div>
+
         <div className="heroGrid">
+    
+
           {/* LEFT */}
           <div className="heroLeft">
-               <a href="#highlights">
-              < HighlightsBtn/>
-              </a>
+
+
+            <a href="#highlights" className="heroHighlightsLink">
+              <HighlightsBtn />
+            </a>
+
             <h1 className="heroTitle">
               Build it right.{" "}
-              <span className="hero-accent">Finish it  beautifully.</span>
+              <span className="hero-accent">Finish it beautifully.</span>
             </h1>
 
             <p className="heroSub">
               From vision to reality, we deliver clean craftsmanship, clear
-              timelines, and honest pricing — so your space feels better than you imagined.
+              timelines, and honest pricing — so your space feels better than
+              you imagined.
             </p>
 
             <div className="heroBtns">
@@ -58,21 +82,35 @@ export default function HeroQuote() {
           <div className="heroRight">
             <div className="heroMasonry">
               <div className="heroMain">
-                <img src={heroimg} alt="Luxury interior" loading="lazy" decoding="async" />
+                <img
+                  src={heroimg}
+                  alt="Luxury interior"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
 
               <div className="heroStack">
                 <div className="heroSmall">
-                  <img src={heroimg1} alt="Construction site" loading="lazy" decoding="async" />
+                  <img
+                    src={heroimg1}
+                    alt="Construction site"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div className="heroSmall">
-                  <img src={heroimg2} alt="Building work" loading="lazy" decoding="async" />
+                  <img
+                    src={heroimg2}
+                    alt="Building work"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

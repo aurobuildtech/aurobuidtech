@@ -9,7 +9,7 @@ const services = [
   { label: "Sale of Properties", id: "sale-of-properties" },
   { label: "Constructions", id: "constructions" },
   { label: "Interior Solutions", id: "interior-solutions" },
-  { label: "Home Automations", id: "home-automation" },
+  { label: "Home Automation", id: "home-automation" },
   { label: "Financial Services", id: "financial-services", disabled: true },
 ];
 

@@ -3,7 +3,7 @@ import Reveal from "../../components/animations/Reveal";
 import LazySection from "../../components/lazy/LazySection";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import FestiveOfferModal from "../../components/offer/FestiveOfferModal";
+// import FestiveOfferModal from "../../components/offer/FestiveOfferModal";
 // import { MyBanner } from "../../MyBanner";
 
 const HeroCarousel = lazy(() => import("../../components/HeroCarousel/HeroCarousel"));
@@ -28,26 +28,26 @@ function BlockLoader({ h = 260 }) {
 }
 
 export default function Home() {
-  const [showOfferModal, setShowOfferModal] = useState(false);
-  const [showContactModal, setShowContactModal] = useState(false);
+  // const [showOfferModal, setShowOfferModal] = useState(false);
+  // const [showContactModal, setShowContactModal] = useState(false);
 
-  useEffect(() => {
-    const offerTimer = setTimeout(() => {
-      setShowOfferModal(true);
-    }, 2200);
+  // useEffect(() => {
+  //   const offerTimer = setTimeout(() => {
+  //     setShowOfferModal(true);
+  //   }, 2200);
 
-    return () => clearTimeout(offerTimer);
-  }, []);
+  //   return () => clearTimeout(offerTimer);
+  // }, []);
 
-  const handleOfferClose = () => {
-    setShowOfferModal(false);
-  };
+  // const handleOfferClose = () => {
+  //   setShowOfferModal(false);
+  // };
 
-  const handleOfferProceed = () => {
-    setTimeout(() => {
-      setShowContactModal(true);
-    }, 300);
-  };
+  // const handleOfferProceed = () => {
+  //   setTimeout(() => {
+  //     setShowContactModal(true);
+  //   }, 300);
+  // };
 
   return (
     <PageTransitionE>
@@ -83,14 +83,16 @@ export default function Home() {
         <link rel="canonical" href="https://www.aurobuildtech.com/" />
       </Helmet>
 
-      <FestiveOfferModal
+      {/* <FestiveOfferModal
         open={showOfferModal}
         onClose={handleOfferClose}
         onProceed={handleOfferProceed}
-      />
+      /> */}
 
       <section className="container py-3 home-block">
-        {showContactModal && (
+        {
+        // showContactModal &&
+         
           <LazySection placeholderHeight={520}>
             <Suspense fallback={<BlockLoader h={520} />}>
               <Reveal y={20}>
@@ -98,7 +100,7 @@ export default function Home() {
               </Reveal>
             </Suspense>
           </LazySection>
-        )}
+        }
 
         <LazySection placeholderHeight={420}>
           <Suspense fallback={<BlockLoader h={420} />}>

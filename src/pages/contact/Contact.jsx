@@ -172,7 +172,7 @@ export default function Contact() {
                             name="phone"
                             value={form.phone}
                             onChange={onChange}
-                            placeholder="(91+) 123-456789"
+                            placeholder="(+91) 123-4567890"
                             required
                           />
                         </div>
