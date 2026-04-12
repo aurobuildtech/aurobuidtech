@@ -115,15 +115,28 @@ export default function Header() {
             </div>
           </Link>
 
-          <button
-            className="navbar-toggler auro-toggler"
-            type="button"
-            aria-expanded={navOpen}
-            aria-label="Toggle navigation"
-            onClick={toggleNav}
-          >
-            <span className="navbar-toggler-icon auro-toggler-icon"></span>
-          </button>
+          {/* MOBILE / TABLET HAMBURGER + HANGING QUOTE */}
+          <div className="mobileHamburgerWrap">
+            <button
+              className="navbar-toggler auro-toggler"
+              type="button"
+              aria-expanded={navOpen}
+              aria-label="Toggle navigation"
+              onClick={toggleNav}
+            >
+              <span className="navbar-toggler-icon auro-toggler-icon"></span>
+            </button>
+
+            <div className="mobileConsultTag" aria-hidden="true">
+              <div className="mobileConnector"></div>
+
+              <div className="mobileTagBox">
+                <span>
+                  The best investment on earth is <b>EARTH</b>
+                </span>
+              </div>
+            </div>
+          </div>
 
           <div
             className={`collapse navbar-collapse ${navOpen ? "show" : ""}`}
@@ -152,7 +165,9 @@ export default function Header() {
                 </button>
 
                 <ul
-                  className={`dropdown-menu auro-dropdown ${servicesOpen ? "show" : ""}`}
+                  className={`dropdown-menu auro-dropdown ${
+                    servicesOpen ? "show" : ""
+                  }`}
                 >
                   {services.map((service) => (
                     <li key={service.id}>
@@ -187,7 +202,9 @@ export default function Header() {
                 </button>
 
                 <ul
-                  className={`dropdown-menu auro-dropdown ${projectsOpen ? "show" : ""}`}
+                  className={`dropdown-menu auro-dropdown ${
+                    projectsOpen ? "show" : ""
+                  }`}
                 >
                   {projects.map((project) => (
                     <li key={project.slug}>
@@ -227,20 +244,33 @@ export default function Header() {
               </li>
             </ul>
 
+            {/* DESKTOP CONSULT BUTTON + HANGING QUOTE */}
             <div
-              className="d-flex align-items-center gap-2 auro-right"
+              className="d-flex align-items-center gap-2 auro-right position-relative"
               onClick={(e) => e.stopPropagation()}
             >
-              <Link
-                to="/contact"
-                className="btn btn-consult"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  closeAllMenus();
-                }}
-              >
-                Schedule Consultation
-              </Link>
+              <div className="consultWrapper">
+                <Link
+                  to="/contact"
+                  className="btn btn-consult"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    closeAllMenus();
+                  }}
+                >
+                  Schedule Consultation
+                </Link>
+
+              <div className="consultTag" aria-hidden="true">
+  <div className="consultTagConnector"></div>
+
+  <div className="consultTagBox">
+    <span>
+      The best investment on earth is <b>EARTH</b>
+    </span>
+  </div>
+</div>
+              </div>
 
               <ThemeToggle />
             </div>

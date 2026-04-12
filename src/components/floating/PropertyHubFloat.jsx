@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  RiHomeSmile2Line,
-  RiBuilding2Line,
-  RiHome5Line,
-  RiHomeSmileFill,
-} from "react-icons/ri";
-import { GiVillage } from "react-icons/gi";
+import { RiHomeSmile2Line, RiHomeSmileFill } from "react-icons/ri";
 import { quickVideoGroups } from "../../pages/Projects/data/projectsData";
 import "./propertyHubFloat.css";
+
+import ploticon from "../../../src/assets/projects/icons/ploticon.jpeg";
+import flaticons from "../../../src/assets/projects/icons/flaticons.jpeg";
+import villasicon from "../../../src/assets/projects/icons/villasicon.jpeg";
 
 export default function PropertyHubFloat() {
   const [open, setOpen] = useState(false);
@@ -63,16 +61,16 @@ export default function PropertyHubFloat() {
     navigate(`/projects/${item.region}/${item.slug}`);
   };
 
-  const renderGroupIcon = (group) => {
+  const getGroupImage = (group) => {
     switch (group) {
       case "Plots":
-        return <GiVillage size={18} />;
+        return ploticon;
       case "Flats":
-        return <RiBuilding2Line size={18} />;
+        return flaticons;
       case "Villas":
-        return <RiHome5Line size={18} />;
+        return villasicon;
       default:
-        return <RiHomeSmile2Line size={18} />;
+        return ploticon;
     }
   };
 
@@ -115,7 +113,9 @@ export default function PropertyHubFloat() {
                 className={`hubCategoryBtn ${activeGroup === group ? "active" : ""}`}
                 onClick={() => setActiveGroup(group)}
               >
-                <span className="hubCategoryIcon">{renderGroupIcon(group)}</span>
+                <span className="hubCategoryIcon">
+                  <img src={getGroupImage(group)} alt={group} className="hubCategoryImg" />
+                </span>
                 <span>{group}</span>
               </button>
             ))}
@@ -129,7 +129,13 @@ export default function PropertyHubFloat() {
                 className="hubItem hubItemBtn"
                 onClick={() => handleNavigateProject(item)}
               >
-                <span className="hubItemIcon">{renderGroupIcon(activeGroup)}</span>
+                <span className="hubItemIcon">
+                  <img
+                    src={getGroupImage(activeGroup)}
+                    alt={activeGroup}
+                    className="hubItemImg"
+                  />
+                </span>
 
                 <div className="hubItemText">
                   <strong>{item.title}</strong>

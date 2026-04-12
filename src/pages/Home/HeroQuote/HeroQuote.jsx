@@ -12,30 +12,8 @@ export default function HeroQuote() {
     <section className="heroWrap mt-4 mb-5">
       <div className="container">
 
-            {/* Animated investment line - ABOVE Highlights */}
-<div className="earthLineWrap">
-  <p
-    className="earthLine"
-    aria-label="The best investment on earth is EARTH"
-  >
-    <span className="earthWord earthPlanetIcon">
-      <FaGlobeAmericas />
-      {/* <TbWorld />
-      <MdPublic /> */}
-    </span>
-
-    <span className="earthWord earthWord1">The</span>
-    <span className="earthWord earthWord2">best</span>
-    <span className="earthWord earthWord3">investment</span>
-    <span className="earthWord earthWord4">on</span>
-    <span className="earthWord earthWord5">earth</span>
-    <span className="earthWord earthWord6">is</span>
-    <span className="earthWord earthWord7 earthAccent">EARTH</span>
-  </p>
-</div>
-
         <div className="heroGrid">
-    
+
 
           {/* LEFT */}
           <div className="heroLeft">
@@ -51,9 +29,7 @@ export default function HeroQuote() {
             </h1>
 
             <p className="heroSub">
-              From vision to reality, we deliver clean craftsmanship, clear
-              timelines, and honest pricing — so your space feels better than
-              you imagined.
+              As a real estate consulting and construction company, we transform your vision into valuable assets with expert guidance, quality craftsmanship, and transparent execution — so every space feels like the right investment.
             </p>
 
             <div className="heroBtns">
