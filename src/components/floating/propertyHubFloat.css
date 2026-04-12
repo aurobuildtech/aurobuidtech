@@ -38,6 +38,25 @@
  
 }
 
+
+
+@media (max-width: 320px) {
+    .mobileConsultTag {
+        top: calc(100% + -7px);
+        right: 346%;
+        transform: translateX(38%);
+    }
+}
+
+@media (min-width: 375px) and (max-width: 422px) {
+    .mobileConsultTag {
+        top: calc(100% + -7px);
+        right: 454%;
+        transform: translateX(38%);
+    }
+}
+
+
 .hubItemBtn {
   width: 100%;
   text-align: left;
