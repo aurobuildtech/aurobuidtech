@@ -26,6 +26,115 @@ body {
   padding-bottom: 90px; /* space for fixed copyright */
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --text-strong: #0f172a;
+  --text-body: #475569;
+  --text-soft: #64748b;
+
+  --fs-display: clamp(2.4rem, 5vw, 4.35rem);
+  --fs-h1: clamp(2.1rem, 4vw, 3.5rem);
+  --fs-h2: clamp(1.75rem, 3vw, 2.7rem);
+  --fs-h3: clamp(1.35rem, 2.2vw, 1.85rem);
+  --fs-h4: clamp(1.15rem, 1.7vw, 1.35rem);
+  --fs-body: 1rem;
+  --fs-body-sm: 0.95rem;
+  --fs-caption: 0.84rem;
+
+  --lh-tight: 1.1;
+  --lh-heading: 1.18;
+  --lh-body: 1.78;
+}
+
+[data-theme="dark"] {
+  --text-strong: #f8fafc;
+  --text-body: #cbd5e1;
+  --text-soft: #94a3b8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  color: var(--text-strong);
+  line-height: var(--lh-heading);
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--fs-h4);
+}
+
+p,
+li,
+blockquote {
+  color: var(--text-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+small,
+.small,
+label,
+.form-label,
+.text-muted {
+  color: var(--text-soft) !important;
+  font-size: var(--fs-body-sm);
+}
+
+button,
+.btn,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.lead {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: var(--text-body);
+}
+
+a {
+  color: inherit;
+}
+
 @media (max-width: 768px) {
   html,
   body {
@@ -67,12 +176,6 @@ heroQuotes
 /* 
 heroQuotes
 */
-html {
-  scroll-behavior: smooth;
-}
-
-
-
 /* cursorDust  */
 
 /* LIGHT THEME (default) */
@@ -100,6 +203,29 @@ html {
 @media (min-width: 1200px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl {
       max-width: 98%;
+  }
+}
+
+@media (max-width: 991px) {
+  :root {
+    --fs-h1: clamp(1.95rem, 5vw, 2.8rem);
+    --fs-h2: clamp(1.55rem, 4.2vw, 2.15rem);
+    --fs-h3: clamp(1.25rem, 3.5vw, 1.6rem);
+    --fs-body: 1.02rem;
+    --fs-body-sm: 0.93rem;
+    --lh-body: 1.72;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --fs-h1: clamp(1.75rem, 7vw, 2.35rem);
+    --fs-h2: clamp(1.4rem, 5.6vw, 1.9rem);
+    --fs-h3: clamp(1.15rem, 4.6vw, 1.45rem);
+    --fs-body: 0.98rem;
+    --fs-body-sm: 0.9rem;
+    --fs-caption: 0.8rem;
+    --lh-body: 1.68;
   }
 }
 

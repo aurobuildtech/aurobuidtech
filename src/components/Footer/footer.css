@@ -28,19 +28,26 @@
 
 /* Titles */
 .auro-footer h6 {
-  color: var(--text);
-  letter-spacing: 0.2px;
+  color: var(--text-strong);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.85rem;
 }
 
 /* Paragraph */
 .auro-footer p {
-  color: var(--muted) !important;
+  color: var(--text-body) !important;
+  font-size: 0.96rem;
+  line-height: 1.75;
 }
 
 /* Links list */
 .footer-links li {
   margin-bottom: 10px;
-  color: var(--muted);
+  color: var(--text-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
   cursor: pointer;
   transition: color 0.2s ease;
 }
@@ -196,7 +203,8 @@ body {
 }
 
 .auro-copy-text {
-  font-size: 0.98rem;
+  font-size: 0.94rem;
+  line-height: 1.65;
   flex: 1 1 320px;
 }
 
@@ -239,7 +247,7 @@ body {
 
   .auro-copy-text {
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
   .auro-socials {
@@ -258,7 +266,7 @@ body {
   }
 
   .auro-copy-text {
-    font-size: 0.9rem;
+    font-size: 0.86rem;
     line-height: 1.5;
   }
 
