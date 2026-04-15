@@ -203,7 +203,7 @@
   @media (max-width: 726px){
 .button{
     position: relative;
-    left: 130px;
+    /* left: 130px; */
     margin: 20px;
 }
   }

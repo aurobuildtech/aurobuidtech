@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { RiHomeSmile2Line, RiHomeSmileFill } from "react-icons/ri";
+import { FaBuilding, FaHouseChimney, FaMapLocationDot } from "react-icons/fa6";
 import { quickVideoGroups } from "../../pages/Projects/data/projectsData";
 import "./propertyHubFloat.css";
 
@@ -8,10 +8,35 @@ import ploticon from "../../../src/assets/projects/icons/ploticon.jpeg";
 import flaticons from "../../../src/assets/projects/icons/flaticons.jpeg";
 import villasicon from "../../../src/assets/projects/icons/villasicon.jpeg";
 
+const GROUPS = [
+  {
+    key: "Plots",
+    label: "Plots",
+    image: ploticon,
+    accentClass: "plots",
+    helperText: "Explore all plotted developments",
+  },
+  {
+    key: "Flats",
+    label: "Flats",
+    image: flaticons,
+    accentClass: "flats",
+    helperText: "Explore all apartment projects",
+  },
+  {
+    key: "Villas",
+    label: "Villas",
+    image: villasicon,
+    accentClass: "villas",
+    helperText: "Explore all villa projects",
+  },
+];
+
 export default function PropertyHubFloat() {
   const [open, setOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [activeGroup, setActiveGroup] = useState("Plots");
+  const [direction, setDirection] = useState("right");
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -48,12 +73,11 @@ export default function PropertyHubFloat() {
     return () => clearTimeout(hideTimer);
   }, [showTooltip]);
 
-  if (isProjectsPage) return null;
+  const currentItems = useMemo(() => {
+    return quickVideoGroups[activeGroup] || [];
+  }, [activeGroup]);
 
-  const togglePanel = () => {
-    setOpen((prev) => !prev);
-    setShowTooltip(false);
-  };
+  if (isProjectsPage) return null;
 
   const handleNavigateProject = (item) => {
     setOpen(false);
@@ -61,102 +85,113 @@ export default function PropertyHubFloat() {
     navigate(`/projects/${item.region}/${item.slug}`);
   };
 
-  const getGroupImage = (group) => {
-    switch (group) {
-      case "Plots":
-        return ploticon;
-      case "Flats":
-        return flaticons;
-      case "Villas":
-        return villasicon;
-      default:
-        return ploticon;
-    }
+  const handleGroupOpen = (group) => {
+    const currentIndex = GROUPS.findIndex((item) => item.key === activeGroup);
+    const nextIndex = GROUPS.findIndex((item) => item.key === group);
+
+    setDirection(nextIndex > currentIndex ? "right" : "left");
+    setActiveGroup(group);
+    setOpen(true);
+    setShowTooltip(false);
   };
+
+  const handleClosePanel = () => {
+    setOpen(false);
+  };
+
+  const getGroupMeta = (group) => {
+    return GROUPS.find((item) => item.key === group) || GROUPS[0];
+  };
+
+  const getListIcon = (group) => {
+    if (group === "Plots") return FaMapLocationDot;
+    if (group === "Flats") return FaBuilding;
+    return FaHouseChimney;
+  };
+
+  const activeGroupMeta = getGroupMeta(activeGroup);
+  const ActiveListIcon = getListIcon(activeGroup);
 
   return (
     <div className="propertyHub">
       {!open && showTooltip && (
         <div className="hubMessage">
           <span className="hubMessageDot"></span>
-          Tap to view projects
+          Tap to view properties
         </div>
       )}
 
-      {open && <div className="hubBackdrop" onClick={() => setOpen(false)}></div>}
+      {open && <div className="hubBackdrop" onClick={handleClosePanel}></div>}
+
+      <div className="hubFloatingGroup">
+        {GROUPS.map((group) => (
+          <button
+            key={group.key}
+            type="button"
+            className={`hubFloatBtn ${group.accentClass} ${
+              activeGroup === group.key && open ? "active" : ""
+            }`}
+            onClick={() => handleGroupOpen(group.key)}
+            aria-label={`Open ${group.label}`}
+          >
+            <span className="hubFloatBtnMedia">
+              <img src={group.image} alt={group.label} />
+            </span>
+
+            <span className="hubFloatBtnText">
+              <strong>{group.label}</strong>
+              <small>View options</small>
+            </span>
+          </button>
+        ))}
+      </div>
 
       {open && (
-        <div className="hubPanel">
+        <div className={`hubPanel ${activeGroupMeta.accentClass}`}>
           <div className="hubHeader">
             <div className="hubHeaderTitleWrap">
-              <span className="hubHeaderIcon">
-                <RiHomeSmile2Line size={18} />
-              </span>
-              <h4>Explore Projects</h4>
+              <h4>{activeGroup}</h4>
+              <p>{activeGroupMeta.helperText}</p>
             </div>
 
             <button
               type="button"
               className="hubClose"
-              onClick={() => setOpen(false)}
+              onClick={handleClosePanel}
               aria-label="Close property hub"
             >
-              ✕
+              x
             </button>
           </div>
 
-          <div className="hubCategories">
-            {Object.keys(quickVideoGroups).map((group) => (
-              <button
-                key={group}
-                type="button"
-                className={`hubCategoryBtn ${activeGroup === group ? "active" : ""}`}
-                onClick={() => setActiveGroup(group)}
-              >
-                <span className="hubCategoryIcon">
-                  <img src={getGroupImage(group)} alt={group} className="hubCategoryImg" />
-                </span>
-                <span>{group}</span>
-              </button>
-            ))}
-          </div>
+          <div className="hubContentViewport">
+            <div
+              key={activeGroup}
+              className={`hubList hubSlideIn ${
+                direction === "right" ? "hubSlideFromRight" : "hubSlideFromLeft"
+              }`}
+            >
+              {currentItems.map((item, index) => (
+                <button
+                  key={`${activeGroup}-${index}`}
+                  type="button"
+                  className={`hubItem hubItemBtn ${activeGroupMeta.accentClass}`}
+                  onClick={() => handleNavigateProject(item)}
+                >
+                  <span className={`hubItemIcon ${activeGroupMeta.accentClass}`}>
+                    <ActiveListIcon className="hubItemGlyph" aria-hidden="true" />
+                  </span>
 
-          <div className="hubList">
-            {quickVideoGroups[activeGroup].map((item, index) => (
-              <button
-                key={`${activeGroup}-${index}`}
-                type="button"
-                className="hubItem hubItemBtn"
-                onClick={() => handleNavigateProject(item)}
-              >
-                <span className="hubItemIcon">
-                  <img
-                    src={getGroupImage(activeGroup)}
-                    alt={activeGroup}
-                    className="hubItemImg"
-                  />
-                </span>
-
-                <div className="hubItemText">
-                  <strong>{item.title}</strong>
-                  <small>Open project details page</small>
-                </div>
-              </button>
-            ))}
+                  <div className="hubItemText">
+                    <strong>{item.title}</strong>
+                    <small>{activeGroup} collection</small>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
-
-      <button
-        type="button"
-        className={`hubTrigger ${open ? "active" : ""}`}
-        onClick={togglePanel}
-        aria-label="Open property hub"
-      >
-        <span className="hubTriggerInner">
-          <RiHomeSmileFill size={26} />
-        </span>
-      </button>
     </div>
   );
 }

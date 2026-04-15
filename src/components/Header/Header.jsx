@@ -127,15 +127,7 @@ export default function Header() {
               <span className="navbar-toggler-icon auro-toggler-icon"></span>
             </button>
 
-            <div className="mobileConsultTag" aria-hidden="true">
-              <div className="mobileConnector"></div>
-
-              <div className="mobileTagBox">
-                <span>
-                  The best investment on earth is <b>EARTH</b>
-                </span>
-              </div>
-            </div>
+         
           </div>
 
           <div
@@ -261,15 +253,7 @@ export default function Header() {
                   Schedule Consultation
                 </Link>
 
-              <div className="consultTag" aria-hidden="true">
-  <div className="consultTagConnector"></div>
 
-  <div className="consultTagBox">
-    <span>
-      The best investment on earth is <b>EARTH</b>
-    </span>
-  </div>
-</div>
               </div>
 
               <ThemeToggle />

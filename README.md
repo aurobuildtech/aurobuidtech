@@ -1,16 +1,53 @@
-# React + Vite
+# Auro BuildTech
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Auro BuildTech is a React + Vite website for a real estate consulting and construction company. The app presents the brand, services, project listings, and contact experience for users exploring construction, interiors, smart home automation, plotted developments, flats, and villas.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- Vite 7
+- React Router DOM 7
+- Framer Motion
+- React Helmet Async
+- Bootstrap 5 and Bootstrap Icons
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+src/
+  assets/        Images and project media
+  components/    Shared UI, animation, floating CTAs, modals
+  pages/         Route-level pages for Home, Services, Projects, About, Contact
+  routes/        App route configuration
+  styles/        Global theme styles
+```
 
-## Expanding the ESLint configuration
+## Main Routes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `/` Home page
+- `/services` Services overview
+- `/services/:serviceId` Service detail pages
+- `/projects` Bangalore projects by default
+- `/projects/:location` Region-specific project listing
+- `/projects/:location/:projectSlug` Project details
+- `/about` About page
+- `/contact` Contact page
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Other available scripts:
+
+```bash
+npm run build
+npm run lint
+npm run preview
+```
+
+## Documentation
+
+See [PROJECT_OVERVIEW.md](./PROJECT_OVERVIEW.md) for a fuller codebase walkthrough, architecture notes, and current cleanup observations.
