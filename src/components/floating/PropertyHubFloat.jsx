@@ -140,7 +140,6 @@ export default function PropertyHubFloat() {
 
             <span className="hubFloatBtnText">
               <strong>{group.label}</strong>
-              <small>View options</small>
             </span>
           </button>
         ))}

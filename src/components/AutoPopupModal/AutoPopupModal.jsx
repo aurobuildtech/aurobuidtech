@@ -3,14 +3,14 @@ import { Modal } from "bootstrap";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./autoPopupModal.css"; // ✅ add this css file
 
-function AutoPopupModal() {
+function AutoPopupModal({ delay = 4000 }) {
   const [show, setShow] = useState(false);
   const modalRef = useRef(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 4000);
+    const timer = setTimeout(() => setShow(true), delay);
     return () => clearTimeout(timer);
-  }, []);
+  }, [delay]);
 
   useEffect(() => {
     if (!show) return;

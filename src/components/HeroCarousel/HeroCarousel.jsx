@@ -105,11 +105,10 @@ export default function HeroCarousel() {
                     Schedule Consultation
                   </Link>
 
-                  <a href="#projects" className="btn rounded-pill auro-btn-outline auro-btn-center">
+                  <Link to="/projects" className="btn rounded-pill auro-btn-outline auro-btn-center">
                     View All Projects →
-                  </a>
+                  </Link>
 
-             
                 </div>
               </div>
 

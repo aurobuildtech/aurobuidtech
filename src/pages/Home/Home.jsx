@@ -3,6 +3,7 @@ import Reveal from "../../components/animations/Reveal";
 import LazySection from "../../components/lazy/LazySection";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import FeaturedProjectsIntro from "../../components/featuredProjectsIntro/FeaturedProjectsIntro";
 // import FestiveOfferModal from "../../components/offer/FestiveOfferModal";
 // import { MyBanner } from "../../MyBanner";
 
@@ -28,8 +29,25 @@ function BlockLoader({ h = 260 }) {
 }
 
 export default function Home() {
+  const [showFeaturedIntro, setShowFeaturedIntro] = useState(false);
+  const [allowAutoModal, setAllowAutoModal] = useState(false);
   // const [showOfferModal, setShowOfferModal] = useState(false);
   // const [showContactModal, setShowContactModal] = useState(false);
+
+  useEffect(() => {
+    setAllowAutoModal(false);
+
+    const introTimer = setTimeout(() => {
+      setShowFeaturedIntro(true);
+    }, 2000);
+
+    return () => clearTimeout(introTimer);
+  }, []);
+
+  const handleFeaturedIntroFinish = () => {
+    setShowFeaturedIntro(false);
+    setAllowAutoModal(true);
+  };
 
   // useEffect(() => {
   //   const offerTimer = setTimeout(() => {
@@ -83,6 +101,11 @@ export default function Home() {
         <link rel="canonical" href="https://www.aurobuildtech.com/" />
       </Helmet>
 
+      <FeaturedProjectsIntro
+        open={showFeaturedIntro}
+        onFinish={handleFeaturedIntroFinish}
+      />
+
       {/* <FestiveOfferModal
         open={showOfferModal}
         onClose={handleOfferClose}
@@ -92,14 +115,16 @@ export default function Home() {
       <section className="container py-3 home-block">
         {
         // showContactModal &&
-         
-          <LazySection placeholderHeight={520}>
-            <Suspense fallback={<BlockLoader h={520} />}>
-              <Reveal y={20}>
-                <AutoPopupModal />
-              </Reveal>
-            </Suspense>
-          </LazySection>
+
+          allowAutoModal && (
+            <LazySection placeholderHeight={520}>
+              <Suspense fallback={<BlockLoader h={520} />}>
+                <Reveal y={20}>
+                  <AutoPopupModal delay={2000} />
+                </Reveal>
+              </Suspense>
+            </LazySection>
+          )
         }
 
         <LazySection placeholderHeight={420}>

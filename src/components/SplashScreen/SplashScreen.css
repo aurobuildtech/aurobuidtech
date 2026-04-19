@@ -1,5 +1,5 @@
 /* ===============================
-   AURO SPLASH – CLEAN BLUE / WHITE
+   AURO SPLASH â€“ CLEAN BLUE / WHITE
 ================================ */
 .auroSplash {
     position: fixed;
@@ -13,9 +13,9 @@
     justify-content: center;
 
     gap: 18px;
-    /* ✅ gap between portal and text */
+    /* âœ… gap between portal and text */
     padding: 16px;
-    /* ✅ small padding only */
+    /* âœ… small padding only */
 
     background:
         radial-gradient(circle at 30% 20%, rgba(0, 140, 255, 0.22), transparent 55%),
@@ -274,7 +274,7 @@
 
 
 /* =========================================
-   AFTER 1.5s → SWITCH TO DARK + ORANGE THEME
+   AFTER 1.5s â†’ SWITCH TO DARK + ORANGE THEME
    (smooth overlay transition)
 ========================================= */
 
@@ -297,7 +297,7 @@
         radial-gradient(circle at 70% 30%, rgba(255, 165, 0, 0.12), transparent 60%),
         linear-gradient(135deg, #0b0c10 0%, #14161c 55%, #0b0c10 100%);
 
-    /* after 1.5s → fade in */
+    /* after 1.5s â†’ fade in */
     animation: auroDarkIn 650ms ease-in-out 1.5s forwards;
 }
 
@@ -324,12 +324,12 @@
 }
 
 /* Rings + orbs become warmer */
-/* ✅ keep ring spin, only change color later */
+/* âœ… keep ring spin, only change color later */
 .portal__ring {
     transition: border-color 650ms ease, box-shadow 650ms ease;
 }
 
-/* ✅ orbs keep floating, only change background later */
+/* âœ… orbs keep floating, only change background later */
 .orb {
     transition: background 650ms ease, box-shadow 650ms ease;
 }
@@ -383,7 +383,7 @@
 }
 
 
-/* After 1.5s → warm orange highlight */
+/* After 1.5s â†’ warm orange highlight */
 .auroSplash {
     animation: switchTheme 650ms ease-in-out 1.5s forwards;
 }

@@ -26,7 +26,7 @@ export default function SplashScreen({onFinish, duration = 2200 }) {
           )}
         </div>
 
-        {/* 🔮 energy orbs (unique loading replacement) */}
+        {/* ðŸ”® energy orbs (unique loading replacement) */}
         <span className="orb orb--1" />
         <span className="orb orb--2" />
         <span className="orb orb--3" />

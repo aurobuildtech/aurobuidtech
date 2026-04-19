@@ -47,53 +47,46 @@
 }
 
 .hubFloatBtn {
-  position: relative;
-  overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  min-width: 0;
-  padding: 10px 14px;
-  border-radius: 999px;
+  gap: 8px;
+  padding: 0;
   border: none;
   cursor: pointer;
   font-weight: 700;
   font-size: 13px;
-  color: #fff;
-  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
-  backdrop-filter: blur(14px);
+  color: #0f172a;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.28s ease, filter 0.28s ease;
   animation: hubFloatBob 4.2s ease-in-out infinite;
 }
 
 .hubFloatBtn::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0));
-  pointer-events: none;
+  content: none;
 }
 
 .hubFloatBtn:hover {
-  transform: translateX(-4px) scale(1.04);
-  filter: saturate(1.08);
+  transform: translateY(-4px) scale(1.03);
+  filter: saturate(1.05);
 }
 
 .hubFloatBtn.active {
-  transform: translateX(-4px) scale(1.04);
+  transform: translateY(-4px) scale(1.03);
 }
 
 .hubFloatBtnMedia {
-  position: relative;
-  z-index: 1;
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.18),
+    0 0 0 3px rgba(255, 255, 255, 0.88);
+  background: transparent;
 }
 
 .hubFloatBtnMedia img {
@@ -103,50 +96,19 @@
 }
 
 .hubFloatBtnText {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   line-height: 1.1;
 }
 
-.hubFloatBtnText strong,
-.hubFloatBtnText small {
-  white-space: nowrap;
-}
-
 .hubFloatBtnText strong {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 800;
-}
-
-.hubFloatBtnText small {
-  margin-top: 3px;
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.84);
-  letter-spacing: 0.02em;
-}
-
-.hubFloatBtn.plots {
-  background: linear-gradient(135deg, #32d583, #149a62);
-  box-shadow:
-    0 16px 30px rgba(34, 197, 94, 0.35),
-    0 0 24px rgba(34, 197, 94, 0.22);
-}
-
-.hubFloatBtn.flats {
-  background: linear-gradient(135deg, #4f8cff, #1d56da);
-  box-shadow:
-    0 16px 30px rgba(59, 130, 246, 0.35),
-    0 0 24px rgba(59, 130, 246, 0.22);
-}
-
-.hubFloatBtn.villas {
-  background: linear-gradient(135deg, #f9b74b, #df7a18);
-  box-shadow:
-    0 16px 30px rgba(245, 158, 11, 0.35),
-    0 0 24px rgba(245, 158, 11, 0.22);
+  letter-spacing: 0.01em;
+  color: dodgerblue;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
 }
 
 .hubPanel {
@@ -375,18 +337,16 @@
   }
 
   .hubFloatBtn {
-    padding: 8px 12px;
     font-size: 12px;
   }
 
   .hubFloatBtnMedia {
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
+    width: 54px;
+    height: 54px;
   }
 
   .hubFloatBtnText strong {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
   }
 
   .hubContentViewport {
@@ -478,4 +438,10 @@ body.dark .hubItemIcon.flats .hubItemGlyph {
 html[data-theme="dark"] .hubItemIcon.villas .hubItemGlyph,
 body.dark .hubItemIcon.villas .hubItemGlyph {
   color: #ffd086;
+}
+
+html[data-theme="dark"] .hubFloatBtnText strong,
+body.dark .hubFloatBtnText strong {
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(15, 23, 42, 0.45);
 }
