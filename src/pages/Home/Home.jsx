@@ -3,7 +3,7 @@ import Reveal from "../../components/animations/Reveal";
 import LazySection from "../../components/lazy/LazySection";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import FeaturedProjectsIntro from "../../components/featuredProjectsIntro/FeaturedProjectsIntro";
+// import FeaturedProjectsIntro from "../../components/featuredProjectsIntro/FeaturedProjectsIntro";
 // import FestiveOfferModal from "../../components/offer/FestiveOfferModal";
 // import { MyBanner } from "../../MyBanner";
 
@@ -101,10 +101,10 @@ export default function Home() {
         <link rel="canonical" href="https://www.aurobuildtech.com/" />
       </Helmet>
 
-      <FeaturedProjectsIntro
+      {/* <FeaturedProjectsIntro
         open={showFeaturedIntro}
         onFinish={handleFeaturedIntroFinish}
-      />
+      /> */}
 
       {/* <FestiveOfferModal
         open={showOfferModal}
