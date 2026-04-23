@@ -49,6 +49,32 @@ export default function Home() {
     setAllowAutoModal(true);
   };
 
+  const pageTitle =
+    "Auro BuildTech | Real Estate Consulting, Construction, Interiors & Home Automation";
+  const pageDescription =
+    "Auro BuildTech delivers real estate consulting, layout development, property sales, construction, interior solutions, and smart home automation services in Bangalore, Goa, Hyderabad, and Visakhapatnam.";
+  const pageUrl = "https://www.aurobuildtech.com/";
+  const pageKeywords =
+    "Auro BuildTech, real estate consulting, construction company in Bangalore, interior solutions, smart home automation, layout development, sale of properties, villas, flats, plots, property investment";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Auro BuildTech",
+    url: pageUrl,
+    logo: `${pageUrl}favicon.ico`,
+    description: pageDescription,
+    areaServed: ["Bangalore", "Goa", "Hyderabad", "Visakhapatnam"],
+    serviceType: [
+      "Real Estate Consulting",
+      "Layout Development",
+      "Sale of Properties",
+      "Construction Services",
+      "Interior Solutions",
+      "Home Automation",
+    ],
+    sameAs: ["https://www.instagram.com/aurobuildtech"],
+  };
+
   // useEffect(() => {
   //   const offerTimer = setTimeout(() => {
   //     setShowOfferModal(true);
@@ -70,35 +96,47 @@ export default function Home() {
   return (
     <PageTransitionE>
       <Helmet>
-        <title>Auro BuildTech | Construction, Interiors & Smart Home Solutions</title>
+        <title>{pageTitle}</title>
 
         <meta
           name="description"
-          content="Auro BuildTech provides modern construction, premium interior solutions, and smart home automation services for residential and commercial spaces."
+          content={pageDescription}
         />
 
         <meta
           name="keywords"
-          content="Auro BuildTech, construction company, interior solutions, home automation, smart home solutions, residential construction, commercial construction"
+          content={pageKeywords}
         />
 
         <meta name="author" content="Auro BuildTech" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#22d3ee" />
 
         <meta
           property="og:title"
-          content="Auro BuildTech | Construction, Interiors & Smart Home Solutions"
+          content={pageTitle}
         />
 
         <meta
           property="og:description"
-          content="Explore modern construction, premium interiors, and smart home automation solutions by Auro BuildTech."
+          content={pageDescription}
         />
 
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.jpg" />
-        <meta property="og:url" content="https://www.aurobuildtech.com/" />
+        <meta property="og:image:alt" content="Auro BuildTech homepage preview" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:site_name" content="Auro BuildTech" />
 
-        <link rel="canonical" href="https://www.aurobuildtech.com/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content="/og-image.jpg" />
+
+        <link rel="canonical" href={pageUrl} />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
 
       {/* <FeaturedProjectsIntro
