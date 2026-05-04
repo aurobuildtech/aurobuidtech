@@ -43,10 +43,10 @@
 
 /* Hover animation */
 .apmIconBtn{
-  background: #0d6efd;          /* blue fill */
+  background: var(--primary, #214f96);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 6 6px 18px rgba(13,110,253,0.35);
+  box-shadow: 0 6px 18px rgba(33, 79, 150, 0.28);
 }
 
 /* Optional platform colors */
@@ -56,7 +56,7 @@
 }
 
 .apmIconBtn.phone:hover{
-  background:#0d6efd;
+  background: var(--cta-primary);
 }
 
 /* smaller submit button (not full width) */

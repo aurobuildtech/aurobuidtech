@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import auroicon from "../../assets/images/auro.png"
+import auroicon from "../../assets/images/SkyZenAuroBuildtechTransparent.png"
 import "./footer.css";
 
 export default function Footer() {
@@ -32,9 +32,9 @@ export default function Footer() {
 
         {/* <!-- Section: Links  --> */}
         <section className="">
-          <div className="container text-center text-md-start mt-5 mb-5">
+          <div className="container text-center text-md-start auro-footer-main">
             {/* <!-- Grid row --> */}
-            <div className="row mt-3">
+            <div className="row gy-4 align-items-start">
               {/* <!-- Grid column --> */}
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 {/* <!-- Content --> */}
@@ -44,11 +44,6 @@ export default function Footer() {
                     alt="Auro logo"
                     className="auro-logo"
                   />
-
-                  <div className="d-flex flex-column lh-1">
-                    <span className="auro-title">AURO</span>
-                    <span className="auro-subtitle">BUILDTECH</span>
-                  </div>
                 </Link>
                 <p className="text-muted text-start">
                   Building excellence through precision craftsmanship and innovative

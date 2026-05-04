@@ -53,7 +53,7 @@
   margin-top:10px;
   border-radius:999px;
   background:var(--cta-primary);
-  box-shadow:0 0 0 6px rgba(13,110,253,.14);
+  box-shadow:0 0 0 6px rgba(33, 79, 150, .14);
 }
 .scl-underline.sm{ width:90px; }
 
@@ -112,8 +112,8 @@
   place-items:center;
   color:#fff;
   font-size:22px;
-  background:linear-gradient(135deg,#0d6efd,#38bdf8);
-  box-shadow:0 10px 25px rgba(13,110,253,0.35);
+  background: var(--cta-primary);
+  box-shadow:0 10px 25px rgba(33, 79, 150, 0.28);
   flex:0 0 auto;
 }
 .scl-fallbackDot{
@@ -142,8 +142,8 @@
   place-items:center;
   color:#fff;
   font-size:22px;
-  background:linear-gradient(135deg,#0d6efd,#38bdf8);
-  box-shadow:0 10px 25px rgba(13,110,253,0.35);
+  background: var(--cta-primary);
+  box-shadow:0 10px 25px rgba(33, 79, 150, 0.28);
   flex:0 0 auto;
 }
 .scl-stepTitle{ font-weight:900; color:var(--text); margin-bottom:4px; }
@@ -161,7 +161,7 @@
 .scl-cardDot{
   width:10px; height:10px; border-radius:999px;
   background:var(--cta-primary);
-  box-shadow:0 0 0 6px rgba(13,110,253,.14);
+  box-shadow:0 0 0 6px rgba(33, 79, 150, .14);
 }
 .scl-cardTitle{ margin:0; font-weight:900; color:var(--text); font-size:16px; }
 .scl-cardText{ margin:0; color:var(--muted); line-height:1.7; font-size:14.5px; }
@@ -183,7 +183,7 @@
   border:1px solid var(--border);
   padding:18px;
   background:
-    radial-gradient(900px 380px at 10% 10%, rgba(13,110,253,0.22), transparent 60%),
+    radial-gradient(900px 380px at 10% 10%, rgba(33, 79, 150, 0.18), transparent 60%),
     radial-gradient(800px 340px at 90% 30%, rgba(245,115,32,0.16), transparent 60%),
     rgba(255,255,255,0.02);
   display:flex;
@@ -200,7 +200,7 @@
   font-weight:900;
   border-radius:14px;
   padding:12px 16px;
-  box-shadow:0 14px 30px rgba(13,110,253,0.25);
+  box-shadow:0 14px 30px rgba(243, 107, 24, 0.24);
   white-space:nowrap;
 }
 .scl-ctaBtn:hover{ filter:brightness(0.96); }
@@ -295,10 +295,10 @@
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #0d6efd, #38bdf8);
+  background: var(--cta-primary);
   box-shadow:
     0 0 0 8px rgba(56, 189, 248, 0.14),
-    0 0 20px rgba(13, 110, 253, 0.22);
+    0 0 20px rgba(33, 79, 150, 0.20);
   z-index: 2;
 }
 
@@ -343,8 +343,8 @@
   place-items: center;
   color: #fff;
   font-size: 24px;
-  background: linear-gradient(135deg, #0d6efd, #38bdf8);
-  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.30);
+  background: var(--cta-primary);
+  box-shadow: 0 10px 25px rgba(33, 79, 150, 0.28);
   flex: 0 0 auto;
 }
 

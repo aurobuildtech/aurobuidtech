@@ -44,14 +44,17 @@ export default function HeroQuote() {
               </div>
             </div>
 
-            <h1 className="heroTitle">
+            <h1 className="heroTitle"  >
               Build it right.{" "}
               <span className="hero-accent">Finish it beautifully.</span>
+              {/* Real Estate Developers and Construction Company in Bengaluru */}
             </h1>
 
             <p className="heroSub">
-              As a real estate consulting and construction company, we transform your vision into valuable assets with expert guidance, quality craftsmanship, and transparent execution — so every space feels like the right investment.
-            </p>
+Auro Buildtech is a trusted real estate development and construction company offering
+professional services in layout development, property sales, residential construction, interior
+solutions, and smart home automation. We help clients turn their vision into reality through
+quality craftsmanship, transparent processes, and reliable project delivery.            </p>
 
             <div className="heroBtns">
               <Link to="/contact" className="btn rounded-pill auro-btn-primary">

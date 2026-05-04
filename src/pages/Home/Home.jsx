@@ -110,7 +110,7 @@ export default function Home() {
 
         <meta name="author" content="Auro BuildTech" />
         <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#22d3ee" />
+        <meta name="theme-color" content="#214f96" />
 
         <meta
           property="og:title"

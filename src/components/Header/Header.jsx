@@ -1,8 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import auroicon from "../../assets/images/auro.png";
+import auroicon from "../../assets/images/SkyZenAuroBuildtechTransparent.png"
 import "./header.css";
-import ThemeToggle from "./ThemeToggle";
 
 const services = [
   { label: "Layout Development", id: "layout-development" },
@@ -108,11 +107,6 @@ export default function Header() {
             onClick={closeAllMenus}
           >
             <img src={auroicon} alt="Auro logo" className="auro-logo" />
-
-            <div className="d-flex flex-column auro-brand-text">
-              <span className="auro-title">AURO</span>
-              <span className="auro-subtitle">BUILDTECH</span>
-            </div>
           </Link>
 
           {/* MOBILE / TABLET HAMBURGER + HANGING QUOTE */}
@@ -255,8 +249,6 @@ export default function Header() {
 
 
               </div>
-
-              <ThemeToggle />
             </div>
           </div>
         </div>

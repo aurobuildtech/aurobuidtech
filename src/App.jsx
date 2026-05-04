@@ -7,7 +7,7 @@ export default function App() {
     <div className="app-bg min-vh-100 d-flex flex-column">
       <Header />
       <main className="flex-grow-1">
-        <CursorDust />
+        {/* <CursorDust /> */}
         <AppRoutes />
       </main>
       <Footer />

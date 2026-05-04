@@ -22,13 +22,13 @@
   margin-bottom: 12px;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(13, 110, 253, 0.95);
+  background: rgba(33, 79, 150, 0.95);
   color: #fff;
   font-size: 13px;
   font-weight: 600;
   box-shadow:
-    0 12px 28px rgba(13, 110, 253, 0.35),
-    0 0 22px rgba(13, 110, 253, 0.25);
+    0 12px 28px rgba(33, 79, 150, 0.32),
+    0 0 22px rgba(243, 107, 24, 0.18);
   backdrop-filter: blur(8px);
 }
 
@@ -106,7 +106,7 @@
   font-size: 0.92rem;
   font-weight: 800;
   letter-spacing: 0.01em;
-  color: dodgerblue;
+  color: var(--primary, #214f96);
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.35);
   white-space: nowrap;
 }
@@ -120,7 +120,7 @@
   border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow:
     0 24px 54px rgba(15, 23, 42, 0.16),
-    0 0 18px rgba(13, 110, 253, 0.08);
+    0 0 18px rgba(33, 79, 150, 0.08);
   backdrop-filter: blur(12px);
   animation: hubPanelRise 0.35s ease;
 }

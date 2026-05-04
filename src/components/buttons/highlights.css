@@ -1,12 +1,12 @@
 /* ---------- THEME COLORS ---------- */
 /* Light mode (default) */
 .button{
-  --c1: #22d3ee;         /* cyan */
-  --c2: #1f63d0;         /* blue deep */
-  --glowA: #3b82f6;      /* blue glow */
-  --glowB: #22d3ee;      /* cyan glow */
-  --radA: rgba(113, 255, 248, 0.8); /* top radial */
-  --radB: rgba(225, 124, 255, 0);   /* fade */
+  --c1: #214f96;
+  --c2: #f36b18;
+  --glowA: rgba(33, 79, 150, 0.72);
+  --glowB: rgba(243, 107, 24, 0.72);
+  --radA: rgba(243, 107, 24, 0.72);
+  --radB: rgba(243, 107, 24, 0);
 }
 
 /* Dark mode override */
@@ -249,7 +249,7 @@
 
   /* reduce glow/spread if your CSS uses shadow */
   .button {
-    box-shadow: 0 10px 22px rgba(0, 170, 255, 0.25) !important;
+    box-shadow: 0 10px 22px rgba(243, 107, 24, 0.25) !important;
   }
 }
 

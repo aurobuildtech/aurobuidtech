@@ -8,6 +8,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import App from "./App.jsx";
 
+localStorage.removeItem("theme");
+document.documentElement.removeAttribute("data-theme");
+document.body.classList.remove("dark");
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
