@@ -11,14 +11,14 @@ const slides = [
   {
     image: coverImg,
     eyebrow: "Latest Collection",
-    title: "Sragvee Builders — Premium Plots",
+    title: "Sragvee Builders — Farmland Plots",
     text: "Where dreams find roots and futures flourish, near Chintamani.",
   },
   {
     image: layoutImg,
     eyebrow: "Master Planned Layout",
     title: "9 Acres 17.5 Guntas",
-    text: "Thoughtfully planned plots from 100×60 ft, on the Bengaluru – Madanapalle Road.",
+    text: "Thoughtfully planned farmland plots from 6 Guntas to 8 Guntas, on the Bengaluru – Madanapalle Road.",
   },
   {
     image: amenitiesImg,
