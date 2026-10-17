@@ -23,6 +23,7 @@ import yellow from "../../../assets/projects/plots/yellow.png"
 import vistaraplot from "../../../assets/projects/plots/vistaraplot.png"
 import goaplot from "../../../assets/projects/plots/goaplot.png"
 import purvankaraplot from "../../../assets/projects/plots/purvankaraplot.png"
+import sragveeCover from "../../../assets/projects/sragvee/sragvee-cover.jpg"
 
 
 export const projectCategories = ["All", "Plots", "Flats", "Villas"];
@@ -112,6 +113,11 @@ export const quickVideoGroups = {
       title: "Goa Villa Plots",
       region: "goa",
       slug: "goa-villa-plots",
+    },
+    {
+      title: "Sragvee Builders Layout",
+      region: "bangalore",
+      slug: "sragvee-builders-layout",
     },
   ],
 
@@ -502,6 +508,36 @@ export const projectsData = [
     ctaLabel: "Check Availability",
     phone: "9739014332",
     mapUrl: "https://t.ly/rbJri",
+    videoUrl: "#",
+  },
+  {
+    id: 13,
+    slug: "sragvee-builders-layout",
+    region: "bangalore",
+    category: "Plots",
+    title: "Sragvee Builders - Premium Plots",
+    location: "Chintamani, Bengaluru - Madanapalle Road",
+    price: "Price on Request",
+    status: "New Launch",
+    image: sragveeCover,
+    shortDesc:
+      "Thoughtfully master-planned plotted layout near Chintamani with wide roads, full amenities, and strong connectivity along the Bengaluru - Madanapalle corridor.",
+    overview: [
+      "9 Acres 17.5 Guntas master-planned layout",
+      "Plot sizes from 100x60 ft to 8.1 Guntas",
+      "9 km from Chintamani, 30 km from H Cross",
+      "Located on the Bengaluru to Madanapalle Road",
+    ],
+    highlights: [
+      "Clubhouse & Swimming Pool",
+      "Kids Playground",
+      "Indoor & Outdoor Games",
+      "24/7 CCTV Security",
+      "Gravel Roads & Water Pipeline",
+      "Compound Wall",
+    ],
+    ctaLabel: "Enquire Now",
+    phone: "9945399123",
     videoUrl: "#",
   },
 ];

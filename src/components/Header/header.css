@@ -7,9 +7,11 @@
 .auro-header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
   align-items: center;
   justify-content: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 /* Brand */
@@ -69,8 +71,9 @@
 /* ========================= */
 /* NAV LINKS */
 .auro-link {
-  font-weight: 700;
-  font-size: 0.96rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
   color: var(--text-body) !important;
   position: relative;
   padding-bottom: 6px;
@@ -80,6 +83,11 @@
 /* Hover color */
 .auro-link:hover {
   color: var(--text) !important;
+}
+
+/* Current page: a quiet nod to the logo's blue */
+.auro-link.active {
+  color: var(--navy) !important;
 }
 
 /* Underline base */
@@ -138,22 +146,23 @@
 .auro-dropdown {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 10px;
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-md, 10px);
+  padding: 8px;
+  box-shadow: var(--shadow-lg);
 }
 
 .auro-dd-item {
-  border-radius: 10px;
+  border-radius: var(--radius-sm, 6px);
   font-weight: 500;
   font-size: 0.95rem;
   padding: 10px 12px;
   color: var(--text-body);
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .auro-dd-item:hover {
-  background: rgba(210, 141, 36, 0.12);
-  color: var(--text);
+  background: var(--forest-tint);
+  color: var(--forest);
 }
 
 /* Desktop hover open */
@@ -170,22 +179,22 @@
 
 /* Button */
 .btn-consult {
-  background: var(--cta-primary);
+  background: var(--forest);
   border: 1px solid transparent;
   color: #fff;
-  font-weight: 800;
-  font-size: 0.94rem;
+  font-weight: 700;
+  font-size: 0.92rem;
   letter-spacing: 0.01em;
-  padding: 10px 15px;
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(243, 107, 24, 0.28);
+  padding: 11px 18px;
+  border-radius: var(--radius-md, 10px);
+  box-shadow: 0 10px 24px rgba(31, 58, 48, 0.22);
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .btn-consult:hover {
-  background: var(--hero-accent);
-  transition: all 0.3s ease;
+  background: var(--forest-dark);
   color: #fff;
-  border: 1px solid var(--hero-accent);
+  transform: translateY(-1px);
 }
 
 /* Toggler */

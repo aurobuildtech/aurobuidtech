@@ -13,36 +13,16 @@ export default function HeroQuote() {
 
           {/* LEFT */}
           <div className="heroLeft">
-            <div className="row align-items-center heroTopRow g-2 g-lg-3">
-              <div className="col-12 col-lg-auto heroTopBtnCol">
-                <a href="#highlights" className="heroHighlightsLink">
-                  <HighlightsBtn />
-                </a>
-              </div>
-
-              <div className="col-12 col-lg heroTopLineCol">
-                <div className="earthLineWrap">
-                  <p
-                    className="earthLine"
-                    aria-label="The best investment on earth is EARTH"
-                  >
-                    <span className="earthWord earthPlanetIcon">
-                      {/* <FaGlobeAmericas /> */}
-                    </span>
-                    <span className="earthWord earthWord1">The</span>
-                    <span className="earthWord earthWord2">best</span>
-                    <span className="earthWord earthWord3">investment</span>
-                    <span className="earthWord earthWord4">on</span>
-                    <span className="earthWord earthWord5">earth</span>
-                    <span className="earthWord earthWord6">is</span>
-                    <span className="earthWord earthPlanetIcon">
-                      <FaGlobeAmericas />
-                    </span>
-                    {/* <span className="earthWord earthWord7 earthAccent">EARTH</span> */}
-                  </p>
-                </div>
-              </div>
+            <div className="heroTopRow">
+              <a href="#highlights" className="heroHighlightsLink">
+                <HighlightsBtn />
+              </a>
             </div>
+
+            <p className="heroKicker">
+              <FaGlobeAmericas className="heroKickerIcon" aria-hidden="true" />
+              The best investment on earth is <em>Earth</em>
+            </p>
 
             <h1 className="heroTitle"  >
               Build it right.{" "}
@@ -57,7 +37,7 @@ solutions, and smart home automation. We help clients turn their vision into rea
 quality craftsmanship, transparent processes, and reliable project delivery.            </p>
 
             <div className="heroBtns">
-              <Link to="/contact" className="btn rounded-pill auro-btn-primary">
+              <Link to="/contact" className="btn heroPrimaryCta">
                 Get a Free Quote
               </Link>
             </div>

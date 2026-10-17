@@ -22,13 +22,13 @@
   margin-bottom: 12px;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(33, 79, 150, 0.95);
+  background: rgba(31, 58, 48, 0.95);
   color: #fff;
   font-size: 13px;
   font-weight: 600;
   box-shadow:
-    0 12px 28px rgba(33, 79, 150, 0.32),
-    0 0 22px rgba(243, 107, 24, 0.18);
+    0 12px 28px rgba(31, 58, 48, 0.32),
+    0 0 22px rgba(163, 121, 63, 0.18);
   backdrop-filter: blur(8px);
 }
 
@@ -60,7 +60,6 @@
   background: transparent;
   box-shadow: none;
   transition: transform 0.28s ease, filter 0.28s ease;
-  animation: hubFloatBob 4.2s ease-in-out infinite;
 }
 
 .hubFloatBtn::before {
@@ -106,7 +105,7 @@
   font-size: 0.92rem;
   font-weight: 800;
   letter-spacing: 0.01em;
-  color: var(--primary, #214f96);
+  color: var(--primary, #1f3a30);
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.35);
   white-space: nowrap;
 }
@@ -120,27 +119,17 @@
   border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow:
     0 24px 54px rgba(15, 23, 42, 0.16),
-    0 0 18px rgba(33, 79, 150, 0.08);
+    0 0 18px rgba(31, 58, 48, 0.08);
   backdrop-filter: blur(12px);
   animation: hubPanelRise 0.35s ease;
 }
 
-.hubPanel.plots {
-  box-shadow:
-    0 24px 54px rgba(12, 74, 43, 0.18),
-    0 0 26px rgba(34, 197, 94, 0.14);
-}
-
-.hubPanel.flats {
-  box-shadow:
-    0 24px 54px rgba(18, 52, 123, 0.18),
-    0 0 26px rgba(59, 130, 246, 0.14);
-}
-
+.hubPanel.plots,
+.hubPanel.flats,
 .hubPanel.villas {
   box-shadow:
-    0 24px 54px rgba(108, 52, 12, 0.18),
-    0 0 26px rgba(245, 158, 11, 0.14);
+    0 24px 54px rgba(31, 58, 48, 0.16),
+    0 0 22px rgba(163, 121, 63, 0.12);
 }
 
 .hubHeader {
@@ -258,15 +247,15 @@
 }
 
 .hubItemIcon.plots {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.14), rgba(240, 253, 244, 0.95));
+  background: linear-gradient(135deg, rgba(31, 58, 48, 0.14), rgba(247, 245, 239, 0.95));
 }
 
 .hubItemIcon.flats {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.14), rgba(239, 246, 255, 0.95));
+  background: linear-gradient(135deg, rgba(75, 80, 72, 0.14), rgba(247, 245, 239, 0.95));
 }
 
 .hubItemIcon.villas {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(255, 251, 235, 0.95));
+  background: linear-gradient(135deg, rgba(163, 121, 63, 0.16), rgba(247, 245, 239, 0.95));
 }
 
 .hubItemGlyph {
@@ -275,15 +264,15 @@
 }
 
 .hubItemIcon.plots .hubItemGlyph {
-  color: #15803d;
+  color: var(--forest, #1f3a30);
 }
 
 .hubItemIcon.flats .hubItemGlyph {
-  color: #1d4ed8;
+  color: var(--charcoal-soft, #4b5048);
 }
 
 .hubItemIcon.villas .hubItemGlyph {
-  color: #b45309;
+  color: var(--bronze-dark, #83602f);
 }
 
 .hubItemText {
@@ -302,16 +291,6 @@
 .hubItemText small {
   font-size: 0.84rem;
   color: #64748b;
-}
-
-@keyframes hubFloatBob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
 }
 
 @keyframes hubPanelRise {
@@ -377,7 +356,7 @@ body.dark .hubPanel {
   border-color: rgba(255, 255, 255, 0.08);
   box-shadow:
     0 24px 54px rgba(0, 0, 0, 0.45),
-    0 0 24px rgba(245, 115, 32, 0.1);
+    0 0 24px rgba(163, 121, 63, 0.1);
 }
 
 html[data-theme="dark"] .hubHeader,

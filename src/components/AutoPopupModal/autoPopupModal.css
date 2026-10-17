@@ -43,16 +43,16 @@
 
 /* Hover animation */
 .apmIconBtn{
-  background: var(--primary, #214f96);
+  background: var(--primary, #1f3a30);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(33, 79, 150, 0.28);
+  box-shadow: 0 6px 18px rgba(31, 58, 48, 0.28);
 }
 
 /* Optional platform colors */
 .apmIconBtn.whatsapp{
   background:#25D366;
-  box-shadow:6 6px 18px rgba(37,211,102,.45);
+  box-shadow: 0 6px 18px rgba(37,211,102,.45);
 }
 
 .apmIconBtn.phone:hover{

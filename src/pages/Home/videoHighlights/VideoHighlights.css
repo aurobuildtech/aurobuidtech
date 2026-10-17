@@ -68,9 +68,9 @@
   border-radius: 999px;
   font-weight: 900;
   font-size: 12px;
-  background: rgba(210,141,36,0.14);
-  color: var(--primary);
-  border: 1px solid rgba(210,141,36,0.25);
+  background: rgba(163, 121, 63, 0.14);
+  color: var(--bronze-dark);
+  border: 1px solid rgba(163, 121, 63, 0.25);
 }
 
 .vhCardTitle{
@@ -95,7 +95,7 @@
   font-weight: 900;
   text-decoration: none;
   color: var(--text);
-  border-bottom: 2px solid rgba(210,141,36,0.35);
+  border-bottom: 2px solid rgba(163, 121, 63, 0.35);
 }
 
 .vhBtn:hover{

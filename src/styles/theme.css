@@ -1,26 +1,68 @@
 /* =========================
-   THEME TOKENS
+   AURO BUILDTECH — DESIGN SYSTEM
+   Premium architectural theme: deep forest green,
+   charcoal typography, warm ivory surfaces, bronze/champagne accent.
 ========================= */
 
-   /* LIGHT */
-   :root{
-    --bg: #ffffff;
-    --surface: #ffffff;
-    --text: #111827;
-    --muted: #6b7280;
-  
-    --brand-blue: #214f96;
-    --brand-blue-dark: #183d78;
-    --brand-orange: #f36b18;
-    --brand-orange-dark: #d85b12;
+:root {
+  /* ---- Neutral base ---- */
+  --ivory: #f7f5ef;
+  --ivory-deep: #efeadd;
+  --stone: #e7e1d2;
+  --stone-dark: #d6cdb6;
+  --charcoal: #22262a;
+  --charcoal-soft: #4b5048;
+  --charcoal-muted: #767c76;
 
-    --primary:   var(--brand-blue);
-    --primary-2: var(--brand-orange);
-    --border:    #e5e7eb;
-    --shadow:     0 10px 30px rgba(0,0,0,0.08);
-  }
+  /* ---- Brand: deep forest green ---- */
+  --forest: #1f3a30;
+  --forest-dark: #142823;
+  --forest-light: #2e5447;
+  --forest-tint: rgba(31, 58, 48, 0.08);
 
- html,
+  /* ---- Brand: bronze / champagne accent ---- */
+  --bronze: #a3793f;
+  --bronze-dark: #83602f;
+  --bronze-light: #c9a36b;
+  --champagne: #ddc89b;
+
+  /* ---- Logo-nod accent: a deepened, desaturated version of the
+     logo's blue — used sparingly for brand continuity, not as a
+     dominant UI color ---- */
+  --navy: #253e5c;
+
+  /* ---- Legacy token names (kept so existing components cascade) ---- */
+  --bg: var(--ivory);
+  --surface: #ffffff;
+  --text: var(--charcoal);
+  --muted: var(--charcoal-muted);
+
+  --brand-blue: var(--forest);
+  --brand-blue-dark: var(--forest-dark);
+  --brand-orange: var(--bronze);
+  --brand-orange-dark: var(--bronze-dark);
+
+  --primary: var(--forest);
+  --primary-2: var(--bronze);
+  --border: #e4ddcc;
+  --shadow: 0 10px 30px rgba(31, 58, 48, 0.10);
+  --shadow-sm: 0 4px 14px rgba(31, 58, 48, 0.08);
+  --shadow-lg: 0 24px 60px rgba(20, 24, 22, 0.16);
+
+  /* ---- Radius & spacing scale ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+}
+
+html,
 body {
   overflow-x: hidden;
   margin: 0;
@@ -33,7 +75,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
   padding-bottom: 84px;
@@ -43,22 +85,25 @@ body {
 }
 
 :root {
-  --text-strong: #0f172a;
-  --text-body: #475569;
-  --text-soft: #64748b;
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
 
-  --fs-display: clamp(2.4rem, 5vw, 4.35rem);
-  --fs-h1: clamp(2.1rem, 4vw, 3.5rem);
-  --fs-h2: clamp(1.75rem, 3vw, 2.7rem);
-  --fs-h3: clamp(1.35rem, 2.2vw, 1.85rem);
-  --fs-h4: clamp(1.15rem, 1.7vw, 1.35rem);
+  --text-strong: var(--charcoal);
+  --text-body: #454b46;
+  --text-soft: #767c76;
+
+  --fs-display: clamp(2.3rem, 4.6vw, 4rem);
+  --fs-h1: clamp(2rem, 3.6vw, 3.1rem);
+  --fs-h2: clamp(1.65rem, 2.8vw, 2.4rem);
+  --fs-h3: clamp(1.3rem, 2vw, 1.7rem);
+  --fs-h4: clamp(1.1rem, 1.5vw, 1.25rem);
   --fs-body: 1rem;
   --fs-body-sm: 0.95rem;
-  --fs-caption: 0.84rem;
+  --fs-caption: 0.82rem;
 
-  --lh-tight: 1.1;
-  --lh-heading: 1.18;
-  --lh-body: 1.78;
+  --lh-tight: 1.12;
+  --lh-heading: 1.2;
+  --lh-body: 1.75;
 }
 
 h1,
@@ -71,10 +116,11 @@ h6,
 .display-2,
 .display-3,
 .display-4 {
+  font-family: var(--font-display);
   color: var(--text-strong);
   line-height: var(--lh-heading);
-  letter-spacing: -0.03em;
-  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-weight: 650;
   margin-top: 0;
 }
 
@@ -119,6 +165,7 @@ input,
 select,
 textarea {
   font: inherit;
+  font-family: var(--font-body);
 }
 
 .lead {
@@ -131,56 +178,122 @@ a {
   color: inherit;
 }
 
+/* ---- Focus visibility (accessibility) ---- */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 2px;
+}
+
 @media (max-width: 768px) {
   html,
   body {
     padding-bottom: 132px;
   }
 }
-  
-  /* ✅ LIGHT MODE BACKGROUND */
-/* LIGHT MODE BACKGROUND */
-/* LIGHT MODE - Professional Neutral Theme */
-.app-bg{
-  background:
-  radial-gradient(circle at 20% 20%, rgba(240, 244, 248, 0.9), transparent 55%),
-    radial-gradient(circle at 20% 20%, rgba(240, 244, 248, 0.9), transparent 55%),
-    radial-gradient(circle at 80% 15%, rgba(255, 248, 230, 0.9), transparent 55%),
-    linear-gradient(180deg, #ffffff 0%, #f6f8fb 60%, #ffffff 100%);
+
+/* =========================
+   GLOBAL SURFACE
+========================= */
+.app-bg {
+  background: linear-gradient(180deg, var(--ivory) 0%, #ffffff 45%, var(--ivory) 100%);
   min-height: 100vh;
 }
 
-
-
-/* 
-heroQuotes
-*/
-/* LIGHT MODE (default) */
-:root{
-  --hero-accent: var(--brand-orange);
-  --cta-primary: linear-gradient(135deg, var(--brand-blue), var(--brand-orange));
-  --cta-primary-hover: var(--brand-orange-dark);
+/* =========================
+   BOOTSTRAP COMPONENT OVERRIDES
+   (keeps markup/classes intact, retints to design system)
+========================= */
+.btn {
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 
-/* 
-heroQuotes
-*/
-/* cursorDust  */
-
-/* LIGHT THEME (default) */
-:root{
-  --dust-c1: rgba(33, 79, 150, 0.28);
-  --dust-c2: rgba(243, 107, 24, 0.22);
-  --dust-c3: rgba(33, 79, 150, 0.2);
-  --dust-glow: rgba(33, 79, 150, 0.24);
+.btn-primary {
+  background-color: var(--forest);
+  border-color: var(--forest);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--forest-dark);
+  border-color: var(--forest-dark);
 }
 
-/* cursorDust  */
+.btn-outline-primary {
+  color: var(--forest);
+  border-color: var(--forest);
+}
+.btn-outline-primary:hover {
+  background-color: var(--forest);
+  border-color: var(--forest);
+}
 
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
 
-/* .app-bg{
-  background: linear-gradient(180deg, #ffffff 0%, #f5f7fa 60%, #ffffff 100%);
-} */
+.badge {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.form-control,
+.form-select {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+  color: var(--text);
+  padding: 0.65rem 0.9rem;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--forest);
+  box-shadow: 0 0 0 3px var(--forest-tint);
+}
+.form-control::placeholder {
+  color: var(--text-soft);
+}
+.form-control:disabled,
+.form-select:disabled {
+  background-color: var(--ivory-deep);
+  color: var(--text-soft);
+}
+
+/* ✅ LIGHT MODE BACKGROUND */
+/* LIGHT MODE - Professional Neutral Theme */
+.app-bg {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(31, 58, 48, 0.05), transparent 55%),
+    radial-gradient(circle at 82% 12%, rgba(163, 121, 63, 0.06), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, var(--ivory) 60%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+/*
+heroQuotes
+*/
+:root {
+  --hero-accent: var(--bronze);
+  --cta-primary: var(--forest);
+  --cta-primary-hover: var(--forest-dark);
+}
+
+/* cursorDust */
+:root {
+  --dust-c1: rgba(31, 58, 48, 0.26);
+  --dust-c2: rgba(163, 121, 63, 0.22);
+  --dust-c3: rgba(31, 58, 48, 0.18);
+  --dust-glow: rgba(31, 58, 48, 0.22);
+}
 
 @media (min-width: 1200px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl {
@@ -190,9 +303,9 @@ heroQuotes
 
 @media (max-width: 991px) {
   :root {
-    --fs-h1: clamp(1.95rem, 5vw, 2.8rem);
-    --fs-h2: clamp(1.55rem, 4.2vw, 2.15rem);
-    --fs-h3: clamp(1.25rem, 3.5vw, 1.6rem);
+    --fs-h1: clamp(1.85rem, 4.6vw, 2.5rem);
+    --fs-h2: clamp(1.5rem, 3.8vw, 1.95rem);
+    --fs-h3: clamp(1.2rem, 3.2vw, 1.5rem);
     --fs-body: 1.02rem;
     --fs-body-sm: 0.93rem;
     --lh-body: 1.72;
@@ -201,9 +314,9 @@ heroQuotes
 
 @media (max-width: 576px) {
   :root {
-    --fs-h1: clamp(1.75rem, 7vw, 2.35rem);
-    --fs-h2: clamp(1.4rem, 5.6vw, 1.9rem);
-    --fs-h3: clamp(1.15rem, 4.6vw, 1.45rem);
+    --fs-h1: clamp(1.7rem, 6.4vw, 2.1rem);
+    --fs-h2: clamp(1.35rem, 5vw, 1.7rem);
+    --fs-h3: clamp(1.12rem, 4.2vw, 1.35rem);
     --fs-body: 0.98rem;
     --fs-body-sm: 0.9rem;
     --fs-caption: 0.8rem;
@@ -211,77 +324,58 @@ heroQuotes
   }
 }
 
-/* carosuel */
-
-/* LIGHT DEFAULT */
+/* carousel */
 :root {
   --hero-title: #ffffff;
-  --hero-subtitle: rgba(255,255,255,0.78);
+  --hero-subtitle: rgba(255, 255, 255, 0.82);
 
-  --cta-bg: #f1b24a;          /* gold */
-  --cta-text: #111827;
-  --cta-bg-hover: #e2a23e;
+  --cta-bg: var(--bronze-light);
+  --cta-text: #22261f;
+  --cta-bg-hover: var(--bronze);
 
-  --cta-outline-border: rgba(255,255,255,0.55);
+  --cta-outline-border: rgba(255, 255, 255, 0.55);
   --cta-outline-text: #ffffff;
-  --cta-outline-hover-bg: rgba(255,255,255,0.12);
+  --cta-outline-hover-bg: rgba(255, 255, 255, 0.12);
 
-  --badge-bg: rgba(241,178,74,0.95);
-  --badge-text: #111827;
-}
-
-/* carosuel */
-
-
-/* statsCounter */
-
-:root{
-  --stats-bg: rgba(255,255,255,0.75);  /* light */
+  --badge-bg: rgba(221, 200, 155, 0.95);
+  --badge-text: #22261f;
 }
 
 /* statsCounter */
-
-
-/* CTA */
-
-:root{
-  --cta-surface: rgba(255,255,255,0.85);
-  --cta-card: rgba(255,255,255,0.92);
-  --cta-border: rgba(15,23,42,0.10);
-
-  --cta-title: rgba(15,23,42,0.92);
-  --cta-muted: rgba(15,23,42,0.68);
-
-  --cta-icon-bg: rgba(241,178,74,0.22);
-  --cta-icon-color: #b78100;
-
-  --cta-primary-bg: linear-gradient(135deg,#f6c453,#f1b24a);
-  --cta-primary-text: #0b0b0c;
-
-  --cta-outline-border: rgba(15,23,42,0.25);
-  --cta-outline-text: rgba(15,23,42,0.92);
-  --cta-outline-hover: rgba(15,23,42,0.06);
+:root {
+  --stats-bg: rgba(255, 255, 255, 0.82);
 }
 
 /* CTA */
+:root {
+  --cta-surface: rgba(255, 255, 255, 0.9);
+  --cta-card: rgba(255, 255, 255, 0.96);
+  --cta-border: rgba(31, 58, 48, 0.12);
 
+  --cta-title: var(--text-strong);
+  --cta-muted: var(--text-body);
 
-/* testimonialsVeidos */
+  --cta-icon-bg: rgba(163, 121, 63, 0.16);
+  --cta-icon-color: var(--bronze-dark);
 
-:root{
+  --cta-primary-bg: var(--forest);
+  --cta-primary-text: #ffffff;
+
+  --cta-outline-border: rgba(31, 58, 48, 0.25);
+  --cta-outline-text: var(--text-strong);
+  --cta-outline-hover: rgba(31, 58, 48, 0.06);
+}
+
+/* testimonialsVideos */
+:root {
   --ts-title: var(--text);
   --ts-sub: var(--muted);
-  --ts-quote: rgba(15,23,42,0.82);
+  --ts-quote: rgba(34, 38, 42, 0.82);
 
-  --ts-card-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
-  --ts-avatar-bg: #e2e8f0;
-  --ts-avatar-icon: #475569;
+  --ts-card-shadow: 0 18px 50px rgba(31, 58, 48, 0.12);
+  --ts-avatar-bg: var(--ivory-deep);
+  --ts-avatar-icon: var(--forest);
 
-  --ts-star: rgb(210,141,36); /* uses your orange */
-  --ts-play: rgb(210,141,36);
+  --ts-star: var(--bronze);
+  --ts-play: var(--bronze);
 }
-
-/* testimonialsVeidos */
-
-
-

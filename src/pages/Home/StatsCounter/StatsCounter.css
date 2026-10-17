@@ -40,7 +40,7 @@
   }
   
   .statValue {
-    color: var(--text);
+    color: var(--navy, var(--text));
     font-weight: 800;
     font-size: 30px;
     line-height: 1.1;

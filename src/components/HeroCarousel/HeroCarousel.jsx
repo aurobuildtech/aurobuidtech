@@ -91,7 +91,7 @@ export default function HeroCarousel() {
 
               <div className="carousel-caption  auro-caption">
                 <div className="d-flex align-items-center gap-2">
-                  <h3 className="badge p-3 fw-bold rounded-pill auro-badge">{slide.badge}</h3>
+                  <h3 className="badge p-3 fw-bold auro-badge">{slide.badge}</h3>
                 </div>
 
                 <h2 className="fw-bold mt-3 auro-caption-title" style={{ whiteSpace: "pre-line" }}>
@@ -101,11 +101,11 @@ export default function HeroCarousel() {
                 <p className="mt-3 auro-caption-subtitle">{slide.subtitle}</p>
 
                 <div className="d-flex gap-3 mt-4 flex-wrap">
-                  <Link to="/contact" className="btn rounded-pill auro-btn-primary">
+                  <Link to="/contact" className="btn auro-btn-primary">
                     Schedule Consultation
                   </Link>
 
-                  <Link to="/projects" className="btn rounded-pill auro-btn-outline auro-btn-center">
+                  <Link to="/projects" className="btn auro-btn-outline auro-btn-center">
                     View All Projects →
                   </Link>
 

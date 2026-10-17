@@ -17,12 +17,14 @@ export default function ServiceSingle() {
   const { serviceId } = useParams();
   const [imgLoaded, setImgLoaded] = useState(false);
 
- 
   /* ✅ CASE 2: /services/:serviceId → single service page */
   const service = servicesData.find((s) => s.id === serviceId);
-  if (!service) return <Navigate to="/services" replace />;
 
-  const bannerImg = Array.isArray(service.img) ? service.img[0] : service.img;
+  const bannerImg = service
+    ? Array.isArray(service.img)
+      ? service.img[0]
+      : service.img
+    : null;
 
   useEffect(() => {
     setImgLoaded(false);
@@ -82,6 +84,8 @@ export default function ServiceSingle() {
     }),
     []
   );
+
+  if (!service) return <Navigate to="/services" replace />;
 
   const meta = serviceMetaMap[serviceId] || {
     title: `${service.title} | Auro BuildTech`,

@@ -130,7 +130,7 @@ export default function VideoHighlights() {
           href="https://www.youtube.com"
           target="_blank"
           rel="noreferrer"
-          className="btn btn-dark rounded-pill px-4"
+          className="btn btn-dark px-4"
         >
           Visit Our YouTube Channel
         </a>

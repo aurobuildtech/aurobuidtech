@@ -51,10 +51,10 @@
 
 /* THEME VARIABLES */
 :root{
-  --cs-text: #1f1b18;
-  --cs-muted: rgba(0,0,0,.65);
-  --cs-card: rgba(0,0,0,.08);
-  --cs-shadow: 0 12px 30px rgba(0,0,0,.18);
+  --cs-text: var(--charcoal, #22262a);
+  --cs-muted: var(--text-body, #454b46);
+  --cs-card: rgba(31, 58, 48, 0.08);
+  --cs-shadow: 0 12px 30px rgba(31, 58, 48, 0.18);
 }
 
 [data-theme="dark"], .dark, body.dark{
@@ -97,19 +97,18 @@
 
   /* light gradient bg */
   background:
-    radial-gradient(circle at 20% 10%, rgba(255, 180, 200, 0.55), transparent 45%),
-    radial-gradient(circle at 80% 25%, rgba(170, 220, 255, 0.65), transparent 45%),
-    radial-gradient(circle at 35% 90%, rgba(200, 170, 255, 0.50), transparent 50%),
-    linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.82));
+    radial-gradient(circle at 20% 10%, rgba(31, 58, 48, 0.07), transparent 45%),
+    radial-gradient(circle at 80% 25%, rgba(163, 121, 63, 0.10), transparent 45%),
+    linear-gradient(135deg, rgba(255,255,255,0.96), var(--ivory));
 }
 
 [data-theme="dark"] .cs-right,
 .dark .cs-right,
 body.dark .cs-right{
   background:
-    radial-gradient(circle at 20% 10%, rgba(245,115,32,0.18), transparent 45%),
-    radial-gradient(circle at 80% 25%, rgba(80,150,255,0.18), transparent 45%),
-    linear-gradient(135deg, rgb(170 80 2), rgb(6 3 1));
+    radial-gradient(circle at 20% 10%, rgba(163, 121, 63, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 25%, rgba(31, 58, 48, 0.22), transparent 45%),
+    linear-gradient(135deg, var(--forest), var(--forest-dark));
 }
 
 /* TOP ROW */

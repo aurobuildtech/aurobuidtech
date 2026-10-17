@@ -13,6 +13,7 @@ const TestimonialsVideo = lazy(() => import("./TestimonialsVideo/TestimonialsVid
 const ClientsStrip = lazy(() => import("./ClientsStrip/ClientsStrip"));
 const ProjectCTA = lazy(() => import("./ProjectCTA/ProjectCTA"));
 const AutoPopupModal = lazy(() => import("../../components/AutoPopupModal/AutoPopupModal"));
+const LatestCollectionPopup = lazy(() => import("../../components/LatestCollectionPopup/LatestCollectionPopup"));
 const HeroQuote = lazy(() => import("./HeroQuote/HeroQuote"));
 const VideoHighlights = lazy(() => import("./videoHighlights/VideoHighlights"));
 
@@ -110,7 +111,7 @@ export default function Home() {
 
         <meta name="author" content="Auro BuildTech" />
         <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#214f96" />
+        <meta name="theme-color" content="#1f3a30" />
 
         <meta
           property="og:title"
@@ -149,6 +150,12 @@ export default function Home() {
         onClose={handleOfferClose}
         onProceed={handleOfferProceed}
       /> */}
+
+      <LazySection forceMount placeholderHeight={0}>
+        <Suspense fallback={null}>
+          <LatestCollectionPopup delay={1200} />
+        </Suspense>
+      </LazySection>
 
       <section className="container py-3 home-block">
         {

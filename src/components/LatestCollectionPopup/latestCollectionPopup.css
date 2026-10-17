@@ -1,0 +1,253 @@
+.lcpBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(20, 24, 22, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  animation: lcpFadeIn 0.3s ease;
+}
+
+.lcpCard {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl, 22px);
+  background: #ffffff;
+  box-shadow: var(--shadow-lg);
+  animation: lcpPopIn 0.35s ease;
+}
+
+.lcpClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.lcpClose:hover {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* ---------- MEDIA ---------- */
+.lcpMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--ivory-deep);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.lcpSlideImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.lcpSlideImg.is-active {
+  opacity: 1;
+}
+
+.lcpMediaOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 24, 22, 0.35), transparent 45%);
+  pointer-events: none;
+}
+
+.lcpArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--charcoal);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lcpArrow:hover {
+  background: #ffffff;
+}
+
+.lcpArrowPrev {
+  left: 12px;
+}
+
+.lcpArrowNext {
+  right: 12px;
+}
+
+.lcpDots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.lcpDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lcpDot.is-active {
+  background: #ffffff;
+  transform: scale(1.25);
+}
+
+/* ---------- CONTENT ---------- */
+.lcpContent {
+  padding: 22px 26px 26px;
+}
+
+.lcpEyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bronze-dark);
+}
+
+.lcpTitle {
+  margin: 6px 0 8px;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  color: var(--text-strong);
+}
+
+.lcpText {
+  margin: 0;
+  color: var(--text-body);
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+.lcpActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.lcpPrimaryBtn {
+  background: var(--forest);
+  color: #fff;
+  border: none;
+  padding: 11px 20px;
+  border-radius: var(--radius-md, 10px);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.lcpPrimaryBtn:hover {
+  background: var(--forest-dark);
+  color: #fff;
+}
+
+.lcpGhostBtn {
+  background: transparent;
+  color: var(--text-body);
+  border: 1px solid var(--border);
+  padding: 11px 18px;
+  border-radius: var(--radius-md, 10px);
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.lcpGhostBtn:hover {
+  background: var(--ivory-deep);
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes lcpFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lcpPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lcpBackdrop,
+  .lcpCard,
+  .lcpSlideImg {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 576px) {
+  .lcpContent {
+    padding: 18px 18px 20px;
+  }
+
+  .lcpTitle {
+    font-size: 1.15rem;
+  }
+
+  .lcpText {
+    font-size: 0.9rem;
+  }
+
+  .lcpActions .btn {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .lcpArrow {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+}

@@ -59,12 +59,12 @@ import "./projectCTA.css";
               and discover how we can bring your construction dreams to life.
             </p>
             <div className="d-flex justify-content-center gap-3 flex-wrap mt-4">
-            <a href="#contact" className="btn rounded-pill px-4 py-2 fw-semibold auro-cta-primary">
+            <a href="#contact" className="btn px-4 py-2 fw-semibold auro-cta-primary">
                 <i className="bi bi-calendar2-plus me-2"></i>
                 Schedule Free Consultation
               </a>
 
-              <a href="tel:+915551234567" className="btn rounded-pill px-4 py-2 fw-semibold auro-cta-outline">                <i className="bi bi-telephone me-2"></i>
+              <a href="tel:+915551234567" className="btn px-4 py-2 fw-semibold auro-cta-outline">                <i className="bi bi-telephone me-2"></i>
                 Call (+91) 99453 99123
               </a>
             </div>

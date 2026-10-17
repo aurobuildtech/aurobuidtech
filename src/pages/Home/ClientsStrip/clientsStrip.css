@@ -6,12 +6,12 @@
     max-width: 1100px;
     margin: auto;
     padding: 22px 28px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg, 16px);
     background: linear-gradient(
       90deg,
-      #2f3c4f 0%,
-      #3b475a 50%,
-      #b89272 100%
+      var(--forest-dark) 0%,
+      var(--forest) 55%,
+      var(--bronze) 100%
     );
     color: #fff;
     display: flex;
@@ -26,6 +26,11 @@
     margin: 0;
     font-size: 15px;
     font-weight: 500;
+    color: #fff;
+  }
+
+  .clientsText strong {
+    color: var(--champagne, #ddc89b);
   }
   
   .clientsAvatars {
@@ -37,12 +42,12 @@
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: #e2e8f0;
+    background: var(--ivory-deep);
     display: grid;
     place-items: center;
     margin-left: -10px;
     border: 2px solid #fff;
-    color: #64748b;
+    color: var(--charcoal-soft);
     font-size: 20px;
   }
   

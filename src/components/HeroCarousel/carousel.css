@@ -87,14 +87,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ffd56b, #f1b24a) !important;
-  color: #0b0b0c !important;
+  background: #ffffff !important;
+  color: var(--forest, #1f3a30) !important;
   padding: 10px 22px !important;
   font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.4px;
-  border-radius: 999px !important;
-  box-shadow: 0 8px 22px rgba(241, 178, 74, 0.35);
+  border-radius: var(--radius-sm, 6px) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
   margin-bottom: 14px;
 }
 
@@ -102,7 +102,7 @@
    TITLE
 ========================= */
 .auro-caption-title {
-  color: #ffd56b;
+  color: #ddc89b;
   font-size: clamp(2rem, 3.3vw, 3.1rem);
   font-weight: 900;
   line-height: 1.1;
@@ -146,7 +146,7 @@
 .auro-btn-outline {
   min-height: 48px;
   padding: 12px 24px;
-  border-radius: 999px !important;
+  border-radius: var(--radius-sm, 6px) !important;
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.2px;
@@ -154,12 +154,14 @@
 }
 
 .auro-btn-primary {
-  background: linear-gradient(135deg, #214f96, #f36b18);
+  background: var(--forest, #1f3a30);
   color: #fff !important;
   border: none !important;
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.auro-btn-primary:hover {
+  background: var(--forest-dark, #142823);
 }
 
 .auro-btn-primary:hover {
@@ -198,7 +200,7 @@
   height: 4px;
   margin: 0 5px;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-sm, 6px);
   background-color: rgba(255, 255, 255, 0.45);
   opacity: 1;
 }

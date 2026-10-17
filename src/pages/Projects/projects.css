@@ -49,7 +49,7 @@
 .projectsMiniBadge {
   display: inline-block;
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm, 6px);
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(8px);
   font-weight: 600;
@@ -126,43 +126,44 @@
 
 .projectTabs {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
-  padding: 10px;
-  background: #f5f7fb;
-  border: 1px solid #e9edf4;
-  border-radius: 999px;
+  padding: 8px;
+  background: var(--ivory-deep, #efeadd);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
 }
 
 .projectTabBtn {
   border: none;
   background: transparent;
   padding: 11px 20px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm, 6px);
   font-weight: 600;
-  color: #334155;
+  color: var(--text-body);
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .projectTabBtn.active {
   background: var(--cta-primary);
   color: #fff;
-  box-shadow: 0 10px 24px rgba(33, 79, 150, 0.22);
+  box-shadow: 0 10px 24px rgba(31, 58, 48, 0.22);
 }
 
 /* GRID */
 .projectCard {
-  border-radius: 24px;
+  border-radius: var(--radius-lg, 16px);
   overflow: hidden;
-  border: 1px solid #e9edf3;
+  border: 1px solid var(--border);
   background: #fff;
-  box-shadow: 0 16px 34px rgba(16, 24, 40, 0.06);
+  box-shadow: var(--shadow-sm);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .projectCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 42px rgba(16, 24, 40, 0.12);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
 .projectCardMedia {
@@ -187,7 +188,7 @@
   position: absolute;
   top: 16px;
   padding: 8px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm, 6px);
   font-size: 0.82rem;
   font-weight: 700;
   backdrop-filter: blur(6px);
@@ -195,7 +196,7 @@
 
 .projectCategoryTag {
   left: 16px;
-  background: rgba(33, 79, 150, 0.95);
+  background: rgba(31, 58, 48, 0.95);
   color: #fff;
 }
 
@@ -220,7 +221,7 @@
 }
 
 .projectLocation {
-  color: #64748b;
+  color: var(--text-soft);
   margin-bottom: 8px;
   font-weight: 500;
 }
@@ -228,12 +229,12 @@
 .projectPrice {
   font-size: 1.02rem;
   font-weight: 800;
-  color: var(--primary, #214f96);
+  color: var(--primary, #1f3a30);
   margin-bottom: 10px;
 }
 
 .projectDesc {
-  color: #5b6472;
+  color: var(--text-body);
   line-height: 1.7;
 }
 
@@ -247,7 +248,7 @@
 
 .projectHighlightsMini li {
   font-size: 0.94rem;
-  color: #334155;
+  color: var(--text-body);
   background: #f8fafc;
   border: 1px solid #eef2f7;
   padding: 10px 12px;
@@ -267,7 +268,7 @@
 }
 
 .projectDetailsImageWrap {
-  border-radius: 26px;
+  border-radius: var(--radius-lg, 16px);
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(16, 24, 40, 0.1);
 }
@@ -305,7 +306,7 @@
 
 .projectDetailBlock li {
   margin-bottom: 10px;
-  color: #475569;
+  color: var(--text-body);
   line-height: 1.7;
 }
 
@@ -333,7 +334,7 @@
   }
 
   .projectTabs {
-    border-radius: 22px;
+    border-radius: var(--radius-md, 10px);
     justify-content: center;
   }
 
@@ -346,7 +347,7 @@
   text-align: center;
   padding: 60px 20px;
   border: 1px dashed var(--border, #d9dee6);
-  border-radius: 24px;
+  border-radius: var(--radius-lg, 16px);
   background: rgba(0, 0, 0, 0.02);
 }
 
@@ -394,9 +395,9 @@ body.dark .projectDetailBlock li {
 /* badge */
 html[data-theme="dark"] .projectsMiniBadge,
 body.dark .projectsMiniBadge {
-  background: rgba(245, 115, 32, 0.12);
-  color: rgb(245 115 32);
-  border: 1px solid rgba(245, 115, 32, 0.18);
+  background: rgba(163, 121, 63, 0.12);
+  color: rgb(163 121 63);
+  border: 1px solid rgba(163, 121, 63, 0.18);
 }
 
 /* tabs wrapper */
@@ -419,11 +420,11 @@ body.dark .projectTabBtn:hover {
 
 html[data-theme="dark"] .projectTabBtn.active,
 body.dark .projectTabBtn.active {
-  background: linear-gradient(135deg, rgb(245 115 32), #b45309);
+  background: linear-gradient(135deg, rgb(163 121 63), #83602f);
   color: #fff;
   box-shadow:
-    0 10px 24px rgba(245, 115, 32, 0.22),
-    0 0 18px rgba(245, 115, 32, 0.10);
+    0 10px 24px rgba(163, 121, 63, 0.22),
+    0 0 18px rgba(163, 121, 63, 0.10);
 }
 
 /* cards */
@@ -438,13 +439,13 @@ html[data-theme="dark"] .projectCard:hover,
 body.dark .projectCard:hover {
   box-shadow:
     0 22px 46px rgba(0, 0, 0, 0.46),
-    0 0 0 1px rgba(245, 115, 32, 0.10);
+    0 0 0 1px rgba(163, 121, 63, 0.10);
 }
 
 /* category tag */
 html[data-theme="dark"] .projectCategoryTag,
 body.dark .projectCategoryTag {
-  background: rgba(245, 115, 32, 0.95);
+  background: rgba(163, 121, 63, 0.95);
   color: #fff;
 }
 
@@ -464,7 +465,7 @@ body.dark .projectLocation {
 
 html[data-theme="dark"] .projectPrice,
 body.dark .projectPrice {
-  color: rgb(245 115 32);
+  color: rgb(163 121 63);
 }
 
 /* highlights */
@@ -500,5 +501,5 @@ body.dark .projectsEmptyState p {
 
 html[data-theme="dark"].dark-btn {
     box-shadow: 2px 2px 5px orangered;
-    background-color: linear-gradient(135deg, rgb(245 115 32), #b45309);;
+    background-color: linear-gradient(135deg, rgb(163 121 63), #83602f);;
 }
