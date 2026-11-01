@@ -41,7 +41,7 @@ export default function Footer() {
                 <Link to="/" className="navbar-brand d-flex align-items-center auro-brand">
                   <img
                     src={auroicon}
-                    alt="Auro logo"
+                    alt="SkyZen Aurobuildtech logo"
                     className="auro-logo"
                   />
                 </Link>
@@ -88,7 +88,7 @@ export default function Footer() {
                 <h6 className="fw-bold">Contact Info</h6>
 
                 <ul className="list-unstyled footer-links mt-3">
-                  <li><i className="bi bi-geo-alt"></i>Auro BuildTech, Kadagrahara Rd, <br /> Bengaluru, Karnataka-560049 </li>
+                  <li><i className="bi bi-geo-alt"></i>SkyZen Aurobuildtech, Kadagrahara Rd, <br /> Bengaluru, Karnataka-560049 </li>
                   <li><i className="bi bi-telephone"></i> (+91)99453 99123</li>
                   <li><i className="bi bi-clock"></i> Mon–Fri: 8AM–6PM</li>
                 </ul>
@@ -107,7 +107,7 @@ export default function Footer() {
         {/* <section className="d-flex  auro-copyright gap-5 justify-content-around justify-content-lg-around p-3 align-items-center border-bottom border-light"> */}
         {/* <!-- Left --> */}
         {/* <div className="me-5 d-none d-lg-block">
-             © 2026 <a className="fw-bold" href="#">AURO BUILDTECH</a> — All rights reserved.
+             © 2026 <a className="fw-bold" href="#">SkyZen Aurobuildtech</a> — All rights reserved.
           </div> */}
         {/* <!-- Left --> */}
 
@@ -126,7 +126,7 @@ export default function Footer() {
 
         <section className="auro-copyright d-flex justify-content-between align-items-center flex-wrap">
           <div className="auro-copy-text">
-            © 2026 <a className="fw-bold" href="#">AURO BUILDTECH</a> — All rights reserved.
+            © 2026 <a className="fw-bold" href="#">SkyZen Aurobuildtech</a> — All rights reserved.
           </div>
 
           <div className="auro-socials">
@@ -162,7 +162,7 @@ export default function Footer() {
 
 
 
-      {/* © 2026 <a className="fw-bold" href="#">AURO BUILDTECH</a> — All rights reserved. */}
+      {/* © 2026 <a className="fw-bold" href="#">SkyZen Aurobuildtech</a> — All rights reserved. */}
 
     </>
 

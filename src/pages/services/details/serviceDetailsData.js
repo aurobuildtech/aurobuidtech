@@ -26,7 +26,7 @@ export const serviceDetailsData = {
       {
         id: "ha1",
         title: "Smart lighting automation",
-        p1: "Auro BuildTech Projects delivers advanced smart lighting automation solutions that enhance comfort, energy efficiency, and modern living experiences. Our intelligent lighting systems allow homeowners to control, schedule, and customize lighting through mobile apps, voice commands, or centralized control panels.",
+        p1: "SkyZen Aurobuildtech delivers advanced smart lighting automation solutions that enhance comfort, energy efficiency, and modern living experiences. Our intelligent lighting systems allow homeowners to control, schedule, and customize lighting through mobile apps, voice commands, or centralized control panels.",
         p2: "By integrating motion sensors, dimming controls, scene settings, and daylight sensors, we create adaptive lighting environments that automatically adjust based on occupancy, time of day, and natural light levels.",
 
         bulletsTitle: "Our smart lighting solutions include:",
@@ -43,14 +43,14 @@ export const serviceDetailsData = {
         ],
 
         closing:
-          "With smart lighting automation from Auro BuildTech Projects, homeowners enjoy enhanced ambiance, reduced energy consumption, improved security, and seamless control — all designed for modern, tech-enabled living.",
+          "With smart lighting automation from SkyZen Aurobuildtech, homeowners enjoy enhanced ambiance, reduced energy consumption, improved security, and seamless control — all designed for modern, tech-enabled living.",
 
         image: homeauto1,
       },
       {
         id: "ha2",
         title: "Intelligent security & surveillance systems",
-        p1: "Auro BuildTech Projects offers smart home automation solutions integrated with advanced CCTV surveillance systems to enhance safety, control, and convenience for modern homes and commercial spaces.",
+        p1: "SkyZen Aurobuildtech offers smart home automation solutions integrated with advanced CCTV surveillance systems to enhance safety, control, and convenience for modern homes and commercial spaces.",
         p2: "Our solutions enable real-time monitoring, remote access, and intelligent threat detection through:",
 
         bullets: [

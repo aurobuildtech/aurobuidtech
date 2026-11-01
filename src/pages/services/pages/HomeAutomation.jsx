@@ -10,19 +10,19 @@ export default function HomeAutomation() {
 
   const heroPreview = data.descImg;
   const pageTitle =
-    "Home Automation Solutions | Smart Lighting, Security & Energy Control | Auro BuildTech";
+    "Home Automation Solutions | Smart Lighting, Security & Energy Control | SkyZen Aurobuildtech";
   const pageDescription =
-    "Explore Auro BuildTech home automation solutions for smart lighting, intelligent security, climate control, motorized curtains, entertainment automation, and energy optimization for modern homes.";
+    "Explore SkyZen Aurobuildtech home automation solutions for smart lighting, intelligent security, climate control, motorized curtains, entertainment automation, and energy optimization for modern homes.";
   const pageUrl = "https://www.aurobuildtech.com/services/home-automation";
   const pageKeywords =
-    "home automation, smart home automation, smart lighting, intelligent security systems, climate control automation, motorized curtains, home theatre automation, energy monitoring, Auro BuildTech";
+    "home automation, smart home automation, smart lighting, intelligent security systems, climate control automation, motorized curtains, home theatre automation, energy monitoring, SkyZen Aurobuildtech";
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: "Home Automation Solutions",
     provider: {
       "@type": "Organization",
-      name: "Auro BuildTech",
+      name: "SkyZen Aurobuildtech",
       url: "https://www.aurobuildtech.com/",
     },
     url: pageUrl,
@@ -50,9 +50,9 @@ export default function HomeAutomation() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.jpg" />
-        <meta property="og:image:alt" content="Auro BuildTech home automation solutions" />
+        <meta property="og:image:alt" content="SkyZen Aurobuildtech home automation solutions" />
         <meta property="og:url" content={pageUrl} />
-        <meta property="og:site_name" content="Auro BuildTech" />
+        <meta property="og:site_name" content="SkyZen Aurobuildtech" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
@@ -75,7 +75,7 @@ export default function HomeAutomation() {
                 <span className="ha-underline sm" />
               </h2>
               <p className="ha-subText">
-                Discover how Auro BuildTech designs intelligent, secure, and connected living
+                Discover how SkyZen Aurobuildtech designs intelligent, secure, and connected living
                 environments through integrated lighting, surveillance, climate, entertainment,
                 and energy automation solutions.
               </p>
@@ -87,7 +87,7 @@ export default function HomeAutomation() {
                   src={heroPreview}
                   className="heroPrev"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                  alt="Smart home automation preview by Auro BuildTech"
+                  alt="Smart home automation preview by SkyZen Aurobuildtech"
                 />
               </div>
             </div>

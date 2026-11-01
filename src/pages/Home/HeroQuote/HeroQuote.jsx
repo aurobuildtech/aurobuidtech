@@ -2,7 +2,6 @@ import "./heroQuote.css";
 import heroimg from "../../../assets/images/heroqutoimg/heroquote.jpg";
 import heroimg1 from "../../../assets/images/heroqutoimg/heroquote1.jpg";
 import heroimg2 from "../../../assets/images/heroqutoimg/heroquote2.jpg";
-import { HighlightsBtn } from "../../../components/buttons/highlightsbtn";
 import { Link } from "react-router-dom";
 import { FaGlobeAmericas } from "react-icons/fa";
 export default function HeroQuote() {
@@ -13,12 +12,6 @@ export default function HeroQuote() {
 
           {/* LEFT */}
           <div className="heroLeft">
-            <div className="heroTopRow">
-              <a href="#highlights" className="heroHighlightsLink">
-                <HighlightsBtn />
-              </a>
-            </div>
-
             <p className="heroKicker">
               <FaGlobeAmericas className="heroKickerIcon" aria-hidden="true" />
               The best investment on earth is <em>Earth</em>
@@ -31,7 +24,7 @@ export default function HeroQuote() {
             </h1>
 
             <p className="heroSub">
-Auro Buildtech is a trusted real estate development and construction company offering
+SkyZen Aurobuildtech is a trusted real estate development and construction company offering
 professional services in layout development, property sales, residential construction, interior
 solutions, and smart home automation. We help clients turn their vision into reality through
 quality craftsmanship, transparent processes, and reliable project delivery.            </p>

@@ -6,7 +6,7 @@ export default function ClientsStrip() {
       <div className="clientsStrip">
 
         <p className="clientsText">
-          Join <strong>500+</strong> satisfied clients who trusted “AURO BUILDTECH” with their
+          Join <strong>500+</strong> satisfied clients who trusted “SkyZen Aurobuildtech” with their
           construction projects
         </p>
 

@@ -20,7 +20,7 @@ export default function SplashScreen({onFinish, duration = 2200 }) {
 
         <div className="portal__core">
           {logo ? (
-            <img className="portal__logo" src={logo} height={"100%"} width={"100%"} alt="Auro" />
+            <img className="portal__logo" src={logo} height={"100%"} width={"100%"} alt="SkyZen Aurobuildtech" />
           ) : (
             <div className="portal__logoFallback" />
           )}
@@ -34,7 +34,7 @@ export default function SplashScreen({onFinish, duration = 2200 }) {
 
       <div className="auroSplash__text">
         <h1 className="auroSplash__title">
-          AURO <span>BUILDTECH</span>
+          SKYZEN <span>AUROBUILDTECH</span>
         </h1>
         <p className="auroSplash__tag">Blueprint • Build • Finish</p>
       </div>

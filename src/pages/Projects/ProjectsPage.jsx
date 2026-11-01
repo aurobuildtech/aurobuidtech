@@ -29,22 +29,15 @@ export default function ProjectsPage() {
     return list;
   }, [currentRegion, activeCategory]);
 
-  const pageTitle =
-    currentRegion === "goa"
-      ? "Projects in Goa | Villas, Plots & Investment Properties | Auro BuildTech"
-      : "Projects in Bangalore | Plots, Flats & Villas | Auro BuildTech";
+  const pageTitle = "Projects in Bangalore | Farmland Plots | SkyZen Aurobuildtech";
 
   const pageDesc =
-    currentRegion === "goa"
-      ? "Explore Auro BuildTech projects in Goa including premium villa plots, luxury villas, lifestyle communities, and curated real estate investment opportunities near key Goa destinations."
-      : "Explore Auro BuildTech projects in Bangalore including premium plots, flats, villas, and curated real estate opportunities across key growth corridors and prime residential locations.";
+    "Explore SkyZen Aurobuildtech projects in Bangalore, including master-planned farmland plots with clear titles, full amenities, and strong connectivity.";
 
   const pageUrl = `https://www.aurobuildtech.com/projects/${currentRegion}`;
   const pageKeywords =
-    currentRegion === "goa"
-      ? "projects in Goa, Goa villa projects, Goa plots, Goa real estate investment, luxury villas in Goa, Auro BuildTech Goa projects"
-      : "projects in Bangalore, Bangalore plots, Bangalore flats, Bangalore villas, Bangalore real estate projects, Auro BuildTech Bangalore projects";
-  const regionName = currentRegion === "goa" ? "Goa" : "Bangalore";
+    "projects in Bangalore, Bangalore plots, farmland plots, Chintamani plots, Sragvee Builders layout, SkyZen Aurobuildtech Bangalore projects";
+  const regionName = "Bangalore";
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -57,7 +50,7 @@ export default function ProjectsPage() {
     },
     provider: {
       "@type": "Organization",
-      name: "Auro BuildTech",
+      name: "SkyZen Aurobuildtech",
       url: "https://www.aurobuildtech.com/",
     },
   };
@@ -81,9 +74,9 @@ export default function ProjectsPage() {
         <meta property="og:description" content={pageDesc} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.jpg" />
-        <meta property="og:image:alt" content={`${regionName} projects by Auro BuildTech`} />
+        <meta property="og:image:alt" content={`${regionName} projects by SkyZen Aurobuildtech`} />
         <meta property="og:url" content={pageUrl} />
-        <meta property="og:site_name" content="Auro BuildTech" />
+        <meta property="og:site_name" content="SkyZen Aurobuildtech" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
@@ -102,21 +95,14 @@ export default function ProjectsPage() {
         <div className="container">
           <div className="projectsIntroBox">
             <span className="projectsMiniBadge">
-              {currentRegion === "goa"
-                ? "Auro Buildtech Goa Projects"
-                : "Auro Buildtech Bangalore Projects"}
+              SkyZen Aurobuildtech Bangalore Projects
             </span>
 
-            <h2>
-              {currentRegion === "goa"
-                ? "Explore premium Goa projects, villa plots, and luxury communities"
-                : "Explore premium Bangalore plots, flats, and villas"}
-            </h2>
+            <h2>Explore premium farmland plots near Bangalore</h2>
 
             <p>
-              {currentRegion === "goa"
-                ? "Discover curated Goa opportunities across luxury villas, premium plotted developments, and investment-focused communities selected for lifestyle value, connectivity, and long-term growth potential."
-                : "Discover curated Bangalore opportunities across plots, flats, and villas in fast-growing corridors with strong connectivity, livability, and long-term real estate investment potential."}
+              Discover master-planned plotted layouts in fast-growing corridors with strong
+              connectivity, full amenities, and long-term real estate investment potential.
             </p>
           </div>
         </div>

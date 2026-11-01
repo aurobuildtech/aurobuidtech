@@ -78,24 +78,24 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Auro BuildTech</title>
+        <title>Contact Us | SkyZen Aurobuildtech</title>
 
         <meta
           name="description"
-          content="Contact Auro BuildTech for residential construction, commercial projects, interior solutions, layout development, and smart home automation services."
+          content="Contact SkyZen Aurobuildtech for residential construction, commercial projects, interior solutions, layout development, and smart home automation services."
         />
 
         <meta
           name="keywords"
-          content="contact Auro BuildTech, construction inquiry, interior design contact, home automation contact, project consultation"
+          content="contact SkyZen Aurobuildtech, construction inquiry, interior design contact, home automation contact, project consultation"
         />
 
-        <meta name="author" content="Auro BuildTech" />
+        <meta name="author" content="SkyZen Aurobuildtech" />
 
-        <meta property="og:title" content="Contact Us | Auro BuildTech" />
+        <meta property="og:title" content="Contact Us | SkyZen Aurobuildtech" />
         <meta
           property="og:description"
-          content="Get in touch with Auro BuildTech for construction, interiors, layout development, and smart home automation projects."
+          content="Get in touch with SkyZen Aurobuildtech for construction, interiors, layout development, and smart home automation projects."
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.jpg" />
@@ -333,7 +333,7 @@ export default function Contact() {
                         <i className="bi bi-geo-alt" aria-hidden="true" />
                         <div>
                           <span>Office</span>
-                          Auro BuildTech, Kadagrahara Rd, Bengaluru, Karnataka 560049
+                          SkyZen Aurobuildtech, Kadagrahara Rd, Bengaluru, Karnataka 560049
                         </div>
                       </li>
                       <li>

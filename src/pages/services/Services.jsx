@@ -26,24 +26,24 @@ export default function Services() {
   return (
     <PageTransitionE>
       <Helmet>
-        <title>Our Services | Auro BuildTech</title>
+        <title>Our Services | SkyZen Aurobuildtech</title>
 
         <meta
           name="description"
-          content="Explore all Auro BuildTech services including layout development, sale of properties, constructions, interior solutions, and smart home automation."
+          content="Explore all SkyZen Aurobuildtech services including layout development, sale of properties, constructions, interior solutions, and smart home automation."
         />
 
         <meta
           name="keywords"
-          content="Auro BuildTech services, layout development, sale of properties, constructions, interior solutions, home automation"
+          content="SkyZen Aurobuildtech services, layout development, sale of properties, constructions, interior solutions, home automation"
         />
 
-        <meta name="author" content="Auro BuildTech" />
+        <meta name="author" content="SkyZen Aurobuildtech" />
 
-        <meta property="og:title" content="Our Services | Auro BuildTech" />
+        <meta property="og:title" content="Our Services | SkyZen Aurobuildtech" />
         <meta
           property="og:description"
-          content="Discover premium construction, interior, and smart home automation services by Auro BuildTech."
+          content="Discover premium construction, interior, and smart home automation services by SkyZen Aurobuildtech."
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.jpg" />

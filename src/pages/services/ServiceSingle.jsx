@@ -57,29 +57,29 @@ export default function ServiceSingle() {
   const serviceMetaMap = useMemo(
     () => ({
       "layout-development": {
-        title: "Layout Development | Auro BuildTech",
+        title: "Layout Development | SkyZen Aurobuildtech",
         description:
-          "Explore premium layout development services by Auro BuildTech with planned infrastructure, legal compliance, and future-ready investment destinations.",
+          "Explore premium layout development services by SkyZen Aurobuildtech with planned infrastructure, legal compliance, and future-ready investment destinations.",
       },
       "sale-of-properties": {
-        title: "Sale of Properties | Auro BuildTech",
+        title: "Sale of Properties | SkyZen Aurobuildtech",
         description:
-          "Discover premium plots, flats, and villas by Auro BuildTech designed for modern lifestyles and smart real estate investment.",
+          "Discover premium plots, flats, and villas by SkyZen Aurobuildtech designed for modern lifestyles and smart real estate investment.",
       },
       constructions: {
-        title: "Constructions | Auro BuildTech",
+        title: "Constructions | SkyZen Aurobuildtech",
         description:
-          "Auro BuildTech offers premium residential and commercial construction services with quality materials, modern engineering, and timely delivery.",
+          "SkyZen Aurobuildtech offers premium residential and commercial construction services with quality materials, modern engineering, and timely delivery.",
       },
       "interior-solutions": {
-        title: "Interior Solutions | Auro BuildTech",
+        title: "Interior Solutions | SkyZen Aurobuildtech",
         description:
-          "Transform your spaces with modern interior solutions by Auro BuildTech using smart planning, premium materials, and elegant finishes.",
+          "Transform your spaces with modern interior solutions by SkyZen Aurobuildtech using smart planning, premium materials, and elegant finishes.",
       },
       "home-automation": {
-        title: "Home Automation | Auro BuildTech",
+        title: "Home Automation | SkyZen Aurobuildtech",
         description:
-          "Experience smart living with Auro BuildTech home automation solutions for lighting, security, climate, and seamless control.",
+          "Experience smart living with SkyZen Aurobuildtech home automation solutions for lighting, security, climate, and seamless control.",
       },
     }),
     []
@@ -88,7 +88,7 @@ export default function ServiceSingle() {
   if (!service) return <Navigate to="/services" replace />;
 
   const meta = serviceMetaMap[serviceId] || {
-    title: `${service.title} | Auro BuildTech`,
+    title: `${service.title} | SkyZen Aurobuildtech`,
     description: `${service.desc1} ${service.desc2 || ""}`.trim(),
   };
 
@@ -103,10 +103,10 @@ export default function ServiceSingle() {
 
         <meta
           name="keywords"
-          content={`${service.title}, Auro BuildTech, construction services, interior services, smart home solutions`}
+          content={`${service.title}, SkyZen Aurobuildtech, construction services, interior services, smart home solutions`}
         />
 
-        <meta name="author" content="Auro BuildTech" />
+        <meta name="author" content="SkyZen Aurobuildtech" />
 
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
@@ -148,7 +148,7 @@ export default function ServiceSingle() {
             <h1 className="svcHeroTitle">{service.title}</h1>
 
             <p className="svcHeroSub">
-              Build smarter, faster, and premium — with Auro BuildTech
+              Build smarter, faster, and premium — with SkyZen Aurobuildtech
             </p>
 
             <p className="svcHeroDesc">
@@ -275,7 +275,7 @@ export default function ServiceSingle() {
 //             <h1 className="svcHeroTitle">{service.title}</h1>
 
 //             <p className="svcHeroSub">
-//               Build smarter, faster, and premium — with Auro BuildTech
+//               Build smarter, faster, and premium — with SkyZen Aurobuildtech
 //             </p>
 
 //             <p className="svcHeroDesc">

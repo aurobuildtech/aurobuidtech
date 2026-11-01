@@ -4,7 +4,7 @@ import { FaBuilding, FaHouseChimney, FaMapLocationDot } from "react-icons/fa6";
 import { quickVideoGroups } from "../../pages/Projects/data/projectsData";
 import "./propertyHubFloat.css";
 
-const GROUPS = [
+const ALL_GROUPS = [
   {
     key: "Plots",
     label: "Plots",
@@ -27,6 +27,9 @@ const GROUPS = [
     helperText: "Explore all villa projects",
   },
 ];
+
+// Only offer groups that currently have projects.
+const GROUPS = ALL_GROUPS.filter((group) => quickVideoGroups[group.key]?.length);
 
 export default function PropertyHubFloat() {
   const [open, setOpen] = useState(false);

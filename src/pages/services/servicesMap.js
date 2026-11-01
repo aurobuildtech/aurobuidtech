@@ -29,7 +29,7 @@ export const servicesData = [
 
     aboutTitle: "About Layout Development",
     aboutParas: [
-      "Auro BuildTech is a forward-thinking real estate development company specializing in premium residential and commercial plotted developments. We are committed to transforming open land into well-planned, legally compliant, and future-ready investment destinations for modern living and business growth.",
+      "SkyZen Aurobuildtech is a forward-thinking real estate development company specializing in premium residential and commercial plotted developments. We are committed to transforming open land into well-planned, legally compliant, and future-ready investment destinations for modern living and business growth.",
       "Our projects are strategically located in rapidly developing zones with excellent connectivity to highways, urban infrastructure, educational institutions, and commercial hubs.",
       "Each venture is meticulously planned with clearly demarcated plots, wide internal roads, drainage systems, green landscapes, and essential utilities to ensure a secure and comfortable environment for homeowners and investors alike.",
     ],
@@ -70,7 +70,7 @@ export const servicesData = [
     ],
     processIconKeys: ["land", "plan", "approve", "execute", "support"],
 
-    highlightsTitle: "Why investors choose Auro",
+    highlightsTitle: "Why investors choose SkyZen Aurobuildtech",
     highlights: [
       {
         title: "Prime Locations",
@@ -105,13 +105,13 @@ export const servicesData = [
     img: saleOfpropvilla,
     descImg : sop,
      desc1:
-    "Auro BuildTech is a reliable real estate company specializing in the development and sale of Plots, premium flats and luxury villas designed for modern lifestyles.",
+    "SkyZen Aurobuildtech is a reliable real estate company specializing in the development and sale of Plots, premium flats and luxury villas designed for modern lifestyles.",
   desc2:
     "We focus on delivering high-quality residential spaces that combine smart design, advanced construction technology, and sustainable living standards.",
 
     aboutTitle: "About Sale of Properties",
     aboutParas: [
-      "Auro BuildTech is a reliable real estate company specializing in the development and sale of premium apartments and luxury villas designed for modern lifestyles.",
+      "SkyZen Aurobuildtech is a reliable real estate company specializing in the development and sale of premium apartments and luxury villas designed for modern lifestyles.",
       "We focus on delivering high-quality residential spaces that combine smart design, advanced construction technology, and sustainable living standards. Our residential projects are strategically located in fast-growing areas with excellent connectivity to schools, hospitals, business centers, and transport facilities.",
       "Each apartment and villa is thoughtfully planned with contemporary architecture, functional layouts, and essential amenities to ensure comfort, safety, and long-term value for homeowners.",
     ],
@@ -128,7 +128,7 @@ export const servicesData = [
     offerIconKeys: ["apartment", "villa", "gated", "legal", "infra", "growth"],
 
     bottomText:
-      "At Auro BuildTech, we are committed to building homes that reflect trust, innovation, and superior living standards—helping families find their dream homes and investors secure valuable real estate assets.",
+      "At SkyZen Aurobuildtech, we are committed to building homes that reflect trust, innovation, and superior living standards—helping families find their dream homes and investors secure valuable real estate assets.",
   },
 
   // keep others as-is for now
@@ -149,7 +149,7 @@ export const servicesData = [
       aboutTitle: "About Construction Services",
 
   aboutParas: [
-    "Auro BuildTech is a trusted construction company specializing in the development of high-quality residential villas and apartment complexes. We are dedicated to delivering structurally strong, aesthetically appealing, and functionally efficient living spaces that meet the evolving needs of modern families.",
+    "SkyZen Aurobuildtech is a trusted construction company specializing in the development of high-quality residential villas and apartment complexes. We are dedicated to delivering structurally strong, aesthetically appealing, and functionally efficient living spaces that meet the evolving needs of modern families.",
 
     "Our construction services are driven by advanced engineering practices, premium quality materials, and innovative building technologies to ensure durability, safety, and long-term value.",
 
@@ -179,7 +179,7 @@ offerIconKeys: [
 ],
 
   bottomText:
-    "At Auro BuildTech Projects, we focus on building homes that combine comfort, style, and reliability—ensuring every project reflects superior craftsmanship, durable construction, and long-term customer satisfaction."
+    "At SkyZen Aurobuildtech, we focus on building homes that combine comfort, style, and reliability—ensuring every project reflects superior craftsmanship, durable construction, and long-term customer satisfaction."
 
   },
 
@@ -228,7 +228,7 @@ offerIconKeys: [
   ],
 
   bottomText:
-    "With a perfect blend of creativity, technology, and functionality, Auro BuildTech delivers interior spaces that enhance comfort, style, and value—turning every house into a dream home and every workspace into an inspiring environment.",
+    "With a perfect blend of creativity, technology, and functionality, SkyZen Aurobuildtech delivers interior spaces that enhance comfort, style, and value—turning every house into a dream home and every workspace into an inspiring environment.",
 
   },
 
@@ -238,7 +238,7 @@ offerIconKeys: [
     eyebrow: "Smart Living",
     title: "Home Automation",
     desc1:
-      "Auro BuildTech offers advanced home automation solutions that transform modern homes into smart, secure, and energy-efficient living spaces.",
+      "SkyZen Aurobuildtech offers advanced home automation solutions that transform modern homes into smart, secure, and energy-efficient living spaces.",
     desc2:
       "Our intelligent automation systems are designed to provide seamless control over lighting, security, climate, entertainment, and other essential home functions-all from a single interface.",
     img:homeauto ,

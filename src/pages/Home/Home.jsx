@@ -15,7 +15,6 @@ const ProjectCTA = lazy(() => import("./ProjectCTA/ProjectCTA"));
 const AutoPopupModal = lazy(() => import("../../components/AutoPopupModal/AutoPopupModal"));
 const LatestCollectionPopup = lazy(() => import("../../components/LatestCollectionPopup/LatestCollectionPopup"));
 const HeroQuote = lazy(() => import("./HeroQuote/HeroQuote"));
-const VideoHighlights = lazy(() => import("./videoHighlights/VideoHighlights"));
 
 function BlockLoader({ h = 260 }) {
   return (
@@ -51,16 +50,16 @@ export default function Home() {
   };
 
   const pageTitle =
-    "Auro BuildTech | Real Estate Consulting, Construction, Interiors & Home Automation";
+    "SkyZen Aurobuildtech | Real Estate Consulting, Construction, Interiors & Home Automation";
   const pageDescription =
-    "Auro BuildTech delivers real estate consulting, layout development, property sales, construction, interior solutions, and smart home automation services in Bangalore, Goa, Hyderabad, and Visakhapatnam.";
+    "SkyZen Aurobuildtech delivers real estate consulting, layout development, property sales, construction, interior solutions, and smart home automation services in Bangalore, Goa, Hyderabad, and Visakhapatnam.";
   const pageUrl = "https://www.aurobuildtech.com/";
   const pageKeywords =
-    "Auro BuildTech, real estate consulting, construction company in Bangalore, interior solutions, smart home automation, layout development, sale of properties, villas, flats, plots, property investment";
+    "SkyZen Aurobuildtech, real estate consulting, construction company in Bangalore, interior solutions, smart home automation, layout development, sale of properties, villas, flats, plots, property investment";
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Auro BuildTech",
+    name: "SkyZen Aurobuildtech",
     url: pageUrl,
     logo: `${pageUrl}favicon.ico`,
     description: pageDescription,
@@ -109,7 +108,7 @@ export default function Home() {
           content={pageKeywords}
         />
 
-        <meta name="author" content="Auro BuildTech" />
+        <meta name="author" content="SkyZen Aurobuildtech" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#1f3a30" />
 
@@ -125,9 +124,9 @@ export default function Home() {
 
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.jpg" />
-        <meta property="og:image:alt" content="Auro BuildTech homepage preview" />
+        <meta property="og:image:alt" content="SkyZen Aurobuildtech homepage preview" />
         <meta property="og:url" content={pageUrl} />
-        <meta property="og:site_name" content="Auro BuildTech" />
+        <meta property="og:site_name" content="SkyZen Aurobuildtech" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
@@ -204,12 +203,6 @@ export default function Home() {
             </Reveal>
           </Suspense>
         </LazySection>
-
-        <Suspense fallback={<BlockLoader h={420} />}>
-          <Reveal delay={0.1}>
-            <VideoHighlights />
-          </Reveal>
-        </Suspense>
 
         <Reveal delay={0.15}>
           <ProjectCTA />

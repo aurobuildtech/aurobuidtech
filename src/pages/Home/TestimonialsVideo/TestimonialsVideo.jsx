@@ -58,7 +58,7 @@ const showcaseImages = [
     quote:
       "From planning to handover, the journey was smooth and reassuring. The team delivered a home we genuinely feel proud of.",
     name: "Verified Homeowner",
-    role: "Auro BuildTech Client",
+    role: "SkyZen Aurobuildtech Client",
   },
 ];
 
@@ -87,7 +87,7 @@ function TestimonialsVideo() {
           <div className="tsTop">CLIENT REVIEWS</div>
           <h2 className="tsTitle">What Our Clients Say</h2>
           <p className="tsSub">
-            Honest words from clients who trusted Auro BuildTech for planning,
+            Honest words from clients who trusted SkyZen Aurobuildtech for planning,
             execution, and final project delivery.
           </p>
         </div>

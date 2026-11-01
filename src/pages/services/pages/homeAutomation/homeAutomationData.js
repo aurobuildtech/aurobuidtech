@@ -20,7 +20,7 @@ export const automationSystems = [
     modelImg: smarthomeAutoImg,
 
     intro:
-      "Auro BuildTech Projects delivers advanced smart lighting automation solutions that enhance comfort, energy efficiency, and modern living experiences.",
+      "SkyZen Aurobuildtech delivers advanced smart lighting automation solutions that enhance comfort, energy efficiency, and modern living experiences.",
 
     description:
       "Our intelligent lighting systems allow homeowners to control, schedule, and customize lighting through mobile apps, voice commands, or centralized control panels. By integrating motion sensors, dimming controls, scene settings, and daylight sensors, we create adaptive lighting environments that automatically adjust based on occupancy, time of day, and natural light levels.",
@@ -38,7 +38,7 @@ export const automationSystems = [
     ],
 
     benefit:
-      "With smart lighting automation from Auro BuildTech Projects, homeowners enjoy enhanced ambiance, reduced energy consumption, improved security, and seamless control — all designed for modern, tech-enabled living.",
+      "With smart lighting automation from SkyZen Aurobuildtech, homeowners enjoy enhanced ambiance, reduced energy consumption, improved security, and seamless control — all designed for modern, tech-enabled living.",
   },
 
   {
@@ -49,7 +49,7 @@ export const automationSystems = [
     modelImg: Intelligentsecurity,
 
     intro:
-      "Auro BuildTech Projects offers smart home automation solutions integrated with advanced CCTV surveillance systems to enhance safety, control, and convenience for modern homes and commercial spaces.",
+      "SkyZen Aurobuildtech offers smart home automation solutions integrated with advanced CCTV surveillance systems to enhance safety, control, and convenience for modern homes and commercial spaces.",
 
     description:'',
       // "Our solutions enable real-time monitoring, remote access, and intelligent threat detection through a complete connected ecosystem built for smarter property protection.",
@@ -81,7 +81,7 @@ export const automationSystems = [
       "Our smart ventilation solutions automatically regulate airflow and fresh air circulation based on environmental conditions, occupancy levels, and air quality parameters—ensuring a healthier and more comfortable indoor environment.",
 
     description:
-      "Auro BuildTech’s climate and ventilation automation systems are designed to maintain comfort while supporting energy efficiency and healthy indoor living. With intelligent sensors and automated airflow balancing, the home adapts in real time.",
+      "SkyZen Aurobuildtech’s climate and ventilation automation systems are designed to maintain comfort while supporting energy efficiency and healthy indoor living. With intelligent sensors and automated airflow balancing, the home adapts in real time.",
 
     pointsTitle: "Our smart ventilation system includes:",
     points: [
@@ -107,7 +107,7 @@ export const automationSystems = [
       "Our systems analyze your home’s energy footprint and take proactive steps to reduce waste without sacrificing comfort.",
 
     description:
-      'The "Green" edge of automation is intelligent optimization. Auro BuildTech helps homeowners understand usage patterns, reduce hidden waste, and improve efficiency through live monitoring, smart scheduling, and responsive energy-saving controls.',
+      'The "Green" edge of automation is intelligent optimization. SkyZen Aurobuildtech helps homeowners understand usage patterns, reduce hidden waste, and improve efficiency through live monitoring, smart scheduling, and responsive energy-saving controls.',
 
     pointsTitle: "How we optimize your home:",
     points: [

@@ -54,6 +54,7 @@ export default function AppRoutes() {
 
           {/* PROJECT ROUTES */}
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/goa/*" element={<Navigate to="/projects/bangalore" replace />} />
           <Route path="/projects/:location" element={<Projects />} />
           <Route
             path="/projects/:location/:projectSlug"

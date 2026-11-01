@@ -31,16 +31,16 @@ export default function ProjectDetailsPage() {
 
       {/* ✅ HELMET */}
       <Helmet>
-        <title>{project.title} | Auro BuildTech</title>
+        <title>{project.title} | SkyZen Aurobuildtech</title>
 
         <meta
           name="description"
-          content={project.shortDesc || "Explore premium real estate projects by Auro BuildTech."}
+          content={project.shortDesc || "Explore premium real estate projects by SkyZen Aurobuildtech."}
         />
 
         <meta
           name="keywords"
-          content={`${project.title}, ${project.location}, Auro BuildTech, real estate`}
+          content={`${project.title}, ${project.location}, SkyZen Aurobuildtech, real estate`}
         />
 
         <meta property="og:title" content={project.title} />

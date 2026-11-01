@@ -32,21 +32,21 @@ function About() {
 
       {/* ✅ HELMET */}
       <Helmet>
-        <title>About Us | Auro BuildTech</title>
+        <title>About Us | SkyZen Aurobuildtech</title>
 
         <meta
           name="description"
-          content="Learn about Auro BuildTech, a trusted construction company offering modern building solutions, premium interiors, and smart home automation services."
+          content="Learn about SkyZen Aurobuildtech, a trusted construction company offering modern building solutions, premium interiors, and smart home automation services."
         />
 
         <meta
           name="keywords"
-          content="about Auro BuildTech, construction company, interior solutions, home automation company, building experts"
+          content="about SkyZen Aurobuildtech, construction company, interior solutions, home automation company, building experts"
         />
 
-        <meta name="author" content="Auro BuildTech" />
+        <meta name="author" content="SkyZen Aurobuildtech" />
 
-        <meta property="og:title" content="About Us | Auro BuildTech" />
+        <meta property="og:title" content="About Us | SkyZen Aurobuildtech" />
         <meta
           property="og:description"
           content="Discover our journey, expertise, and commitment to quality construction and smart living solutions."

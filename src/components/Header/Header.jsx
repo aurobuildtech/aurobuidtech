@@ -14,7 +14,6 @@ const services = [
 
 const projects = [
   { label: "Projects In Bangalore", slug: "bangalore" },
-  { label: "Projects In Goa", slug: "goa" },
 ];
 
 export default function Header() {
@@ -106,7 +105,7 @@ export default function Header() {
             className="navbar-brand d-flex align-items-center auro-brand"
             onClick={closeAllMenus}
           >
-            <img src={auroicon} alt="Auro logo" className="auro-logo" />
+            <img src={auroicon} alt="SkyZen Aurobuildtech logo" className="auro-logo" />
           </Link>
 
           {/* MOBILE / TABLET HAMBURGER + HANGING QUOTE */}
