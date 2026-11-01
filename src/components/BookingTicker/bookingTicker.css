@@ -36,6 +36,34 @@
   color: inherit;
 }
 
+button.btkLink {
+  border: none;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btkThumb {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--forest-dark);
+}
+
+.btkThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.btkToast.is-status {
+  border-left-color: var(--forest);
+}
+
 .btkPlot {
   flex: 0 0 auto;
   width: 56px;
@@ -176,6 +204,11 @@
   .btkLink {
     gap: 10px;
     padding: 10px 4px 10px 10px;
+  }
+
+  .btkThumb {
+    width: 46px;
+    height: 46px;
   }
 
   .btkPlot {

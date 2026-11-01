@@ -2,6 +2,7 @@ import skyline from "../../../assets/projects/bangcaro/skylinebang.png"
 import Utsav from "../../../assets/projects/bangcaro/Utsav.png" 
 import aurocoll from  "../../../assets/projects/bangcaro/aurocoll.png"
 import sragveeCover from "../../../assets/projects/sragvee/sragvee-cover.jpg"
+import sragveeBookingStatus from "../../../assets/projects/sragvee/booking-status.png"
 
 
 export const projectCategories = ["All", "Plots"];
@@ -81,5 +82,6 @@ export const projectsData = [
     phone: "9945399123",
     videoUrl: "#",
     hasBookingLayout: true,
+    bookingStatusImage: sragveeBookingStatus,
   },
 ];

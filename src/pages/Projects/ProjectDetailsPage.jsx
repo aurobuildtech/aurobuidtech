@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import "./projects.css";
 import { projectsData } from "./data/projectsData";
 import SragveeBookingLayout from "./components/SragveeBookingLayout";
+import BookingStatusButton from "./components/BookingStatusButton";
 
 export default function ProjectDetailsPage() {
   const { location, projectSlug } = useParams();
@@ -118,6 +119,10 @@ export default function ProjectDetailsPage() {
                   <i className="bi bi-telephone me-2" aria-hidden="true" />
                   {project.ctaLabel || "Call Now"}
                 </a>
+
+                {project.bookingStatusImage && (
+                  <BookingStatusButton image={project.bookingStatusImage} title={project.title} />
+                )}
 
                 {project.mapUrl && (
                   <a
