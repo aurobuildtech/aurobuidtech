@@ -266,12 +266,13 @@ export default function Contact() {
                       </div>
 
                       <button type="submit" className="ctBtn">
-                        Submit Project Inquiry <span aria-hidden="true">✈️</span>
+                        Submit Project Inquiry <i className="bi bi-send ms-2" aria-hidden="true" />
                       </button>
                     </form>
                   </div>
 
-                  {/* RIGHT: SERVICE AREA */}
+                  {/* RIGHT: SERVICE AREA + DIRECT CONTACT */}
+                  <div className="ctSideCol">
                   <div className="ctCard">
                     <h2 className="ctCardTitle">Our Service Area</h2>
                     <p className="ctCardSub">
@@ -316,6 +317,34 @@ export default function Contact() {
                         basis. Contact us to discuss your location.
                       </div>
                     </div>
+                  </div>
+
+                  <div className="ctCard ctDirect">
+                    <h2 className="ctCardTitle">Talk to Us Directly</h2>
+                    <ul className="ctDirectList">
+                      <li>
+                        <i className="bi bi-telephone" aria-hidden="true" />
+                        <div>
+                          <span>Call</span>
+                          <a href="tel:+919945399123">+91 99453 99123</a>
+                        </div>
+                      </li>
+                      <li>
+                        <i className="bi bi-geo-alt" aria-hidden="true" />
+                        <div>
+                          <span>Office</span>
+                          Auro BuildTech, Kadagrahara Rd, Bengaluru, Karnataka 560049
+                        </div>
+                      </li>
+                      <li>
+                        <i className="bi bi-clock" aria-hidden="true" />
+                        <div>
+                          <span>Hours</span>
+                          Mon – Fri, 8 AM – 6 PM
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                   </div>
                 </div>
               </div>

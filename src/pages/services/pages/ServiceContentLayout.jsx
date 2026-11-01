@@ -36,7 +36,7 @@ export default function ServiceContentLayout({ data }) {
     <section className="scl-wrap">
       <div className="container">
         {/* TOP GRID */}
-        <div className="scl-grid">
+        <div className={`scl-grid${descImg ? "" : " is-single"}`}>
           {/* LEFT */}
           <Reveal y={14}>
             <div className="scl-left">
@@ -56,44 +56,47 @@ export default function ServiceContentLayout({ data }) {
           </Reveal>
 
           {/* RIGHT */}
-          <Reveal y={14}>
-            <div className="scl-right">
-              {descImg && (
+          {descImg && (
+            <Reveal y={14}>
+              <div className="scl-right">
                 <div className="scl-imgCard">
                   <img
                     src={descImg}
                     alt={aboutTitle || data.title}
                     className="scl-img"
+                    loading="lazy"
                   />
                 </div>
-              )}
+              </div>
+            </Reveal>
+          )}
+        </div>
 
-              {sideTitle && sideList.length > 0 && (
-                <div className="scl-box">
-                  <h3 className="scl-subTitle">
-                    {sideTitle}
-                    <span className="scl-underline sm" />
-                  </h3>
+        {sideTitle && sideList.length > 0 && (
+          <Reveal y={14}>
+            <div className="scl-box scl-provide">
+              <h3 className="scl-subTitle">
+                {sideTitle}
+                <span className="scl-underline sm" />
+              </h3>
 
-                  <ul className="scl-list">
-                    {sideList.map((item, i) => {
-                      const IconComp = getIconByKey(sideIconKeys[i]);
+              <ul className="scl-list">
+                {sideList.map((item, i) => {
+                  const IconComp = getIconByKey(sideIconKeys[i]);
 
-                      return (
-                        <li key={i} className="scl-li">
-                          <span className="scl-iconBox">
-                            {IconComp ? <IconComp /> : <span className="scl-fallbackDot" />}
-                          </span>
-                          <span>{item}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
+                  return (
+                    <li key={i} className="scl-li">
+                      <span className="scl-iconBox">
+                        {IconComp ? <IconComp /> : <span className="scl-fallbackDot" />}
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </Reveal>
-        </div>
+        )}
 
         {/* PROCESS */}
         {processTitle && processSteps.length > 0 && (

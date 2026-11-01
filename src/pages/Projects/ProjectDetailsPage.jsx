@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./projects.css";
 import { projectsData } from "./data/projectsData";
+import SragveeBookingLayout from "./components/SragveeBookingLayout";
 
 export default function ProjectDetailsPage() {
   const { location, projectSlug } = useParams();
@@ -61,23 +62,46 @@ export default function ProjectDetailsPage() {
           </Link>
         </div>
 
-        <div className="row g-4 align-items-start">
-          <div className="col-lg-7">
+        <div className="pdGrid">
+          <div className="pdMedia">
             <div className="projectDetailsImageWrap">
               <img src={project.image} alt={project.title} />
             </div>
           </div>
 
-          <div className="col-lg-5">
+          {project.highlights?.length > 0 && (
+            <div className="pdHighlights">
+              <h3>Highlights</h3>
+              <ul>
+                {project.highlights.map((item, index) => (
+                  <li key={index}>
+                    <i className="bi bi-check2" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div className="pdContent">
             <div className="projectDetailsContent">
-              <span className="projectCategoryTag details">
-                {project.category}
-              </span>
+              <div className="pdTags">
+                <span className="projectCategoryTag details">{project.category}</span>
+                {project.status && <span className="pdStatus">{project.status}</span>}
+              </div>
 
               <h1>{project.title}</h1>
 
-              <p className="projectLocation">{project.location}</p>
-              <p className="projectPrice">{project.price}</p>
+              <p className="pdLocation">
+                <i className="bi bi-geo-alt" aria-hidden="true" />
+                {project.location}
+              </p>
+
+              <div className="pdPrice">
+                <span>Price</span>
+                <strong>{project.price}</strong>
+              </div>
+
               <p className="projectDesc">{project.shortDesc}</p>
 
               <div className="projectDetailBlock">
@@ -89,18 +113,10 @@ export default function ProjectDetailsPage() {
                 </ul>
               </div>
 
-              <div className="projectDetailBlock">
-                <h3>Highlights</h3>
-                <ul>
-                  {project.highlights?.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-
               <div className="projectDetailActions">
-                <a href={`tel:${project.phone}`} className="dark-btn  btn btn-primary">
-                  Call Now
+                <a href={`tel:${project.phone}`} className="dark-btn btn btn-primary">
+                  <i className="bi bi-telephone me-2" aria-hidden="true" />
+                  {project.ctaLabel || "Call Now"}
                 </a>
 
                 {project.mapUrl && (
@@ -128,6 +144,8 @@ export default function ProjectDetailsPage() {
             </div>
           </div>
         </div>
+
+        {project.hasBookingLayout && <SragveeBookingLayout phone={project.phone} />}
       </div>
     </main>
   );

@@ -4,29 +4,25 @@ import { FaBuilding, FaHouseChimney, FaMapLocationDot } from "react-icons/fa6";
 import { quickVideoGroups } from "../../pages/Projects/data/projectsData";
 import "./propertyHubFloat.css";
 
-import ploticon from "../../../src/assets/projects/icons/ploticon.jpeg";
-import flaticons from "../../../src/assets/projects/icons/flaticons.jpeg";
-import villasicon from "../../../src/assets/projects/icons/villasicon.jpeg";
-
 const GROUPS = [
   {
     key: "Plots",
     label: "Plots",
-    image: ploticon,
+    Icon: FaMapLocationDot,
     accentClass: "plots",
     helperText: "Explore all plotted developments",
   },
   {
     key: "Flats",
     label: "Flats",
-    image: flaticons,
+    Icon: FaBuilding,
     accentClass: "flats",
     helperText: "Explore all apartment projects",
   },
   {
     key: "Villas",
     label: "Villas",
-    image: villasicon,
+    Icon: FaHouseChimney,
     accentClass: "villas",
     helperText: "Explore all villa projects",
   },
@@ -134,8 +130,8 @@ export default function PropertyHubFloat() {
             onClick={() => handleGroupOpen(group.key)}
             aria-label={`Open ${group.label}`}
           >
-            <span className="hubFloatBtnMedia">
-              <img src={group.image} alt={group.label} />
+            <span className="hubFloatBtnMedia" aria-hidden="true">
+              <group.Icon />
             </span>
 
             <span className="hubFloatBtnText">
@@ -159,7 +155,7 @@ export default function PropertyHubFloat() {
               onClick={handleClosePanel}
               aria-label="Close property hub"
             >
-              x
+              <i className="bi bi-x-lg" aria-hidden="true" />
             </button>
           </div>
 

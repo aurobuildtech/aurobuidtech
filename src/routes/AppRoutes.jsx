@@ -6,6 +6,8 @@ import SplashScreen from "../components/SplashScreen/SplashScreen";
 import WhatsAppFloat from "../components/buttons/WhatsAppFloat";
 import PropertyHubFloat from "../components/floating/PropertyHubFloat";
 import ScrollToTop from "../components/ScrollToTop";
+import BookingTicker from "../components/BookingTicker/BookingTicker";
+import { SRAGVEE_PROJECT_PATH } from "../pages/Projects/data/sragveeBookings";
 
 /* LAZY PAGES */
 const Home = lazy(() => import("../pages/Home/Home"));
@@ -37,6 +39,7 @@ export default function AppRoutes() {
         {/* ✅ GLOBAL FLOAT BUTTONS */}
         <PropertyHubFloat />
         <WhatsAppFloat />
+        <BookingTicker />
 
         {/* ✅ SCROLL FIX */}
         <ScrollToTop />
@@ -55,6 +58,16 @@ export default function AppRoutes() {
           <Route
             path="/projects/:location/:projectSlug"
             element={<ProjectDetailsPage />}
+          />
+
+          <Route
+            path="/sragvee"
+            element={
+              <Navigate
+                replace
+                to={{ pathname: SRAGVEE_PROJECT_PATH, search: location.search, hash: "booking-layout" }}
+              />
+            }
           />
 
           <Route path="/about" element={<About />} />

@@ -1,0 +1,202 @@
+.btkToast {
+  position: fixed;
+  left: 20px;
+  /* clears the fixed copyright bar */
+  bottom: 86px;
+  z-index: 1040;
+  width: min(360px, calc(100vw - 112px));
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--bronze);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
+}
+
+.btkToast.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s;
+}
+
+.btkLink {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 6px 12px 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.btkPlot {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--forest);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.btkPlot small {
+  font-family: var(--font-body);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--champagne) !important;
+  margin-bottom: 3px;
+}
+
+.btkBody {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.btkKicker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bronze-dark);
+}
+
+.btkDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3f8f5e;
+  box-shadow: 0 0 0 3px rgba(63, 143, 94, 0.18);
+}
+
+.btkText {
+  font-size: 0.92rem;
+  line-height: 1.35;
+  color: var(--text-body);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btkText strong {
+  color: var(--text-strong);
+}
+
+.btkMeter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3px;
+}
+
+.btkBar {
+  flex: 1 1 auto;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--stone);
+  overflow: hidden;
+}
+
+.btkBar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--forest), var(--bronze));
+}
+
+.btkCount {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.btkLink:hover .btkText strong {
+  color: var(--forest);
+}
+
+.btkClose {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin: 6px 6px 0 0;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-soft);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.btkClose:hover {
+  background: var(--ivory-deep);
+  color: var(--text-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btkToast,
+  .btkToast.is-visible {
+    transform: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .btkToast {
+    bottom: 128px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btkToast {
+    left: 12px;
+  }
+
+  .btkLink {
+    gap: 10px;
+    padding: 10px 4px 10px 10px;
+  }
+
+  .btkPlot {
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
+  }
+
+  .btkText {
+    font-size: 0.84rem;
+    white-space: normal;
+  }
+
+  .btkKicker {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.62rem;
+  }
+
+  .btkKicker .btkDot {
+    flex: 0 0 auto;
+  }
+}

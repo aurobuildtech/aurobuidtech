@@ -1,12 +1,14 @@
 import { Suspense } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 import PageTransitionE from "../../components/animations/PageTransition";
 import Reveal from "../../components/animations/Reveal";
 import LazySection from "../../components/lazy/LazySection";
 import ServiceModal from "../../components/modals/ServiceModal";
 import ClientsStrip from "../Home/ClientsStrip/ClientsStrip";
-import ServiceSingle from "./ServiceSingle";
+import { servicesData } from "./servicesMap";
+import "./services.css";
 
 function BlockLoader({ h = 260 }) {
   return (
@@ -54,11 +56,38 @@ export default function Services() {
         <ServiceModal />
 
         <Reveal y={18}>
-          <h1 className="fw-bold text-center mt-5">Our Services</h1>
+          <header className="svcIndexHead">
+            <span className="svcIndexEyebrow">What we do</span>
+            <h1>Our Services</h1>
+            <p>
+              From land to living — layout development, property sales, construction, interiors and
+              smart home automation, delivered by one accountable team.
+            </p>
+          </header>
         </Reveal>
 
-        {/* ✅ this will render all services because /services has no serviceId */}
-        <ServiceSingle />
+        <div className="svcIndexGrid">
+          {servicesData.map((service, i) => (
+            <Link key={service.id} to={`/services/${service.id}`} className="svcIndexCard">
+              <div className="svcIndexMedia">
+                <img
+                  src={Array.isArray(service.img) ? service.img[0] : service.img}
+                  alt={service.title}
+                  loading="lazy"
+                />
+                <span className="svcIndexNo">{String(i + 1).padStart(2, "0")}</span>
+              </div>
+              <div className="svcIndexBody">
+                <span className="svcIndexTag">{service.eyebrow}</span>
+                <h2>{service.title}</h2>
+                <p>{service.desc1}</p>
+                <span className="svcIndexMore">
+                  Explore service <i className="bi bi-arrow-right" aria-hidden="true" />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
 
         <LazySection placeholderHeight={110}>
           <Suspense fallback={<BlockLoader h={110} />}>

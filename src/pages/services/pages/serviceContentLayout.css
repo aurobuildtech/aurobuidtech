@@ -230,6 +230,70 @@
     display: block;
 }
 
+/* Text and image share a row at equal height; the provide list spans below. */
+.scl-grid {
+  align-items: stretch;
+}
+
+.scl-grid.is-single {
+  grid-template-columns: 1fr;
+}
+
+.scl-grid > div,
+.scl-right,
+.scl-right .scl-imgCard {
+  height: 100%;
+}
+
+.scl-right .scl-img {
+  height: 100%;
+  min-height: 300px;
+  max-height: 460px;
+}
+
+.scl-provide {
+  margin-top: 34px;
+  padding: 24px;
+  background: #fff;
+  border-radius: var(--radius-md);
+}
+
+.scl-provide .scl-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px 24px;
+}
+
+.scl-provide .scl-li {
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .scl-grid > div,
+  .scl-right,
+  .scl-right .scl-imgCard {
+    height: auto;
+  }
+
+  .scl-right .scl-img {
+    height: 280px;
+    min-height: 0;
+  }
+
+  .scl-provide .scl-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .scl-provide {
+    padding: 18px;
+  }
+
+  .scl-provide .scl-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* =========================
    CENTER TIMELINE LIST
    ========================= */

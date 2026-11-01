@@ -539,5 +539,6 @@ export const projectsData = [
     ctaLabel: "Enquire Now",
     phone: "9945399123",
     videoUrl: "#",
+    hasBookingLayout: true,
   },
 ];

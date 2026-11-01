@@ -324,3 +324,57 @@
     .ctRow2{ grid-template-columns: 1fr; }
     .ctCities{ grid-template-columns: 1fr; }
   }
+/* Right column: service area + direct contact stack to match the form height */
+.ctSideCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.ctDirect {
+  flex: 1;
+}
+
+.ctDirectList {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 14px;
+}
+
+.ctDirectList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+.ctDirectList i {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--forest-tint);
+  color: var(--forest);
+}
+
+.ctDirectList span {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.ctDirectList a {
+  font-weight: 600;
+  color: var(--forest);
+  text-decoration: none;
+}
